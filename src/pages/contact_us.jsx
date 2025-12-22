@@ -1,0 +1,192 @@
+import React from "react";
+import ContactForm from "../components/contactForm";
+import { MapPin, Pin, Mail, Phone, Smartphone } from "lucide-react";
+import hiring from "../assets/contact-us/Job offers-bro 1.png";
+
+function Contact_us({ lang }) {
+  const texts = {
+    headquarters: lang === "en" ? "Headquarters" : "المقر الرئيسي",
+    branches: [
+      { title: lang === "en" ? "Abu Dhabi (Head Office)" : "أبو ظبي (المكتب الرئيسي)", address: lang === "en" ? "Al Jazira Club - floor No. 8 - Tower A Al Muroor St - Al Nahyan - Zone 1" : "نادي الجزيرة - الطابق رقم 8 - البرج أ، شارع المروّر - النهيان - المنطقة " },
+      { title: lang === "en" ? "Dubai" : "دبي", address: lang === "en" ? "Al Muroor Road - Rashid Bin Saeed Al Maktoum St(2nd St)" : "طريق المروح - شارع راشد بن سعيد آل مكتوم (الشارع الثاني)" },
+      { title: lang === "en" ? "Sharjah" : "الشارقة", address: lang === "en" ? "Al Muroor Road - Rashid Bin Saeed Al Maktoum St(2nd St)" : "طريق المروح - شارع راشد بن سعيد آل مكتوم (الشارع الثاني)" },
+      { title: lang === "en" ? "Ajman" : "عجمان", address: lang === "en" ? "Flamingo, Villa 30 - Al Zorah - Ajman" : "فلامينغو، فيلا 30 - الزوراء - عجمان" },
+    ],
+    helpSupport: lang === "en" ? "Help & Support" : "المساعدة والدعم",
+    contactItems: [
+      {icon:Mail, text: "info@jovera.ae"},
+      {icon:Phone, text: "800-664000"},
+      {icon:Smartphone, text: "+97126311977"},
+      {icon:Smartphone, text: "+97126311977"},
+    ],
+    whyChooseUsHeading: lang === "en" ? "13 Years Experience" : "13 سنة من الخبرة",
+    whyChooseUsText: lang === "en" ? "Jovera Group Established in 2013 in the UAE, it swiftly became a key player in real estate and financial services tourism, Advertisement, and accountancy, prioritizing excellence and innovation." : "تأسست مجموعة جوفيرا في عام 2013 في الإمارات، وسرعان ما أصبحت لاعباً رئيسياً في العقارات والخدمات المالية والسياحة والإعلان والمحاسبة، مع التركيز على التميز والابتكار.",
+    whyChooseUsItems: lang === "en" ? ["Free consultations", "Fast and secure transactions", "Trusted partners", "Professional support team"] : ["استشارات مجانية", "معاملات سريعة وآمنة", "شركاء موثوقون", "فريق دعم احترافي"],
+    formHeading: lang === "en" ? "Meet Jovera Group" : "تعرف على مجموعة جوفيرا",
+    joinUsHeading: lang === "en" ? "Embrace the Future at Jovera Group" : "احتضن المستقبل في مجموعة جوفيرا",
+    joinUsText: lang === "en" ? "By joining Jovera Group, you can become part of a dynamic team that values wisdom, agility, boldness, foresight, and partnership. We provide a positive work environment that fosters substantial growth opportunities for everyone." : "من خلال الانضمام إلى مجموعة جوفيرا، يمكنك أن تصبح جزءًا من فريق ديناميكي يقدر الحكمة والمرونة والجرأة والبصيرة والشراكة. نحن نوفر بيئة عمل إيجابية تعزز فرص النمو الكبيرة للجميع.",
+    browseVacancies: lang === "en" ? "Browse vacancies" : "تصفح الوظائف",
+  };
+
+ 
+const options = [
+  { key: "Business Loan", value: { en: "Business Loan", ar: "قرض تجاري" } },
+  { key: "Mortgage Loan", value: { en: "Mortgage Loan", ar: "قرض عقاري" } },
+  { key: "Personal Loan", value: { en: "Personal Loan", ar: "قرض شخصي" } },
+  { key: "Real Estate", value: { en: "Real Estate", ar: "العقارات" } },
+  { key: "Legal Service", value: { en: "Legal Service", ar: "خدمة قانونية" } },
+  { key: "Auditing & Accounting", value: { en: "Auditing & Accounting", ar: "التدقيق والمحاسبة" } },
+];
+
+
+
+  return (
+    <main className={`bg-[#0D0D0D] text-white min-h-screen px-16 pt-40 pb-20 mx-auto space-y-20 ${lang !== "en" ? "rtl" : ""}`}>
+
+      <div className={`${lang === "en" ? "text-left" : "text-right"}`}>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl mb-3 tracking-tight">{lang === "en" ? "Contact" : "اتصل بنا"}</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-400 font-light tracking-wide">{lang === "en" ? "Find Us" : "اعثر علينا"}</h2>
+      </div>
+
+     {/* Row 1: Map + Contact Info */}
+      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${lang !== "en" ? "lg:flex-row-reverse" : ""}`}>
+        {/* Map */}
+        <div className="w-full h-[400px] rounded-lg overflow-hidden"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11563.201869038848!2d54.3894629!3d24.4539698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e69246c2e264f%3A0x29be66f81d19a043!2sJovera%20Group!5e0!3m2!1sen!2sae!4v1702213879032!5m2!1sen!2sae" className="w-full h-full border-0 rounded-lg" allowFullScreen="" loading="lazy" title="Jovera Group Location" ></iframe> </div>
+{/* Contact Info */}
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+  {/* ===================== LEFT COLUMN ===================== */}
+  
+  <div className={`${lang === "en" ? "order-2" : "order-1"}`}>
+
+    {/* Dubai */}
+    <div className={`p-4 mb-5 rounded-xl text-white flex items-center gap-4 bg-[#1B1B1B] 
+      ${lang !== "en" ? "flex-row-reverse text-right gap-2" : ""}
+    `}>
+      <MapPin width={28} height={28} />
+      <div>
+        <h4 className="text-lg font-semibold">{texts.branches[1].title}</h4>
+        <p className="text-sm">{texts.branches[1].address}</p>
+      </div>
+    </div>
+
+    {/* Ajman */}
+    <div className={`p-4 rounded-xl text-white flex items-center gap-4 bg-[#1B1B1B] 
+      ${lang !== "en" ? "flex-row-reverse text-right gap-2" : ""}
+    `}>
+      <MapPin width={28} height={28} />
+      <div>
+        <h4 className="text-lg font-semibold">{texts.branches[3].title}</h4>
+        <p className="text-sm">{texts.branches[3].address}</p>
+      </div>
+    </div>
+
+  </div>
+
+  {/* ===================== RIGHT COLUMN ===================== */}
+
+  <div className={`${lang === "en" ? "order-1" : "order-2"}`}>
+
+    {/* Abu Dhabi (Gold Card) */}
+    <div className={`p-4 mb-5 rounded-xl text-white flex items-center gap-4 bg-gradient-to-r 
+      from-[#D7AA47] to-[#715925] 
+      ${lang !== "en" ? "flex-row-reverse text-right gap-2" : ""}
+    `}>
+      <MapPin width={28} height={28} />
+      <div>
+        <h4 className="text-lg font-semibold">{texts.branches[0].title}</h4>
+        <p className="text-sm">{texts.branches[0].address}</p>
+      </div>
+    </div>
+
+    {/* Sharjah */}
+    <div className={`p-4 rounded-xl text-white flex items-center gap-4 bg-[#1B1B1B] 
+      ${lang !== "en" ? "flex-row-reverse text-right gap-2" : ""}
+    `}>
+      <MapPin width={28} height={28} />
+      <div>
+        <h4 className="text-lg font-semibold">{texts.branches[2].title}</h4>
+        <p className="text-sm">{texts.branches[2].address}</p>
+      </div>
+    </div>
+
+    {/* Help & Support */}
+    <div className={`${lang !== "en" ? "text-right" : ""}`}>
+      <h2 className="text-xl font-semibold mt-6 mb-6">{texts.helpSupport}</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {texts.contactItems.map((item, idx) => (
+          <div 
+            key={idx}
+            className={`flex items-center p-4 bg-[#1B1B1B] rounded-lg 
+              ${lang !== "en" ? "flex-row-reverse gap-2" : "gap-4"}
+            `}
+          >
+            <item.icon width={24} height={24} />
+            <span className="text-gray-300 text-sm">{item.text}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+      {/* Row 2: Why Choose Us + Form */}
+      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${lang !== "en" ? "lg:flex-row-reverse" : ""}`}>
+        <div className={`${lang === "en" ? "text-left" : "text-right"} space-y-4`}>
+          <h1 className="text-2xl mb-10">{lang === "en" ? "Why Choose Us ?" : "لماذا تختارنا؟"}</h1>
+          <h3 className="text-2xl font-bold text-[#D7AA47]">{texts.whyChooseUsHeading}</h3>
+          <p className="text-gray-300">{texts.whyChooseUsText}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+            {texts.whyChooseUsItems.map((item, idx) => (
+              <div key={idx} className="bg-[#1B1B1B] p-2 rounded text-sm transition-all duration-300 ease-out hover:shadow-[0_0_10px_rgba(215,170,47,0.7)] hover:scale-105">{item}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className={`${lang !== "en" ? "order-first" : ""}`}>
+          <ContactForm lang={lang} options={options} />
+        </div>
+      </div>
+
+{/* Row 3: Join Us */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+  {/* Image + JOIN US (English only) */}
+  <div
+    className={`flex flex-col ${
+      lang === "en" ? "items-start" : "items-center"
+    }`}
+  >
+    {/* Show JOIN US only in English */}
+    {lang === "en" && (
+      <h1 className="text-2xl mb-10 text-left w-full">JOIN US</h1>
+    )}
+
+    <img src={hiring} alt="We are hiring" className="w-64 rounded-lg "  loading="lazy"/>
+  </div>
+
+  {/* Text Section */}
+  <div className={`${lang === "en" ? "text-left" : "text-right"} space-y-4`}>
+    {/* Show Arabic Join Us when lang !== en */}
+    {lang !== "en" && <h1 className="text-2xl mb-10">انضم إلينا</h1>}
+
+    <h3 className="text-2xl text-[#FFFFF]">{texts.joinUsHeading}</h3>
+
+    <p className="text-gray-300 text-sm">{texts.joinUsText}</p>
+
+    <button
+      className="px-5 py-2 rounded-lg font-semibold text-white transition-transform duration-300 ease-out shadow-md hover:scale-105 hover:shadow-xl bg-gradient-to-r from-[#D7AA47] to-[#715925]"
+    >
+      {texts.browseVacancies}
+    </button>
+  </div>
+</div>
+
+    </main>
+  );
+}
+
+export default Contact_us;
