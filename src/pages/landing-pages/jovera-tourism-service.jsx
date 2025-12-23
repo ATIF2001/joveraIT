@@ -67,10 +67,6 @@ const TourismLandingPage = ({ lang }) => {
   
   const isArabic = lang !== "en";
 
-  const handleFormSubmit = (data) => {
-    console.log("Form data:", data);
-  };
-
   /* ===================== CONTENT ===================== */
 
 const PaymentMethods = [
@@ -162,12 +158,31 @@ const services = [
 ];
 
 const options = [
-  { key: "Business Loan", value: { en: "Business Loan", ar: "قرض تجاري" } },
-  { key: "Mortgage Loan", value: { en: "Mortgage Loan", ar: "قرض عقاري" } },
-  { key: "Personal Loan", value: { en: "Personal Loan", ar: "قرض شخصي" } },
-  { key: "Real Estate", value: { en: "Real Estate", ar: "العقارات" } },
-  { key: "Legal Service", value: { en: "Legal Service", ar: "خدمة قانونية" } },
-  { key: "Auditing & Accounting", value: { en: "Auditing & Accounting", ar: "التدقيق والمحاسبة" } },
+  
+  {
+    key: "UAE Visas",
+    value: { en: "UAE Visas", ar: "تأشيرات الإمارات" }
+  },
+  {
+    key: "Global Visas",
+    value: { en: "Global Visas", ar: "التأشيرات العالمية" }
+  },
+  {
+    key: "Hotels",
+    value: { en: "Hotels", ar: "الفنادق" }
+  },
+  {
+    key: "Airline Tickets",
+    value: { en: "Airline Tickets", ar: "تذاكر الطيران" }
+  },
+  {
+    key: "Trips",
+    value: { en: "Trips", ar: "الرحلات" }
+  },
+  {
+    key: "UAE Trips",
+    value: { en: "UAE Trips", ar: "رحلات داخل الإمارات" }
+  }
 ];
 
 
@@ -381,7 +396,7 @@ const content = {
       {/* ================= HERO ================= */}
        {/* Hero Section */}
 <ScrollAnimation>
-  <section className="container mx-auto px-4 pt-20 sm:pt-24 md:py-20 lg:py-24 max-w-7xl">
+  <section className="container mx-auto px-4 pt-32 md:pt-24 lg:pt-32 max-w-7xl">
   <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
   {/* LEFT DIV (Text) */}
   <div className={`h-full flex flex-col justify-center ${isArabic ? 'order-2 text-right' : 'order-1'} `}>
@@ -401,7 +416,12 @@ const content = {
           <span>{isArabic ? '←' : '→'}</span>
         </span>
       } link={"/UnderDevelopment"} />
-          <SecondaryButton children={t.hero.contact} onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }) } />
+          <SecondaryButton children={t.hero.contact}  onClick={() => {
+  document.getElementById("contact")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}} />
         </div>
   </div>
 
@@ -617,7 +637,7 @@ const content = {
 
 
 
-<ScrollAnimation>
+
       {/* ================= CONTACT ================= */}
       {/* Contact Form & Success Section */}
           <section className="container mx-auto px-4 py-16 ">
@@ -667,7 +687,7 @@ const content = {
               </div>
             </div>
           </section>
-          </ScrollAnimation>
+       
     </div>
   );
 };

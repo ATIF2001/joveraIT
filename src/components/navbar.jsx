@@ -34,7 +34,14 @@ function Nav({ lang, setLang }) {
           >
             {lang === "en" ? "Home" : "الرئيسية"}
           </Link>
-
+             <Link
+            to="/about-us"
+            className={`hover:text-yellow-400 ${
+              isActive("/about-us") ? "text-yellow-400" : "text-white"
+            }`}
+          >
+            {lang === "en" ? "About Us" : "من نحن"}
+          </Link>
           <Link
             to="/portfolio"
             className={`hover:text-yellow-400 ${

@@ -137,13 +137,17 @@ const isArabic = lang !== 'en';
   };
 
 const options = [
-  { key: "Business Loan", value: { en: "Business Loan", ar: "قرض تجاري" } },
-  { key: "Mortgage Loan", value: { en: "Mortgage Loan", ar: "قرض عقاري" } },
-  { key: "Personal Loan", value: { en: "Personal Loan", ar: "قرض شخصي" } },
-  { key: "Real Estate", value: { en: "Real Estate", ar: "العقارات" } },
-  { key: "Legal Service", value: { en: "Legal Service", ar: "خدمة قانونية" } },
-  { key: "Auditing & Accounting", value: { en: "Auditing & Accounting", ar: "التدقيق والمحاسبة" } },
+  { key: "Web Development", value: { en: "Web Development", ar: "تطوير المواقع" } },
+  { key: "Mobile App Development", value: { en: "Mobile App Development", ar: "تطوير تطبيقات الجوال" } },
+  { key: "UI/UX Design", value: { en: "UI/UX Design", ar: "تصميم واجهات وتجربة المستخدم" } },
+  { key: "Software Development", value: { en: "Software Development", ar: "تطوير البرمجيات" } },
+  { key: "E-Commerce Solutions", value: { en: "E-Commerce Solutions", ar: "حلول التجارة الإلكترونية" } },
+  { key: "Cloud Services", value: { en: "Cloud Services", ar: "الخدمات السحابية" } },
+  { key: "IT Consulting", value: { en: "IT Consulting", ar: "استشارات تقنية المعلومات" } },
+  { key: "Cyber Security", value: { en: "Cyber Security", ar: "الأمن السيبراني" } },
+  { key: "Maintenance & Support", value: { en: "Maintenance & Support", ar: "الصيانة والدعم الفني" } }
 ];
+
 
 
   const [open1, setOpen1] = useState(false);
@@ -158,7 +162,7 @@ const options = [
     <div className={`min-h-screen bg-black text-white ${isArabic ? 'rtl' : 'ltr'}`}>
       {/* Hero Section */}
       <ScrollAnimation>
-      <section className="container mx-auto px-4 pt-20 sm:pt-24 md:py-20 lg:py-24 max-w-7xl">
+      <section className="container mx-auto px-4 pt-32 md:pt-24 lg:pt-32 max-w-7xl">
        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
   {/* LEFT DIV (Text) */}
   <div className={`h-full flex flex-col justify-center ${isArabic ? 'order-2 text-right' : 'order-1'} `}>
@@ -178,7 +182,12 @@ const options = [
          <span>{isArabic ? '←' : '→'}</span>
        </span>
      } link={"/UnderDevelopment"} />
-         <SecondaryButton children={t.hero.contact} onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }) } />
+         <SecondaryButton children={t.hero.contact}  onClick={() => {
+  document.getElementById("contact")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}} />
        </div>
   </div>
 
@@ -473,7 +482,7 @@ const options = [
       </section>
 </ScrollAnimation>
       {/* Contact Form & Success Section */}
-    <ScrollAnimation>
+    
       <section className="container mx-auto px-4 py-16 max-w-7xl">
         <div className="bg-[#171717] p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
           {/* Form Placeholder */}
@@ -521,7 +530,7 @@ const options = [
           </div>
         </div>
       </section>
-      </ScrollAnimation>
+
     </div>
   );
 };

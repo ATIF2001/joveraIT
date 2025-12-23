@@ -214,16 +214,64 @@ const directors = lang === "en" ? directors_en : directors_ar;
 ];
 
 
-
 const options = [
-  { key: "Business Loan", value: { en: "Business Loan", ar: "قرض تجاري" } },
-  { key: "Mortgage Loan", value: { en: "Mortgage Loan", ar: "قرض عقاري" } },
-  { key: "Personal Loan", value: { en: "Personal Loan", ar: "قرض شخصي" } },
-  { key: "Real Estate", value: { en: "Real Estate", ar: "العقارات" } },
-  { key: "Legal Service", value: { en: "Legal Service", ar: "خدمة قانونية" } },
-  { key: "Auditing & Accounting", value: { en: "Auditing & Accounting", ar: "التدقيق والمحاسبة" } },
+  {
+    key: "Business Banking",
+    value: {
+      en: "Business Banking",
+      ar: "الخدمات المصرفية للأعمال",
+    },
+  },
+  {
+    key: "Personal Loan",
+    value: {
+      en: "Personal Loan",
+      ar: "قرض شخصي",
+    },
+  },
+  {
+    key: "Mortgage",
+    value: {
+      en: "Mortgage",
+      ar: "قرض عقاري",
+    },
+  },
+  {
+    key: "Real Estate",
+    value: {
+      en: "Real Estate",
+      ar: "العقارات",
+    },
+  },
+  {
+    key: "IT Services",
+    value: {
+      en: "IT Services",
+      ar: "خدمات تقنية المعلومات",
+    },
+  },
+  {
+    key: "Tourism",
+    value: {
+      en: "Tourism",
+      ar: "السياحة",
+    },
+  },
+  {
+    key: "Accounting and Auditing",
+    value: {
+      en: "Accounting and Auditing",
+      ar: "المحاسبة والتدقيق",
+    },
+  },
+  {
+    key: "Legal and Business Services",
+    value: {
+      en: "Legal and Business Services",
+      ar: "الخدمات القانونية وخدمات الأعمال",
+    },
+  },
 ];
-
 
 
 

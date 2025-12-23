@@ -18,6 +18,7 @@ import TourismLandingPage from "./pages/landing-pages/jovera-tourism-service";
 import AccountingLandingPage from "./pages/landing-pages/jovera-accounting";
 import TermsAndConditions from "./pages/terms_and_conditions";
 import UnderDevelopment from "./pages/under-development";
+import AboutUs from "./pages/about_us";
 
 import Jovera404 from "./pages/404";
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/portfolio" element={<ServicesSection lang={lang} />} />
         <Route path="/media-hub" element={<Media lang={lang} />} />
         <Route path="/contact-us" element={<Contact_us lang={lang} />} />
+        <Route path="/about-us" element={<AboutUs lang={lang} />} />
         <Route path="/IT" element={<ITLandingPage lang={lang} />} />
         <Route path="/Finance" element={<FinanceLandingPage lang={lang} />} />
         <Route path="/RealEstate" element={<RealEstateLandingPage lang={lang} />} />

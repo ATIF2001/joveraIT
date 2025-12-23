@@ -29,19 +29,72 @@ function Contact_us({ lang }) {
   };
 
  
+
 const options = [
-  { key: "Business Loan", value: { en: "Business Loan", ar: "قرض تجاري" } },
-  { key: "Mortgage Loan", value: { en: "Mortgage Loan", ar: "قرض عقاري" } },
-  { key: "Personal Loan", value: { en: "Personal Loan", ar: "قرض شخصي" } },
-  { key: "Real Estate", value: { en: "Real Estate", ar: "العقارات" } },
-  { key: "Legal Service", value: { en: "Legal Service", ar: "خدمة قانونية" } },
-  { key: "Auditing & Accounting", value: { en: "Auditing & Accounting", ar: "التدقيق والمحاسبة" } },
+  {
+    key: "Business Banking",
+    value: {
+      en: "Business Banking",
+      ar: "الخدمات المصرفية للأعمال",
+    },
+  },
+  {
+    key: "Personal Loan",
+    value: {
+      en: "Personal Loan",
+      ar: "قرض شخصي",
+    },
+  },
+  {
+    key: "Mortgage",
+    value: {
+      en: "Mortgage",
+      ar: "قرض عقاري",
+    },
+  },
+  {
+    key: "Real Estate",
+    value: {
+      en: "Real Estate",
+      ar: "العقارات",
+    },
+  },
+  {
+    key: "IT Services",
+    value: {
+      en: "IT Services",
+      ar: "خدمات تقنية المعلومات",
+    },
+  },
+  {
+    key: "Tourism",
+    value: {
+      en: "Tourism",
+      ar: "السياحة",
+    },
+  },
+  {
+    key: "Accounting and Auditing",
+    value: {
+      en: "Accounting and Auditing",
+      ar: "المحاسبة والتدقيق",
+    },
+  },
+  {
+    key: "Legal and Business Services",
+    value: {
+      en: "Legal and Business Services",
+      ar: "الخدمات القانونية وخدمات الأعمال",
+    },
+  },
 ];
 
 
 
+
+
   return (
-    <main className={`bg-[#0D0D0D] text-white min-h-screen px-16 pt-40 pb-20 mx-auto space-y-20 ${lang !== "en" ? "rtl" : ""}`}>
+    <main  className={`bg-[#0D0D0D] text-white min-h-screen px-16 pt-40 pb-20 mx-auto space-y-20 ${lang !== "en" ? "rtl" : ""}`}>
 
       <div className={`${lang === "en" ? "text-left" : "text-right"}`}>
         <h2 className="text-3xl md:text-4xl lg:text-5xl mb-3 tracking-tight">{lang === "en" ? "Contact" : "اتصل بنا"}</h2>

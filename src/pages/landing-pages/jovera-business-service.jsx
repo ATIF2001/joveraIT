@@ -340,12 +340,34 @@ const content = {
 };
 
 const options = [
-  { key: "Business Loan", value: { en: "Business Loan", ar: "قرض تجاري" } },
-  { key: "Mortgage Loan", value: { en: "Mortgage Loan", ar: "قرض عقاري" } },
-  { key: "Personal Loan", value: { en: "Personal Loan", ar: "قرض شخصي" } },
-  { key: "Real Estate", value: { en: "Real Estate", ar: "العقارات" } },
-  { key: "Legal Service", value: { en: "Legal Service", ar: "خدمة قانونية" } },
-  { key: "Auditing & Accounting", value: { en: "Auditing & Accounting", ar: "التدقيق والمحاسبة" } },
+  {
+    key: "SME Business Loan",
+    value: {
+      en: "SME Business Loan",
+      ar: "قرض الأعمال للشركات الصغيرة والمتوسطة",
+    },
+  },
+  {
+    key: "Fleet Finance (Auto Loans)",
+    value: {
+      en: "Fleet Finance (Auto Loans)",
+      ar: "تمويل الأساطيل (قروض السيارات)",
+    },
+  },
+  {
+    key: "LGs / LCs",
+    value: {
+      en: "LGs / LCs",
+      ar: "خطابات الضمان / الاعتمادات المستندية",
+    },
+  },
+  {
+    key: "Account Opening",
+    value: {
+      en: "Account Opening",
+      ar: "فتح حساب",
+    },
+  },
 ];
 
 
@@ -383,7 +405,12 @@ const options = [
         <span>{isArabic ? '←' : '→'}</span>
       </span>
     } link={"/UnderDevelopment"} />
-        <SecondaryButton children={t.hero.contact} onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }) } />
+        <SecondaryButton children={t.hero.contact}  onClick={() => {
+  document.getElementById("contact")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}}/>
       </div>
   </div>
 
@@ -514,7 +541,7 @@ const options = [
     </div>
 
     {/* Pricing Cards Grid */}
-   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto place-items-center">
   {PricingPackages.map((pkg) => (
     <PricingCard
       key={pkg.id}

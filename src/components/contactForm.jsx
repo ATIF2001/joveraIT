@@ -103,6 +103,7 @@ export default function ContactForm({ lang, options}) {
 
   return (
     <div
+      id="contact"
       className={`w-full max-w-[700px] mx-auto rounded-xl p-6 md:p-8 flex items-center justify-center bg-gradient-to-r from-[#D7AA47] to-[#715925] ${
         lang === "en" ? "text-left" : "text-right"
       }`}

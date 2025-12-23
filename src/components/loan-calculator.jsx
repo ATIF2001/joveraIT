@@ -171,8 +171,9 @@ export default function Calculator({ lang }) {
   }, [loanKey, amount, period, interest, price, advance, years]);
 
   return (
-    <section className="w-full bg-black text-white py-16">
-      <div className="flex justify-center gap-10 mb-10">
+    <section className="w-full bg-black text-white py-12 px-4 sm:px-6 lg:px-16">
+      {/* Loan Type Toggle */}
+      <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-10 mb-8 sm:mb-10">
         {LOAN_TYPES.map((type) => (
           <Toggle
             key={type}
@@ -188,10 +189,12 @@ export default function Calculator({ lang }) {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto bg-[#1b1b1b] rounded-2xl p-8 grid lg:grid-cols-2 gap-12">
-        <div className="space-y-8">
+      {/* Calculator Body */}
+      <div className="max-w-7xl mx-auto bg-[#1b1b1b] rounded-2xl p-4 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12">
+        {/* Input Sliders */}
+        <div className="space-y-6 sm:space-y-8">
           {loanKey !== "business" && (
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
               {USER_TYPES.map((u) => (
                 <Toggle
                   key={u}
@@ -221,20 +224,24 @@ export default function Calculator({ lang }) {
           )}
         </div>
 
-        <div className="bg-[#715925] rounded-xl p-8">
+        {/* Result Box */}
+        <div className="bg-[#715925] rounded-xl p-6 sm:p-8">
           <h3 className="text-2xl mb-4">{t.monthlyPayment}</h3>
-          <p className="text-4xl font-bold mb-8">{format(result.monthly)} AED</p>
+          <p className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">{format(result.monthly)} AED</p>
 
-          <div className="grid grid-cols-2 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 sm:mb-8">
             <Stat label={t.totalInterest} value={result.interest} />
             <Stat label={t.totalAmount} value={result.total} />
           </div>
 
           <button
-            onClick={() =>
-              window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
-            }
-            className="bg-[#D7AA47] w-full  text-white py-3 rounded-lg font-semibold"
+            onClick={() => {
+              document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            className="bg-[#D7AA47] w-full text-white py-3 rounded-lg font-semibold"
           >
             {t.applyNow}
           </button>
@@ -249,7 +256,7 @@ export default function Calculator({ lang }) {
 const Toggle = ({ active, children, ...props }) => (
   <button
     {...props}
-    className={`px-8 py-3 rounded-xl border font-semibold transition-all ${
+    className={`px-6 sm:px-8 py-2 sm:py-3 rounded-xl border font-semibold transition-all text-sm sm:text-base ${
       active
         ? "bg-[#D7AA47] text-white border-[#D7AA47]"
         : "bg-black text-white border-white"
@@ -283,8 +290,8 @@ const Slider = ({ label, value, set, step = 1, type, range: [min, max], t }) => 
   };
 
   return (
-    <div className="flex items-center w-full gap-4">
-      <div className="flex flex-col space-y-2 flex-1">
+    <div className="flex flex-col sm:flex-row items-center w-full gap-4">
+      <div className="flex flex-col space-y-2 flex-1 w-full">
         <div className="flex justify-between text-sm">
           <span>{label}</span>
         </div>
@@ -303,7 +310,7 @@ const Slider = ({ label, value, set, step = 1, type, range: [min, max], t }) => 
         </div>
       </div>
 
-      <fieldset className="border border-gray-400 rounded px-3 py-2 min-w-[150px] text-left">
+      <fieldset className="border border-gray-400 rounded px-3 py-2 min-w-[120px] sm:min-w-[150px] text-left mt-2 sm:mt-0">
         <legend className="px-1 text-sm font-medium text-white">
           {legendType[type]}
         </legend>

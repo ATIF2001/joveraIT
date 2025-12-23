@@ -250,9 +250,6 @@ const options = [
   { key: "Business Loan", value: { en: "Business Loan", ar: "قرض تجاري" } },
   { key: "Mortgage Loan", value: { en: "Mortgage Loan", ar: "قرض عقاري" } },
   { key: "Personal Loan", value: { en: "Personal Loan", ar: "قرض شخصي" } },
-  { key: "Real Estate", value: { en: "Real Estate", ar: "العقارات" } },
-  { key: "Legal Service", value: { en: "Legal Service", ar: "خدمة قانونية" } },
-  { key: "Auditing & Accounting", value: { en: "Auditing & Accounting", ar: "التدقيق والمحاسبة" } },
 ];
 
 
@@ -284,7 +281,14 @@ const options = [
           <span>{isArabic ? '←' : '→'}</span>
         </span>
       } link={"/UnderDevelopment"} />
-          <SecondaryButton children={t.hero.secondaryBtn} onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }) } />
+          <SecondaryButton children={t.hero.secondaryBtn} onClick={() => {
+  document.getElementById("contact")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}}>
+
+</SecondaryButton>
         </div>
   </div>
 
@@ -366,6 +370,7 @@ const options = [
 </section>
 </ScrollAnimation>
 <ScrollAnimation>
+  {/* Calculator */}
 <section>
  <h2 className="text-center text-3xl font-bold text-[#D7AA47]">
         Calculator
@@ -425,7 +430,7 @@ const options = [
 </section>
 </ScrollAnimation>
 
-<ScrollAnimation>
+
       {/* Contact Form & Success Section */}
       <section id="contact-form" className="container mx-auto px-4 py-16 max-w-7xl">
          <div className="bg-[#171717] p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
@@ -474,7 +479,7 @@ const options = [
           </div>
         </div>
       </section>
-      </ScrollAnimation>
+   
     </div>
   );
 };

@@ -77,12 +77,8 @@ const content = {
 
 
 const options = [
-  { key: "Business Loan", value: { en: "Business Loan", ar: "قرض تجاري" } },
-  { key: "Mortgage Loan", value: { en: "Mortgage Loan", ar: "قرض عقاري" } },
-  { key: "Personal Loan", value: { en: "Personal Loan", ar: "قرض شخصي" } },
   { key: "Real Estate", value: { en: "Real Estate", ar: "العقارات" } },
-  { key: "Legal Service", value: { en: "Legal Service", ar: "خدمة قانونية" } },
-  { key: "Auditing & Accounting", value: { en: "Auditing & Accounting", ar: "التدقيق والمحاسبة" } },
+
 ];
 
 
@@ -99,7 +95,7 @@ const options = [
       <ScrollAnimation>
       {/* ================= HERO ================= */}
        {/* Hero Section */}
-      <section className="container mx-auto px-4 pt-20 sm:pt-24 md:py-20 lg:py-24 max-w-7xl">
+      <section className="container mx-auto px-4 pt-32 md:pt-20 lg:pt-24 max-w-7xl">
  
        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
   {/* LEFT DIV (Text) */}
@@ -120,7 +116,12 @@ const options = [
             <span>{isArabic ? '←' : '→'}</span>
           </span>
         } link={"/UnderDevelopment"} />
-            <SecondaryButton children={t.hero.contact} onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }) } />
+            <SecondaryButton children={t.hero.contact}  onClick={() => {
+  document.getElementById("contact")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}} />
           </div>
   </div>
 
@@ -177,16 +178,16 @@ const options = [
   </div>
 </section>
   </ScrollAnimation>
-  <ScrollAnimation>
+
   {/* ================= Properties ================= */}
 <section className="w-full flex justify-center items-center py-16">
   <div className="w-full max-w-6xl px-4">
     <PropertiesSection lang={lang}/>
   </div>
 </section>
-</ScrollAnimation>
 
-<ScrollAnimation>
+
+
       {/* ================= CONTACT ================= */}
       {/* Contact Form & Success Section */}
             <section className="container mx-auto px-4 py-16 max-w-7xl">
@@ -237,7 +238,7 @@ const options = [
               </div>
               
             </section>
-         </ScrollAnimation> 
+        
     </div>
   );
 };
