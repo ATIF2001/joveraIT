@@ -546,18 +546,22 @@ const content = {
 
         {/* Store Buttons */}
         <div className="flex flex-wrap gap-4">
+          <a href="https://play.google.com/store/apps/details?id=com.joveragroup.tourism&hl=en&pli=1">
           <img
             src={Playstore}
             alt="Google Play"
             className="h-12 cursor-pointer hover:opacity-80 transition"
             loading="lazy"
           />
+          </a>
+          <a href="https://apps.apple.com/us/app/jovera-tourism/id6753887774">
           <img
             src={Appstore}
             alt="App Store"
             className="h-12 cursor-pointer hover:opacity-80 transition"
             loading="lazy"
           />
+          </a>
         </div>
       </div>
 

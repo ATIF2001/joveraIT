@@ -7,6 +7,7 @@ function Footer({ lang }) {
     en: {
       company: "Company",
       home: "Home",
+      about: "About us",
       portfolio: "Portfolio",
       Media: "Media Hub",
       Contact: "Contact us",
@@ -27,6 +28,7 @@ function Footer({ lang }) {
     ar: {
       company: "الشركة",
       home: "الرئيسية",
+      about: "من نحن",
       portfolio: "أعمالنا",
       Media: "محور وسائل الإعلام",
       Contact: "اتصل بنا",
@@ -71,6 +73,11 @@ function Footer({ lang }) {
               <li>
                 <Link to="/" className="hover:text-yellow-600 cursor-pointer">
                   {text.home}
+                </Link>
+              </li>
+                <li>
+                <Link to="/about-us" className="hover:text-yellow-600 cursor-pointer">
+                  {text.about}
                 </Link>
               </li>
               <li>

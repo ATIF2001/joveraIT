@@ -19,6 +19,8 @@ import AccountingLandingPage from "./pages/landing-pages/jovera-accounting";
 import TermsAndConditions from "./pages/terms_and_conditions";
 import UnderDevelopment from "./pages/under-development";
 import AboutUs from "./pages/about_us";
+import Careers from "./pages/career";
+import JobDetails from "./pages/career-job";
 
 import Jovera404 from "./pages/404";
 
@@ -45,6 +47,8 @@ function App() {
         <Route path="/Tourism" element={<TourismLandingPage lang={lang} />} />
         <Route path="/Accounting" element={<AccountingLandingPage lang={lang} />} />
         <Route path="/Terms_and_Conditions" element={<TermsAndConditions lang={lang} />} />
+        <Route path="/Career" element={<Careers lang={lang} />} />
+        <Route path="/careers/:jobId" element={<JobDetails lang={lang} />} />
         <Route path="news/:id" element={<NewsDetail lang={lang} />} />
         
         {/* Under Development */}

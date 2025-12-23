@@ -283,7 +283,7 @@ const options = [
     <div className="bg-black text-white min-h-screen">
 
 {/* Hero Section with Video Background */}
-<section className="relative h-[500px] flex items-center">
+<section className="relative h-[900px] flex items-center">
   <video
     className="absolute inset-0 w-full h-full object-cover z-0"
     src="/Hero-Video.mp4"

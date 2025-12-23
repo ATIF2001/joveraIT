@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import arrow from "../../src/assets/landing-pages/Business-Services/services/arrow.png";
 
 export default function ServiceCard({ service, lang }) {
@@ -25,6 +26,7 @@ export default function ServiceCard({ service, lang }) {
         </p>
 
         {/* CTA */}
+      <Link to={"/underDevelopment"}>
        <button
   className={`mt-auto flex items-center gap-2 text-[#D4AF37] text-sm font-medium group ${
     lang === "en" ? "mr-auto" : "ml-auto"
@@ -35,7 +37,7 @@ export default function ServiceCard({ service, lang }) {
   </span>
   {lang === "en" ? "Read More" : "اقرأ المزيد"}
 </button>
-
+</Link>
       </div>
     </div>
   );

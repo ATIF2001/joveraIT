@@ -2,6 +2,8 @@ import React from "react";
 import ContactForm from "../components/contactForm";
 import { MapPin, Pin, Mail, Phone, Smartphone } from "lucide-react";
 import hiring from "../assets/contact-us/Job offers-bro 1.png";
+import { Link } from "react-router-dom";
+
 
 function Contact_us({ lang }) {
   const texts = {
@@ -228,13 +230,14 @@ const options = [
 
     <h3 className="text-2xl text-[#FFFFF]">{texts.joinUsHeading}</h3>
 
-    <p className="text-gray-300 text-sm">{texts.joinUsText}</p>
-
+    <p className="text-gray-300 text-sm mb-10">{texts.joinUsText}</p>
+    <Link to="/Career" >
     <button
-      className="px-5 py-2 rounded-lg font-semibold text-white transition-transform duration-300 ease-out shadow-md hover:scale-105 hover:shadow-xl bg-gradient-to-r from-[#D7AA47] to-[#715925]"
+      className="mt-8 px-5 py-2 rounded-lg font-semibold text-white transition-transform duration-300 ease-out shadow-md hover:scale-105 hover:shadow-xl bg-gradient-to-r from-[#D7AA47] to-[#715925]"
     >
       {texts.browseVacancies}
     </button>
+ </Link>
   </div>
 </div>
 

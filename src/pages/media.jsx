@@ -8,32 +8,41 @@ export default function MediaHub({ lang }) {
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
 
-  // 🔹 FEATURED NEWS (TOP 3 ONLY – NO PAGINATION)
-  const { allNews: featuredNews = [] } = useFetchNews({
+  /* ================= FEATURED NEWS ================= */
+  const {
+    allNews: featuredNews = [],
+    loading: featuredLoading,
+    error: featuredError
+  } = useFetchNews({
     page: 1,
     lang,
     limit: 3,
     featured: true
   });
 
-  // 🔹 NORMAL NEWS (PAGINATED – 10 PER PAGE)
-  const { allNews: normalNews = [] } = useFetchNews({
+  /* ================= NORMAL NEWS ================= */
+  const {
+    allNews: normalNews = [],
+    loading: normalLoading,
+    error: normalError
+  } = useFetchNews({
     page: currentPage,
     lang,
     limit: 12,
     featured: false
   });
 
-  // Safety
+  const isLoading = featuredLoading || normalLoading;
+  const hasError = featuredError || normalError;
+
   const heroSlides = Array.isArray(featuredNews) ? featuredNews : [];
   const currentArticles = Array.isArray(normalNews) ? normalNews : [];
 
-  // 🔹 Pagination logic (API driven)
-  const totalPages = currentArticles.length === 12
-    ? currentPage + 1
-    : currentPage;
+  /* ================= PAGINATION ================= */
+  const totalPages =
+    currentArticles.length === 12 ? currentPage + 1 : currentPage;
 
-  // 🔹 Auto slide hero
+  /* ================= HERO AUTO SLIDE ================= */
   useEffect(() => {
     if (heroSlides.length > 1) {
       const timer = setInterval(() => {
@@ -43,53 +52,75 @@ export default function MediaHub({ lang }) {
     }
   }, [heroSlides.length]);
 
-  const nextSlide = () => {
+  const nextSlide = () =>
     setCurrentSlide(prev => (prev + 1) % heroSlides.length);
-  };
 
-  const prevSlide = () => {
+  const prevSlide = () =>
     setCurrentSlide(prev => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  const goToSlide = (index) => setCurrentSlide(index);
 
   const goToPage = (page) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // 🔹 Pagination numbers
   const generatePagination = () => {
     const pages = [];
     const maxVisiblePages = 4;
+
+/* ================= LOADER ================= */
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="flex flex-col items-center gap-6">
+          <div className="relative w-16 h-16">
+            <div className="absolute inset-0 rounded-full border-4 border-gray-700"></div>
+            <div className="absolute inset-0 rounded-full border-4 border-yellow-400 border-t-transparent animate-spin"></div>
+          </div>
+          <span className="text-white text-sm uppercase tracking-widest">
+            Loading Media
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+
+
+
+
+
 
     if (totalPages <= maxVisiblePages + 2) {
       for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
       pages.push(1);
-
       if (currentPage > 3) pages.push('...');
 
       const start = Math.max(2, currentPage - 1);
       const end = Math.min(totalPages - 1, currentPage + 1);
-
       for (let i = start; i <= end; i++) pages.push(i);
 
       if (currentPage < totalPages - 2) pages.push('...');
-
       pages.push(totalPages);
     }
-
     return pages;
   };
 
   return (
     <div className="bg-[#111111] min-h-screen text-white">
+
+      {/* ================= LOADER ================= */}
+      {/* {isLoading && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
+        </div>
+      )} */}
+
       <div className="mx-auto px-10 sm:px-6 lg:px-20 py-16 md:py-24">
 
-        {/* Header */}
+        {/* ================= HEADER ================= */}
         <div className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl mb-3 tracking-tight mt-20">
             MEDIA HUB
@@ -99,7 +130,14 @@ export default function MediaHub({ lang }) {
           </h2>
         </div>
 
-        {/* 🔹 HERO SLIDER (FEATURED ONLY) */}
+        {/* ================= ERROR ================= */}
+        {hasError && (
+          <div className="text-center text-red-400 mb-12">
+            Failed to load news. Please try again later.
+          </div>
+        )}
+
+        {/* ================= HERO SLIDER ================= */}
         {heroSlides.length > 0 && (
           <div className="relative mb-20">
             <div
@@ -112,8 +150,8 @@ export default function MediaHub({ lang }) {
             >
               <div className="aspect-[16/9] md:aspect-[21/9]">
                 <img
-                  src={heroSlides[currentSlide].imageUrl}
-                  alt={heroSlides[currentSlide].title}
+                  src={heroSlides[currentSlide]?.imageUrl}
+                  alt={heroSlides[currentSlide]?.title || "N/A"}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -156,11 +194,11 @@ export default function MediaHub({ lang }) {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                {heroSlides[currentSlide].title}
+                {heroSlides[currentSlide]?.title || "N/A"}
               </h3>
 
               <p className="text-gray-300 max-w-4xl mx-auto line-clamp-2">
-                {heroSlides[currentSlide].description}
+                {heroSlides[currentSlide]?.description || "N/A"}
               </p>
             </div>
 
@@ -172,16 +210,18 @@ export default function MediaHub({ lang }) {
                   className={`rounded-full ${
                     currentSlide === index ? 'w-3 h-3' : 'bg-gray-600 w-2.5 h-2.5'
                   }`}
-                  style={currentSlide === index ? {
-                    background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)",
-                  } : {}}
+                  style={
+                    currentSlide === index
+                      ? { background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)" }
+                      : {}
+                  }
                 />
               ))}
             </div>
           </div>
         )}
 
-        {/* 🔹 NORMAL NEWS GRID */}
+        {/* ================= NEWS GRID ================= */}
         {currentArticles.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {currentArticles.map(article => (
@@ -192,14 +232,19 @@ export default function MediaHub({ lang }) {
                 <div className="h-64 overflow-hidden">
                   <img
                     src={article.imageUrl}
-                    alt={article.title}
+                    alt={article?.title || "N/A"}
                     className="w-full h-full object-cover hover:scale-110 transition-transform"
                   />
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-4">{article.title}</h3>
-                  <p className="text-gray-400 mb-6 line-clamp-2">{article.description}</p>
+                  <h3 className="text-xl font-bold mb-4">
+                    {article?.title || "N/A"}
+                  </h3>
+
+                  <p className="text-gray-400 mb-6 line-clamp-2">
+                    {article?.description || "N/A"}
+                  </p>
 
                   <button
                     onClick={() =>
@@ -220,7 +265,7 @@ export default function MediaHub({ lang }) {
           </div>
         )}
 
-        {/* 🔹 PAGINATION (NORMAL NEWS ONLY) */}
+        {/* ================= PAGINATION ================= */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-2">
             <button
@@ -241,9 +286,11 @@ export default function MediaHub({ lang }) {
                   className={`w-10 h-10 rounded ${
                     currentPage === page ? 'text-white' : 'bg-[#1a1a1a]'
                   }`}
-                  style={currentPage === page ? {
-                    background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)",
-                  } : {}}
+                  style={
+                    currentPage === page
+                      ? { background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)" }
+                      : {}
+                  }
                 >
                   {page}
                 </button>
