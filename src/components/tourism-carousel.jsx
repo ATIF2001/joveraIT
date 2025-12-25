@@ -8,13 +8,11 @@ const STEP = CARD_WIDTH + GAP;
 const TourismCarousel = ({ packages, autoSwap = true, delay = 3000, lang }) => {
   const total = packages.length;
 
-  // Hooks MUST be called unconditionally
   const startIndex = total;
   const [index, setIndex] = useState(startIndex);
   const intervalRef = useRef(null);
   const isHovered = useRef(false);
 
-  // Prepare cloned list safely
   const cloned =
     total > 1 ? [...packages, ...packages, ...packages] : packages;
 
@@ -56,14 +54,11 @@ const TourismCarousel = ({ packages, autoSwap = true, delay = 3000, lang }) => {
     );
   };
 
-  // EMPTY STATE (AFTER HOOKS)
-  if (total === 0) {
-    return null;
-  }
+  if (total === 0) return null;
 
   return (
     <div className="relative w-full flex justify-center overflow-hidden">
-      <div className=" w-full relative">
+      <div className="w-full relative">
 
         {/* LEFT ARROW */}
         <button
@@ -88,9 +83,7 @@ const TourismCarousel = ({ packages, autoSwap = true, delay = 3000, lang }) => {
         {/* TRACK */}
         <div
           className="flex gap-5 transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${index * STEP}px)`
-          }}
+          style={{ transform: `translateX(-${index * STEP}px)` }}
           onMouseEnter={() => {
             isHovered.current = true;
             stopAuto();
@@ -100,31 +93,13 @@ const TourismCarousel = ({ packages, autoSwap = true, delay = 3000, lang }) => {
             startAuto();
           }}
         >
-        {cloned.map((pkg, i) => {
-  const localizedPkg =
-    lang === "en"
-      ? {
-          ...pkg,
-          title: pkg.title.en,
-          description: pkg.description.en,
-          country: pkg.country.en,
-        }
-      : {
-          ...pkg,
-          title: pkg.title.ar,
-          description: pkg.description.ar,
-          country: pkg.country.ar,
-        };
-
-  return (
-    <TourismPackageCard
-      key={`${pkg.id}-${i}`}
-      pkg={localizedPkg}
-      lang={lang}
-    />
-  );
-})}
-
+          {cloned.map((pkg, i) => (
+            <TourismPackageCard
+              key={`${pkg?.id}-${i}`}
+              pkg={pkg}
+              lang={lang}
+            />
+          ))}
         </div>
       </div>
     </div>

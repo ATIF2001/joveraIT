@@ -166,7 +166,7 @@ export default function UnderDevelopment({ lang = 'en' }) {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden flex items-center justify-center" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="p-32 relative min-h-screen bg-black text-white overflow-hidden flex items-center justify-center" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* 3D Canvas Background */}
       <canvas 
         ref={canvasRef}

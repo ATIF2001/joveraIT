@@ -184,32 +184,48 @@ const directors = lang === "en" ? directors_en : directors_ar;
     mashreq
   ];
 
-  const branches = [
-    { city: "Abu Dhabi", address: "Abu Dhabi ( Head office )", details: "Hamdan St - City center - 10th floor" },
-    { city: "Dubai", address: "Dubai", details: "Al garhoud Road - Beirut fish Saeed Al Maktoum St" },
-    { city: "Sharjah", address: "Sharjah", details: "Al Taawun - Ajman Bus Stand Al Ittihad Rd" },
-    { city: "Ajman", address: "Ajman", details: "Al Bustan - Behind Bin Saeed Al Maktoum St" }
-  ];
-  const translatedBranches = [
-  { 
-    city: "أبوظبي", 
-    address: "أبوظبي (المقر الرئيسي)", 
-    details: "شارع حمدان - مركز المدينة - الطابق العاشر" 
+ const branches = [
+  {
+    city: "Abu Dhabi",
+    address: "Abu Dhabi (Head Office)",
+    details: "Al Jazira Club - Floor No. 8 - Tower A - Al Muroor St - Al Nahyan - Zone 1"
   },
-  { 
-    city: "دبي", 
-    address: "دبي", 
-    details: "طريق القرهود - بيروت فيش - شارع سعيد بن مكتوم" 
+  {
+    city: "Dubai",
+    address: "Dubai",
+    details: "Al Muroor Road - Rashid Bin Saeed Al Maktoum St (2nd St)"
   },
-  { 
-    city: "الشارقة", 
-    address: "الشارقة", 
-    details: "التعاون - موقف حافلات عجمان - شارع الاتحاد" 
+  {
+    city: "Sharjah",
+    address: "Sharjah",
+    details: "Al Muroor Road - Rashid Bin Saeed Al Maktoum St (2nd St)"
   },
-  { 
-    city: "عجمان", 
-    address: "عجمان", 
-    details: "البستان - خلف شارع سعيد بن مكتوم" 
+  {
+    city: "Ajman",
+    address: "Ajman",
+    details: "Flamingo, Villa 30 - Al Zorah - Ajman"
+  }
+];
+const translatedBranches = [
+  {
+    city: "أبو ظبي",
+    address: "أبو ظبي (المكتب الرئيسي)",
+    details: "نادي الجزيرة - الطابق رقم 8 - البرج أ - شارع المروّر - النهيان - المنطقة 1"
+  },
+  {
+    city: "دبي",
+    address: "دبي",
+    details: "طريق المروّر - شارع راشد بن سعيد آل مكتوم (الشارع الثاني)"
+  },
+  {
+    city: "الشارقة",
+    address: "الشارقة",
+    details: "طريق المروّر - شارع راشد بن سعيد آل مكتوم (الشارع الثاني)"
+  },
+  {
+    city: "عجمان",
+    address: "عجمان",
+    details: "فلامينغو، فيلا 30 - الزوراء - عجمان"
   }
 ];
 
@@ -274,11 +290,6 @@ const options = [
 ];
 
 
-
-
-
-
-
   return (
     <div className="bg-black text-white min-h-screen">
 
@@ -329,7 +340,7 @@ const options = [
   </div>
 </section>
 
- <section className="py-16 px-16 bg-black">
+ <section className="py-16 px-4 sm:px-16 bg-black">
   <div className="max-w-7xl mx-auto">
     <h2
       className={`text-3xl mb-12 ${lang === "en" ? "text-left" : "text-right"}`}
@@ -371,7 +382,7 @@ const options = [
 
 
 {/* Our Story */}
-<section className="py-16 px-16 bg-black">
+<section className="py-16 px-4 sm:px-16 bg-black">
   <div className="max-w-7xl mx-auto">
     {lang === "en" ? (
       <h2 className="text-3xl mb-12 text-left">Our Story – In Brief</h2>
@@ -620,43 +631,55 @@ const options = [
 </section>
 
  {/* Branches */}
-<section className="py-12 px-4 bg-black">
+<section className="py-8 px-3 sm:py-12 sm:px-4 bg-black">
   <div className="max-w-7xl mx-auto">
 
-    <h2 className={`text-3xl mb-8 text-white ${lang === "en" ? "text-left" : "text-right"}`} dir={lang === "en" ? "ltr" : "rtl"}>
-  {lang === "en" ? "BRANCHES OF JOVERA GROUP" : "فروع مجموعة جوفيرا"}
-</h2>
-
-<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-  {(lang === "en" ? branches : translatedBranches).map((branch, index) => (
-    <div
-      key={index}
-      className={`
-        p-4 rounded-xl text-white flex items-center gap-4
-        ${index === 0 
-          ? "bg-gradient-to-r from-[#D7AA47] to-[#715925]"
-          : "bg-[#1A1A1A]"}
-      `}
+    <h2
+      className={`text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8 text-white ${
+        lang === "en" ? "text-left" : "text-right"
+      }`}
+      dir={lang === "en" ? "ltr" : "rtl"}
     >
-      {/* Icon Column */}
-      <div className="flex items-center justify-center w-14 h-14">
-        <MapPin size={36} />
-      </div>
+      {lang === "en" ? "BRANCHES OF JOVERA GROUP" : "فروع مجموعة جوفيرا"}
+    </h2>
 
-      {/* Text Column */}
-      <div className={`flex flex-col gap-1 ${lang === "en" ? "text-left" : "text-right"}`}>
-        <h4 className="font-bold text-md">
-          {branch.address}
-        </h4>
-        <p className="text-sm opacity-90 leading-snug">
-          {branch.details}
-        </p>
-      </div>
+    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+      {(lang === "en" ? branches : translatedBranches).map((branch, index) => (
+        <div
+          key={index}
+          className={`
+            p-3 sm:p-4 rounded-lg sm:rounded-xl text-white flex items-center gap-3 sm:gap-4
+            ${index === 0
+              ? "bg-gradient-to-r from-[#D7AA47] to-[#715925]"
+              : "bg-[#1A1A1A]"}
+          `}
+        >
+          {/* Icon */}
+          <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14">
+            <MapPin size={22} className="sm:hidden" />
+            <MapPin size={36} className="hidden sm:block" />
+          </div>
+
+          {/* Text */}
+          <div
+            className={`flex flex-col gap-0.5 sm:gap-1 ${
+              lang === "en" ? "text-left" : "text-right"
+            }`}
+          >
+            <h4 className="font-semibold text-sm sm:text-md">
+              {branch.address}
+            </h4>
+            <p className="text-xs sm:text-sm opacity-90 leading-snug">
+              {branch.details}
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
-  ))}
-</div>
+
   </div>
-</section>      
+</section>
+  
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Nav from "./components/navbar";
 import Footer from "./components/footer";
@@ -27,7 +27,15 @@ import Jovera404 from "./pages/404";
 import "./App.css";
 
 function App() {
-  const [lang, setLang] = useState("en");
+  // Load language from localStorage if it exists, otherwise default to "en"
+  const [lang, setLang] = useState(() => {
+    return localStorage.getItem("lang") || "en";
+  });
+
+  // Whenever lang changes, update localStorage
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+  }, [lang]);
 
   return (
     <Router>
@@ -50,9 +58,9 @@ function App() {
         <Route path="/Career" element={<Careers lang={lang} />} />
         <Route path="/careers/:jobId" element={<JobDetails lang={lang} />} />
         <Route path="news/:id" element={<NewsDetail lang={lang} />} />
-        
+
         {/* Under Development */}
-         <Route path="/UnderDevelopment" element={<UnderDevelopment lang={lang} />} />
+        <Route path="/UnderDevelopment" element={<UnderDevelopment lang={lang} />} />
         {/* 404 – Must be LAST */}
         <Route path="*" element={<Jovera404 lang={lang} />} />
       </Routes>

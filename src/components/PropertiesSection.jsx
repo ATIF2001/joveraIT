@@ -22,7 +22,14 @@ const emiratesImages = {
 
 /* ================== COMPONENT ================== */
 export default function PropertiesSection({ lang }) {
+  
+  
+  
+  
   const isEn = lang === "en";
+
+
+
 
   // Fetch featured properties
   const { allProperties: properties, loading: propertiesLoading } = useFetchProperties({
@@ -39,6 +46,9 @@ export default function PropertiesSection({ lang }) {
     return <p className="text-center text-white py-20">{isEn ? "Loading..." : "جارٍ التحميل..."}</p>;
   }
 
+  if (!properties || properties.length === 0) {
+  return null;
+}
   // Map API data to the local image structure while keeping counts
   const emirates = emiratesData.map((item) => {
     const cityName = item.name.en;
@@ -121,7 +131,8 @@ export default function PropertiesSection({ lang }) {
                     `${property.propertyType}`,
                   ],
                   image: `${property.coverImageUrl}`,
-                  price: `${property.currency} ${property.price}`,
+                  currency:`${property.currency}`,
+                  price: `${property.price}`,
                 }}
                 lang={lang}
               />

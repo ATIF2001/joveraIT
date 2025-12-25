@@ -9,8 +9,8 @@ export default function ServiceCard({ service, lang }) {
       {/* Image */}
       <div className="mb-5 overflow-hidden rounded-2xl">
         <img
-          src={service.image}
-          alt={service.title[lang]}
+          src={service?.image}
+          alt={service?.title[lang]}
           className="w-full h-48 object-cover"
         />
       </div>
@@ -18,11 +18,11 @@ export default function ServiceCard({ service, lang }) {
       {/* Content */}
       <div className={`flex flex-col flex-grow ${lang === "en" ? "text-left" : "text-right"}`}>
         <h3 className="text-lg font-semibold text-white mb-3">
-          {service.title[lang]}
+          {service?.title[lang]}
         </h3>
 
         <p className="text-sm text-white/70 leading-relaxed mb-6">
-          {service.description[lang]}
+          {service?.description[lang]}
         </p>
 
         {/* CTA */}

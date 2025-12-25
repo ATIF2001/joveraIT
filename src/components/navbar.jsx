@@ -9,7 +9,7 @@ function Nav({ lang, setLang }) {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="absolute sm:top-10 left-0 w-full z-30 bg-black/30 backdrop-blur-sm border-b border-white/20">
+    <header className="absolute min-[751px]:top-10 left-0 w-full z-30 bg-black/30 backdrop-blur-sm border-b border-white/20">
       <div className="mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -116,7 +116,14 @@ function Nav({ lang, setLang }) {
             >
               {lang === "en" ? "Home" : "الرئيسية"}
             </Link>
-
+               <Link
+            to="/about-us"
+            className={`hover:text-yellow-400 ${
+              isActive("/about-us") ? "text-yellow-400" : "text-white"
+            }`}
+          >
+            {lang === "en" ? "About Us" : "من نحن"}
+          </Link>
             <Link
               to="/portfolio"
               onClick={() => setIsMenuOpen(false)}

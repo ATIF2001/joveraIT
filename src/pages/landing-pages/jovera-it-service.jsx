@@ -483,8 +483,8 @@ const options = [
 </ScrollAnimation>
       {/* Contact Form & Success Section */}
     
-      <section className="container mx-auto px-4 py-16 max-w-7xl">
-        <div className="bg-[#171717] p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
+      <section className="container mx-auto px-4 py-16 sm:max-w-7xl">
+        <div className="sm:bg-[#171717] sm:p-20  grid lg:grid-cols-2 gap-12 sm:rounded-xl">
           {/* Form Placeholder */}
             <ContactForm lang={lang} options={options} />
 

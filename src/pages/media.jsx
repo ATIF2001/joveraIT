@@ -238,7 +238,7 @@ export default function MediaHub({ lang }) {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-4">
+                  <h3 className="text-xl font-bold mb-4  line-clamp-1">
                     {article?.title || "N/A"}
                   </h3>
 

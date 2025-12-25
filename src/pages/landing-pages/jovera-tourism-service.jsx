@@ -33,7 +33,7 @@ import Arrow from "../../assets/landing-pages/Tourism/Icon.png";
 import phoneMockup from "../../assets/landing-pages/Tourism/QRCode.png";
 import Playstore from "../../assets/landing-pages/Tourism/play-store.png";
 import Appstore from "../../assets/landing-pages/Tourism/AppStore.png";
-
+import  useTourismPackages from "../../Apis/fetchTourismPackages";
 
 
 //Payment
@@ -44,23 +44,30 @@ import fawry from "../../assets/landing-pages/Tourism/payments/fawry.png";
 import googlePay from "../../assets/landing-pages/Tourism/payments/googlePay.png";
 import vodafone from "../../assets/landing-pages/Tourism/payments/vodafone.png";
 
-//Tourism Carousel
-import BahrainFlag from "../../assets/landing-pages/Tourism/packages/Bahrain-flag.png";
-import KawaitFlag from "../../assets/landing-pages/Tourism/packages/Kawait-flag.jpg";
-import OmanFlag from "../../assets/landing-pages/Tourism/packages/oman-flag.png";
-import QatarFlag from "../../assets/landing-pages/Tourism/packages/Qatar-flag.jpg";
-import SaudiFlag from "../../assets/landing-pages/Tourism/packages/saudi-flag.jpg";
-import UAEFlag from "../../assets/landing-pages/Tourism/packages/UAE-flag.png";
+// //Tourism Carousel
+// import BahrainFlag from "../../assets/landing-pages/Tourism/packages/Bahrain-flag.png";
+// import KawaitFlag from "../../assets/landing-pages/Tourism/packages/Kawait-flag.jpg";
+// import OmanFlag from "../../assets/landing-pages/Tourism/packages/oman-flag.png";
+// import QatarFlag from "../../assets/landing-pages/Tourism/packages/Qatar-flag.jpg";
+// import SaudiFlag from "../../assets/landing-pages/Tourism/packages/saudi-flag.jpg";
+// import UAEFlag from "../../assets/landing-pages/Tourism/packages/UAE-flag.png";
 
-//Tourism pictures
-import KawaitPic from "../../assets/landing-pages/Tourism/packages/Kawait-pic.jpg";
-import BahrainPic from "../../assets/landing-pages/Tourism/packages/Bahrain-pic.jpg";
-import SaudiPic from "../../assets/landing-pages/Tourism/packages/Saudi-pic.jpg";
-import OmanPic from "../../assets/landing-pages/Tourism/packages/oman-pic.jpg";
-import QatarPic from "../../assets/landing-pages/Tourism/packages/Qatar-pic.jpg";
-import UAEPic from "../../assets/landing-pages/Tourism/packages/UAE-pic.jpg";
+// //Tourism pictures
+// import KawaitPic from "../../assets/landing-pages/Tourism/packages/Kawait-pic.jpg";
+// import BahrainPic from "../../assets/landing-pages/Tourism/packages/Bahrain-pic.jpg";
+// import SaudiPic from "../../assets/landing-pages/Tourism/packages/Saudi-pic.jpg";
+// import OmanPic from "../../assets/landing-pages/Tourism/packages/oman-pic.jpg";
+// import QatarPic from "../../assets/landing-pages/Tourism/packages/Qatar-pic.jpg";
+// import UAEPic from "../../assets/landing-pages/Tourism/packages/UAE-pic.jpg";
 
 
+import { getDeviceType } from "../../utils/device";
+
+const PLAY_STORE =
+  "https://play.google.com/store/apps/details?id=com.joveragroup.tourism&hl=en&pli=1";
+
+const APP_STORE =
+  "https://apps.apple.com/us/app/jovera-tourism/id6753887774";
 
 
 const TourismLandingPage = ({ lang }) => {
@@ -68,6 +75,9 @@ const TourismLandingPage = ({ lang }) => {
   const isArabic = lang !== "en";
 
   /* ===================== CONTENT ===================== */
+
+
+ const { packages, loading, error } = useTourismPackages(lang);
 
 const PaymentMethods = [
 stripe,
@@ -186,141 +196,157 @@ const options = [
 ];
 
 
-const [packages, setPackages] = useState([]);
+// const [packages, setPackages] = useState([]);
 
-useEffect(() => {
-  const apiData = [
-    {
-      id: 1,
-      title: {
-        en: "Dubai",
-        ar: "دبي",
-      },
-      description: {
-        en: "30 days visa, hassle-free tourist visas for 30 or 60 days with processing times ranging from 24 to 72 working hours. All you need is a valid passport and personal photo with a white background — we’ll take care of the rest.",
-        ar: "تأشيرة لمدة 30 يوماً بدون تعقيد، تشمل تأشيرات سياحية لمدة 30 أو 60 يوماً مع وقت معالجة يتراوح بين 24 إلى 72 ساعة عمل. كل ما تحتاجه هو جواز سفر ساري المفعول وصورة شخصية بخلفية بيضاء — وسنتولى نحن الباقي.",
-      },
-      country: {
-        en: "United Arab Emirates",
-        ar: "الإمارات العربية المتحدة",
-      },
-      image: UAEPic,
-      flag: UAEFlag,
-      days: 30,
-      people: 7,
-      rating: 5,
-      price: 1200,
-      oldPrice: 1400,
-    },
-    {
-      id: 2,
-      title: {
-        en: "Makka",
-        ar: "مكة",
-      },
-      description: {
-        en: "30 days visa, hassle-free tourist visas for 30 or 60 days with processing times ranging from 24 to 72 working hours. All you need is a valid passport and personal photo with a white background — we’ll take care of the rest.",
-        ar: "تأشيرة سياحية لمدة 30 يوماً بدون تعقيد، مع سرعة في المعالجة خلال 24 إلى 72 ساعة عمل. فقط جواز سفر ساري وصورة شخصية، والباقي علينا.",
-      },
-      country: {
-        en: "Saudi Arabia",
-        ar: "المملكة العربية السعودية",
-      },
-      image: SaudiPic,
-      flag: SaudiFlag,
-      days: 30,
-      people: 7,
-      rating: 5,
-      price: 1200,
-    },
-    {
-      id: 3,
-      title: {
-        en: "Doha",
-        ar: "الدوحة",
-      },
-      description: {
-        en: "30 days visa, hassle-free tourist visas with fast processing.",
-        ar: "تأشيرة سياحية لمدة 30 يوماً مع معالجة سريعة وبدون تعقيد.",
-      },
-      country: {
-        en: "Qatar",
-        ar: "قطر",
-      },
-      image: QatarPic,
-      flag: QatarFlag,
-      days: 30,
-      people: 7,
-      rating: 5,
-      price: 1200,
-    },
-    {
-      id: 4,
-      title: {
-        en: "Manama",
-        ar: "المنامة",
-      },
-      description: {
-        en: "Fast and reliable tourist visa services.",
-        ar: "خدمات تأشيرة سياحية سريعة وموثوقة.",
-      },
-      country: {
-        en: "Bahrain",
-        ar: "البحرين",
-      },
-      image: BahrainPic,
-      flag: BahrainFlag,
-      days: 30,
-      people: 7,
-      rating: 5,
-      price: 1200,
-    },
-    {
-      id: 5,
-      title: {
-        en: "Kuwait",
-        ar: "الكويت",
-      },
-      description: {
-        en: "Tourist visa with quick approval.",
-        ar: "تأشيرة سياحية مع موافقة سريعة.",
-      },
-      country: {
-        en: "Kuwait",
-        ar: "الكويت",
-      },
-      image: KawaitPic,
-      flag: KawaitFlag,
-      days: 30,
-      people: 7,
-      rating: 5,
-      price: 1200,
-    },
-    {
-      id: 6,
-      title: {
-        en: "Oman",
-        ar: "عُمان",
-      },
-      description: {
-        en: "Easy tourist visa with fast processing.",
-        ar: "تأشيرة سياحية سهلة مع سرعة في المعالجة.",
-      },
-      country: {
-        en: "Oman",
-        ar: "سلطنة عمان",
-      },
-      image: OmanPic,
-      flag: OmanFlag,
-      days: 30,
-      people: 7,
-      rating: 5,
-      price: 1200,
-    },
-  ];
+// useEffect(() => {
+//   const apiData = [
+//     {
+//       id: 1,
+//       title: {
+//         en: "Dubai",
+//         ar: "دبي",
+//       },
+//       description: {
+//         en: "30 days visa, hassle-free tourist visas for 30 or 60 days with processing times ranging from 24 to 72 working hours. All you need is a valid passport and personal photo with a white background — we’ll take care of the rest.",
+//         ar: "تأشيرة لمدة 30 يوماً بدون تعقيد، تشمل تأشيرات سياحية لمدة 30 أو 60 يوماً مع وقت معالجة يتراوح بين 24 إلى 72 ساعة عمل. كل ما تحتاجه هو جواز سفر ساري المفعول وصورة شخصية بخلفية بيضاء — وسنتولى نحن الباقي.",
+//       },
+//       country: {
+//         en: "United Arab Emirates",
+//         ar: "الإمارات العربية المتحدة",
+//       },
+//       image: UAEPic,
+//       flag: UAEFlag,
+//       days: 30,
+//       people: 7,
+//       rating: 5,
+//       price: 1200,
+//       oldPrice: 1400,
+//     },
+//     {
+//       id: 2,
+//       title: {
+//         en: "Makka",
+//         ar: "مكة",
+//       },
+//       description: {
+//         en: "30 days visa, hassle-free tourist visas for 30 or 60 days with processing times ranging from 24 to 72 working hours. All you need is a valid passport and personal photo with a white background — we’ll take care of the rest.",
+//         ar: "تأشيرة سياحية لمدة 30 يوماً بدون تعقيد، مع سرعة في المعالجة خلال 24 إلى 72 ساعة عمل. فقط جواز سفر ساري وصورة شخصية، والباقي علينا.",
+//       },
+//       country: {
+//         en: "Saudi Arabia",
+//         ar: "المملكة العربية السعودية",
+//       },
+//       image: SaudiPic,
+//       flag: SaudiFlag,
+//       days: 30,
+//       people: 7,
+//       rating: 5,
+//       price: 1200,
+//     },
+//     {
+//       id: 3,
+//       title: {
+//         en: "Doha",
+//         ar: "الدوحة",
+//       },
+//       description: {
+//         en: "30 days visa, hassle-free tourist visas with fast processing.",
+//         ar: "تأشيرة سياحية لمدة 30 يوماً مع معالجة سريعة وبدون تعقيد.",
+//       },
+//       country: {
+//         en: "Qatar",
+//         ar: "قطر",
+//       },
+//       image: QatarPic,
+//       flag: QatarFlag,
+//       days: 30,
+//       people: 7,
+//       rating: 5,
+//       price: 1200,
+//     },
+//     {
+//       id: 4,
+//       title: {
+//         en: "Manama",
+//         ar: "المنامة",
+//       },
+//       description: {
+//         en: "Fast and reliable tourist visa services.",
+//         ar: "خدمات تأشيرة سياحية سريعة وموثوقة.",
+//       },
+//       country: {
+//         en: "Bahrain",
+//         ar: "البحرين",
+//       },
+//       image: BahrainPic,
+//       flag: BahrainFlag,
+//       days: 30,
+//       people: 7,
+//       rating: 5,
+//       price: 1200,
+//     },
+//     {
+//       id: 5,
+//       title: {
+//         en: "Kuwait",
+//         ar: "الكويت",
+//       },
+//       description: {
+//         en: "Tourist visa with quick approval.",
+//         ar: "تأشيرة سياحية مع موافقة سريعة.",
+//       },
+//       country: {
+//         en: "Kuwait",
+//         ar: "الكويت",
+//       },
+//       image: KawaitPic,
+//       flag: KawaitFlag,
+//       days: 30,
+//       people: 7,
+//       rating: 5,
+//       price: 1200,
+//     },
+//     {
+//       id: 6,
+//       title: {
+//         en: "Oman",
+//         ar: "عُمان",
+//       },
+//       description: {
+//         en: "Easy tourist visa with fast processing.",
+//         ar: "تأشيرة سياحية سهلة مع سرعة في المعالجة.",
+//       },
+//       country: {
+//         en: "Oman",
+//         ar: "سلطنة عمان",
+//       },
+//       image: OmanPic,
+//       flag: OmanFlag,
+//       days: 30,
+//       people: 7,
+//       rating: 5,
+//       price: 1200,
+//     },
+//   ];
 
-  setPackages(apiData);
-}, []);
+//   setPackages(apiData);
+// }, []);
+const handleServiceClick = () => {
+  const device = getDeviceType();
+
+  if (device === "android") {
+    window.location.href = PLAY_STORE;
+    return;
+  }
+
+  if (device === "ios") {
+    window.location.href = APP_STORE;
+    return;
+  }
+
+  // Desktop fallback
+  window.location.href = PLAY_STORE;
+};
 
 
 const content = {
@@ -445,41 +471,40 @@ const content = {
 </ScrollAnimation>
 
 <ScrollAnimation>
+ 
  {/* ================= Services ================= */}
 
 <section className="relative py-24 md:py-32">
   {/* Background */}
   <div className="absolute inset-0 bg-black" />
 
-  <div className=" relative mx-auto max-w-screen-2xl px-4">
+  <div className="relative mx-auto max-w-screen-2xl px-4">
     <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#D7AA47] mb-16">
       {lang === "en" ? "Our Services" : "خدماتنا"}
     </h2>
 
     <div
-      className={`
+      className="
         border-[10px] border-[#1B1B1B] p-5
         grid grid-cols-1
         sm:grid-cols-2
         md:grid-cols-3
         lg:grid-cols-6
         gap-6
-      `}
+      "
       dir={lang === "en" ? "ltr" : "rtl"}
     >
-      {services.map((service, index) => (
+      {services.map((service) => (
         <div
           key={service.id}
-          className={`
+          onClick={handleServiceClick}
+          className="
             relative group rounded-2xl h-[260px]
             flex flex-col items-center justify-center
-            transition-all duration-300
-            ${
-              index === 0
-                ? "bg-gradient-to-br from-[#D7AA47] to-[#8f6c1f]"
-                : "bg-[#1B1B1B] hover:bg-[#202020]"
-            }
-          `}
+            transition-all duration-300 cursor-pointer
+            bg-[#1B1B1B]
+            hover:bg-gradient-to-br hover:from-[#D7AA47] hover:to-[#8f6c1f]
+          "
         >
           {/* Arrow icon */}
           <span className="absolute top-4 right-4 text-white opacity-60 group-hover:opacity-100 transition">
@@ -490,21 +515,16 @@ const content = {
           <img
             src={service.image}
             alt={service.title[lang]}
-            className="h-24 object-contain mb-6"
+            className="
+              h-24 object-contain mb-6
+              transition-all duration-300
+              group-hover:brightness-110
+            "
             loading="lazy"
           />
 
           {/* Title */}
-          <h3
-            className={`
-              text-lg font-medium
-              ${
-                index === 0
-                  ? "text-white"
-                  : "text-white"
-              }
-            `}
-          >
+          <h3 className="text-lg font-medium text-white">
             {service.title[lang]}
           </h3>
         </div>
@@ -512,6 +532,7 @@ const content = {
     </div>
   </div>
 </section>
+
 
 
 
@@ -644,8 +665,8 @@ const content = {
 
       {/* ================= CONTACT ================= */}
       {/* Contact Form & Success Section */}
-          <section className="container mx-auto px-4 py-16 ">
-            <div className="bg-[#171717] p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
+          <section className="container mx-auto px-4 py-16 max-w-7xl ">
+            <div className="sm:bg-[#171717] sm:p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
               {/* Form Placeholder */}
                 <ContactForm lang={lang} options={options} />
     

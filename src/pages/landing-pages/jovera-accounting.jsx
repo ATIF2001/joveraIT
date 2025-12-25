@@ -72,7 +72,7 @@ const options = [
 
 {/* Hero Section */}
 <ScrollAnimation>
-<section className="container mx-auto px-4 pt-20 sm:pt-24 md:py-20 lg:py-24 max-w-7xl">
+<section className="container mx-auto px-4 pt-20 sm:pt-24 md:py-20 lg:pt-32 max-w-7xl">
 <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
   {/* LEFT DIV (Text) */}
   <div className={`h-full flex flex-col mt-20 ${isArabic ? 'order-2 text-right' : 'order-1'} `}>
@@ -233,21 +233,10 @@ const options = [
 </ScrollAnimation>
 
 
-
-
-
-
-
-
-
-
-
-
-
       {/* ================= CONTACT ================= */}
       {/* Contact Form & Success Section */}
-        <section id="contact-form" className="container mx-auto px-4 py-16 max-w-7xl">
-           <div className="bg-[#171717] p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
+        <section id="contact-form" className="container mx-auto px-4 pb-16 max-w-7xl">
+           <div className="sm:bg-[#171717] sm:p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
           {/* Form Placeholder */}
               <ContactForm lang={lang} options={options} />
   
@@ -293,7 +282,6 @@ const options = [
             </div>
           </div>
         </section>
-     
     </div>
   );
 };

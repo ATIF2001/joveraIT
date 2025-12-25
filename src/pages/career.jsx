@@ -48,10 +48,15 @@ const Careers = ({ lang }) => {
   }
 
   return (
-    <div className="min-h-screen bg-black px-6 md:px-16 pt-[200px]">
+    <div className="min-h-screen bg-black px-6 md:px-16 pt-[200px] pb-[200px]
+">
       {/* Total Jobs */}
       <div className="text-white text-2xl mb-20 text-center">
-        {totaljobs} OPEN JOBS
+   
+  {lang === "en"
+    ? `${totaljobs} JOBS OPEN`
+    : `عدد الوظائف المتاحة: ${totaljobs}`}
+
       </div>
 
       {/* Job Listings */}

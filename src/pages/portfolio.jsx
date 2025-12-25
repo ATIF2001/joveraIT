@@ -3,26 +3,20 @@ import { useInView } from "react-intersection-observer";
 import Finance from "../assets/portfolio-main/Financial-services.jpg";
 import RealEstate from "../assets/portfolio-main/real-estate.png";
 import IT from "../assets/portfolio-main/IT.jpg";
-import Marketing from "../assets/portfolio-main/marketing.jpg";
 import Travel from "../assets/portfolio-main/travel.jpg";
 import Bussiness from "../assets/portfolio-main/business-service.jpg";
 import Accounting from "../assets/portfolio-main/accounting-auditing.png";
 
-// IMPORTING LOGOS
-
+// Importing Logos
 import Financelogo from "../assets/portfolio-logos/financial-services.png";
 import RealEstatelogo from "../assets/portfolio-logos/real-estate.png";
 import Itlogo from "../assets/portfolio-logos/IT.png";
-import Marketinglogo from "../assets/portfolio-logos/marketing.png";
 import Tourismlogo from "../assets/portfolio-logos/tourism.png";
 import Businesslogo from "../assets/portfolio-logos/services-businessman.png";
 import Accountancylogo from "../assets/portfolio-logos/accountancy.png";
+
 import ScrollAnimation from "../components/scrollAnimation";
-
-//Buttons
-import { PrimaryButton2 } from "../components/button-primary";
-import { SecondaryButton } from "../components/button-primary";
-
+import { PrimaryButton2, SecondaryButton } from "../components/button-primary";
 
 const servicesData = [
   {
@@ -70,20 +64,6 @@ const servicesData = [
     cta_ar: "اقرأ المزيد",
     website: "/IT",
   },
-  // {
-  //   id: 4,
-  //   logo: Marketinglogo,
-  //   title_en: "Driving Growth Through Innovative Marketing Solutions",
-  //   title_ar: "تحفيز النمو من خلال حلول التسويق المبتكرة",
-  //   description_en:
-  //     "Our mission is to help businesses reach their full potential by delivering creative marketing strategies, data-driven campaigns, and impactful branding — ensuring our clients stay ahead in a fast-paced digital world.",
-  //   description_ar:
-  //     "مهمتنا هي مساعدة الشركات على تحقيق أقصى إمكاناتها من خلال تقديم استراتيجيات تسويقية مبتكرة، وحملات قائمة على البيانات، وعلامات تجارية مؤثرة — لضمان بقاء عملائنا في الصدارة في عالم رقمي سريع.",
-  //   image: Marketing,
-  //   cta_en: "Read more",
-  //   cta_ar: "اقرأ المزيد",
-  //   website: "#",
-  // },
   {
     id: 5,
     logo: Tourismlogo,
@@ -128,104 +108,87 @@ const servicesData = [
   },
 ];
 
-
-
 export default function ServicesSection({ lang }) {
   return (
-    <section className="py-16 px-10 bg-black text-white">
+    <section className="py-32 px-4 sm:px-10 bg-black text-white">
 
-{/* Intro Section */}
-<ScrollAnimation className={`m-20 w-1/2 ${lang === "en" ? "ml-0 text-left" : "ml-auto text-right"}`}
->
-  <h2 className={`text-4xl mb-12 ${lang === "en" ? "text-left" : "text-right"}`}>
-    {lang === "en" ? "OUR PORTFOLIO" : "خدماتنا"}
-  </h2>
+      {/* Intro Section */}
+      <ScrollAnimation
+        className={`mb-16 w-full sm:w-1/2 ${
+    lang === "en" ? "text-left sm:mr-auto" : "text-right sm:ml-auto"
+  } transition-all duration-700 ease-out opacity-100 translate-y-0`}
+      >
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          {lang === "en" ? "OUR PORTFOLIO" : "خدماتنا"}
+        </h2>
 
-  <ul role="list" className={`list-disc ${lang === "en" ? "text-left pl-5" : "text-right pr-5"}`}
-  dir={lang === "en" ? "ltr" : "rtl"}
->
-    <li className="mb-5">
-      <p>
-        {lang === "en"
-          ? "With innovation at our core, Jovera Group has built a dynamic network of specialized entities across diverse sectors — Financial Services (Mortgage & Business Loans), Real Estate, IT Solutions E-Marketing, Businessmen Services, Tourism, And ( Accounting & Auditing )."
-          : "مع الابتكار في جوهرنا، قامت مجموعة جوفيرا ببناء شبكة ديناميكية من الكيانات المتخصصة عبر قطاعات متنوعة — الخدمات المالية (الرهون والقروض التجارية)، العقارات، حلول تكنولوجيا المعلومات، التسويق الإلكتروني، خدمات رجال الأعمال، السياحة، و (المحاسبة والتدقيق)."}
-      </p>
-    </li>
-    <li>
-      <p>
-        {lang === "en"
-          ? "We continue to expand our reach and evolve with market trends, driving growth and excellence across every field we serve."
-          : "نواصل توسيع نطاقنا والتطور مع اتجاهات السوق، مما يدفع النمو والتميز في كل مجال نخدمه."}
-      </p>
-    </li>
-  </ul>
-</ScrollAnimation>
+        <ul
+          role="list"
+          className={`list-disc ${lang === "en" ? "pl-5" : "pr-5"}`}
+          dir={lang === "en" ? "ltr" : "rtl"}
+        >
+          <li className="mb-3 text-gray-300">
+            {lang === "en"
+              ? "With innovation at our core, Jovera Group has built a dynamic network of specialized entities across diverse sectors — Financial Services (Mortgage & Business Loans), Real Estate, IT Solutions E-Marketing, Businessmen Services, Tourism, And ( Accounting & Auditing )."
+              : "مع الابتكار في جوهرنا، قامت مجموعة جوفيرا ببناء شبكة ديناميكية من الكيانات المتخصصة عبر قطاعات متنوعة — الخدمات المالية (الرهون والقروض التجارية)، العقارات، حلول تكنولوجيا المعلومات، التسويق الإلكتروني، خدمات رجال الأعمال، السياحة، و (المحاسبة والتدقيق)."}
+          </li>
+          <li className="text-gray-300">
+            {lang === "en"
+              ? "We continue to expand our reach and evolve with market trends, driving growth and excellence across every field we serve."
+              : "نواصل توسيع نطاقنا والتطور مع اتجاهات السوق، مما يدفع النمو والتميز في كل مجال نخدمه."}
+          </li>
+        </ul>
+      </ScrollAnimation>
 
-{/* Services List */}
-<div className="max-w-7xl mx-auto flex flex-col gap-16">
-  {servicesData.map((service, index) => (
-    <ScrollAnimation
-      key={service.id}
-      className={`flex flex-col md:flex-row items-center gap-20 ${
-        index % 2 !== 0 ? "md:flex-row-reverse" : ""
-      }`}
-    >
-      {/* Image */}
-      <div className="md:w-1/2 w-full h-64 md:h-80 overflow-hidden rounded-xl shadow-lg">
-        <img
-          src={service.image}
-          alt={service.title_en}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          loading="lazy"
-        />
-      </div>
-
-      {/* Content */}
-      <div className={`md:w-1/2 w-full flex flex-col gap-4 ${lang === "en" ? "text-left" : "text-right"}`}>
-        <img
-          src={service.logo}
-          alt={service.title_en}
-          className="w-[250px]"
-          loading="lazy"
-        />
-        <h3 className="text-2xl font-bold">
-          {lang === "en" ? service.title_en : service.title_ar}
-        </h3>
-        <p className="text-gray-300">
-          {lang === "en" ? service.description_en : service.description_ar}
-        </p>
-
-        {/* Buttons */}
-        <div className="flex gap-4 mt-4">
-          {/* <button
-            className="px-5 py-2 rounded-lg font-semibold text-white transition-transform duration-300 ease-out shadow-md hover:scale-105 hover:shadow-xl"
-            style={{
-              borderRadius: "12px",
-              background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)",
-            }}
+      {/* Services List */}
+      <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-12">
+        {servicesData.map((service, index) => (
+          <ScrollAnimation
+            key={service.id}
+            className={`flex flex-col md:flex-row items-center gap-4 sm:gap-8 ${
+              index % 2 !== 0 ? "md:flex-row-reverse" : ""
+            }`}
           >
-            {lang === "en" ? service.cta_en : service.cta_ar}
-          </button> */}
+            {/* Image */}
+            <div className="md:w-1/2 w-full h-48 sm:h-64 md:h-80 overflow-hidden rounded-xl shadow-lg">
+              <img
+                src={service.image}
+                alt={service.title_en}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
 
-          <PrimaryButton2 children={lang === "en" ? service.cta_en : service.cta_ar} link={service.website}/>
-          <SecondaryButton children={lang === "en" ? "Go Website" : "اذهب إلى الموقع"} link={"/UnderDevelopment"} />
-          
-          
-          {/* <a
-            href={service.website}
-            className="px-5 py-2 rounded-lg font-semibold border transition-all text-white"
-            style={{ borderRadius: "12px", borderColor: "#FFFF" }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {lang === "en" ? "Go Website" : "اذهب إلى الموقع"}
-          </a> */}
-        </div>
+            {/* Content */}
+            <div className={`md:w-1/2 w-full flex flex-col gap-3 sm:gap-4 ${lang === "en" ? "text-left" : "text-right"}`}>
+              <img
+                src={service.logo}
+                alt={service.title_en}
+                className="w-32 sm:w-44 md:w-52 mx-auto md:mx-0"
+                loading="lazy"
+              />
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold">
+                {lang === "en" ? service.title_en : service.title_ar}
+              </h3>
+              <p className="text-gray-300 text-sm sm:text-base">
+                {lang === "en" ? service.description_en : service.description_ar}
+              </p>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                <PrimaryButton2
+                  children={lang === "en" ? service.cta_en : service.cta_ar}
+                  link={service.website}
+                />
+                <SecondaryButton
+                  children={lang === "en" ? "Go Website" : "اذهب إلى الموقع"}
+                  link={"/UnderDevelopment"}
+                />
+              </div>
+            </div>
+          </ScrollAnimation>
+        ))}
       </div>
-    </ScrollAnimation>
-  ))}
-</div>
-
     </section>
   );
 }

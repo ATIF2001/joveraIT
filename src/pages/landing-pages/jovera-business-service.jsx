@@ -434,7 +434,7 @@ const options = [
 </ ScrollAnimation>
  {/* ================= PARTNERS ================= */}
 <ScrollAnimation>
-<section className="relative py-24 md:py-32">
+<section className="relative pb-12 md:pb-16">
   {/* Outer Background */}
   <div className="absolute inset-0 bg-black" />
 
@@ -499,7 +499,7 @@ const options = [
 
   {/* ================= Services ================= */}
 < ScrollAnimation>
-<section className="py-32 bg-black">
+<section className="pb-16 bg-black">
   <div className="container mx-auto px-4">
 
     {/* Section Title */}
@@ -530,7 +530,7 @@ const options = [
 </ ScrollAnimation>
   {/* ================= Pricing Cards ================= */}
 <ScrollAnimation>
-<section className="py-32 bg-black">
+<section className="pb-16 bg-black">
   <div className="container mx-auto px-4">
 
     {/* Section Title */}
@@ -585,8 +585,8 @@ const options = [
 
       {/* ================= CONTACT ================= */}
     {/* Contact Form & Success Section */}
-      <section id="contact-form" className="container mx-auto px-4 py-16 max-w-7xl">
-         <div className="bg-[#171717] p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
+      <section id="contact-form" className="container mx-auto px-4 pb-16 max-w-7xl">
+         <div className="sm:bg-[#171717] sm:p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
         {/* Form Placeholder */}
             <ContactForm lang={lang} options={options} />
 

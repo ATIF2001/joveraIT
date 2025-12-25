@@ -63,7 +63,11 @@ const JobDetails = ({ lang }) => {
   const display = (field) => field || (isRTL ? "غير محدد" : "N/A");
 
   return (
-    <div dir={isRTL ? "rtl" : "ltr"} className="min-h-screen bg-black text-white px-6 md:px-24 pt-[160px]">
+    <div
+  dir={isRTL ? "rtl" : "ltr"}
+  className="min-h-screen bg-black text-white px-6 md:px-24 pt-[160px] pb-24"
+>
+
       {/* Title */}
       <h1 className="text-4xl font-semibold text-center mb-2">{display(job.title)}</h1>
       <p className="text-center text-gray-400 mb-8">{display(job.location)}</p>

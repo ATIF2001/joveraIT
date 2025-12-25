@@ -22,7 +22,7 @@ export default function NewsDetail({lang}) {
 
   return (
     <div className="bg-[#111111] min-h-screen text-white">
-     <div className="mx-auto px-8 sm:px-12 lg:px-16 py-24 md:py-32">
+     <div className="mx-auto px-8 sm:px-12 lg:px-16 py-32 md:py-32">
         
         {/* Article Header */}
         <div className="text-center mb-12 md:mb-16">

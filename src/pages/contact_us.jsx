@@ -96,7 +96,7 @@ const options = [
 
 
   return (
-    <main  className={`bg-[#0D0D0D] text-white min-h-screen px-16 pt-40 pb-20 mx-auto space-y-20 ${lang !== "en" ? "rtl" : ""}`}>
+    <main  className={`bg-[#0D0D0D] text-white min-h-screen px-4 sm:px-16 pt-32 pb-20 mx-auto space-y-20 ${lang !== "en" ? "rtl" : ""}`}>
 
       <div className={`${lang === "en" ? "text-left" : "text-right"}`}>
         <h2 className="text-3xl md:text-4xl lg:text-5xl mb-3 tracking-tight">{lang === "en" ? "Contact" : "اتصل بنا"}</h2>

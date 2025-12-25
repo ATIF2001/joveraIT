@@ -89,14 +89,14 @@ const AboutUs = ({ lang = "en" }) => {
     />
   </div>
 
-  <div className="relative z-10 max-w-6xl px-16">
+  <div className="relative z-10 max-w-6xl px-4 sm:px-8 md:px-16">
     {/* PURPOSE */}
-    <h2 className="uppercase tracking-[0.3em] text-lg md:text-xl lg:text-2xl mb-10">
+    <h2 className="uppercase tracking-[0.3em] text-sm sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-10">
       {t.purpose}
     </h2>
 
     {/* DESCRIPTION */}
-    <p className="max-w-4xl text-gray-300 leading-relaxed text-lg md:text-xl lg:text-2xl mb-12">
+    <p className="max-w-4xl text-gray-300 leading-relaxed text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12">
       <span className="text-[#D7AA47] font-semibold">
         {t.heroTextHighlight}
       </span>{" "}
@@ -104,12 +104,13 @@ const AboutUs = ({ lang = "en" }) => {
     </p>
 
     {/* MAIN TITLE */}
-    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light uppercase leading-tight">
+    <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light uppercase leading-snug sm:leading-tight md:leading-tight lg:leading-tight">
       {t.heroTitle1} <br />
       <span className="font-semibold">{t.heroTitle2}</span>
     </h1>
   </div>
 </section>
+
 
 
       {/* ================= OUR STORY ================= */}

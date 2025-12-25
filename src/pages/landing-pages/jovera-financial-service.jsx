@@ -263,7 +263,7 @@ const options = [
   <div className={`min-h-screen bg-black text-white ${isArabic ? 'rtl' : 'ltr'}`}>
       {/* Hero Section */}
       <ScrollAnimation>
-      <section className="container mx-auto px-4 py-12 md:py-20 lg:py-24 max-w-7xl">
+      <section className="container mx-auto px-4 pt-12 md:pt-20 lg:pt-24 max-w-7xl">
        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
   {/* LEFT DIV (Text) */}
   <div className={`h-full pt-[80px] ${isArabic ? 'order-2 text-right' : 'order-1'} `}>
@@ -310,7 +310,7 @@ const options = [
 </ScrollAnimation>
 <ScrollAnimation>
 {/* Services Section */}
-<section className="container mx-auto px-4 py-16">
+<section className="container mx-auto px-4 pb-16">
   <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#D7AA47]">
     {t.services.title}
   </h2>
@@ -432,8 +432,8 @@ const options = [
 
 
       {/* Contact Form & Success Section */}
-      <section id="contact-form" className="container mx-auto px-4 py-16 max-w-7xl">
-         <div className="bg-[#171717] p-20  grid lg:grid-cols-2 gap-12 rounded-xl">
+      <section id=" contact-form" className="container mx-auto px-4 py-16 sm:max-w-7xl">
+         <div className="sm:bg-[#171717] sm:p-20  grid lg:grid-cols-2 gap-12 sm:rounded-xl">
         {/* Form Placeholder */}
             <ContactForm lang={lang} options={options} />
 
