@@ -26,18 +26,23 @@ export default function ServiceCard({ service, lang }) {
         </p>
 
         {/* CTA */}
-      <Link to={"/underDevelopment"}>
-       <button
+      <button
+  onClick={() => {
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" }); // smooth scroll
+    }
+  }}
   className={`mt-auto flex items-center gap-2 text-[#D4AF37] text-sm font-medium group ${
     lang === "en" ? "mr-auto" : "ml-auto"
   }`}
 >
-  <span className={"transform transition group-hover:-translate-x-1 "}>
+  <span className={"transform transition group-hover:-translate-x-1"}>
     <img src={arrow} alt="arrow" />
   </span>
-  {lang === "en" ? "Read More" : "اقرأ المزيد"}
+  {lang === "en" ? "Learn More" : "اعرف المزيد"}
 </button>
-</Link>
+
       </div>
     </div>
   );

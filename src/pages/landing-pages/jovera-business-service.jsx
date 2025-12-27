@@ -332,7 +332,7 @@ const content = {
 
     success: {
       label: "نجاحنا",
-      title: "لقد ساعدنا أكثر من 700 عميل حول العالم",
+      title:"لقد ساعدنا أكثر من 700 عميل في الإمارات",
       description:
         "نبني الثقة والابتكار ونحقق نتائج ملموسة لعملائنا.",
     },
@@ -498,7 +498,7 @@ const options = [
 </ ScrollAnimation>
 
   {/* ================= Services ================= */}
-< ScrollAnimation>
+{/* < ScrollAnimation> */}
 <section className="pb-16 bg-black">
   <div className="container mx-auto px-4">
 
@@ -512,11 +512,13 @@ const options = [
     {/* Cards Grid */}
     <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8`}>
       {services.map((service) => (
+      < ScrollAnimation>
         <ServiceCard
           key={service.id}
           service={service} 
           lang={lang}       
         />
+        </ScrollAnimation>
       ))}
     </div>
 
@@ -527,21 +529,21 @@ const options = [
 
 
 
-</ ScrollAnimation>
+{/* </ ScrollAnimation> */}
   {/* ================= Pricing Cards ================= */}
 <ScrollAnimation>
 <section className="pb-16 bg-black">
   <div className="container mx-auto px-4">
 
     {/* Section Title */}
-    <div className="flex justify-center mb-16">
+    {/* <div className="flex justify-center mb-16">
       <span className="px-10 py-3 bg-[#1A1A1A] rounded-full text-white text-lg">
         {lang === "en" ? "Pricing" : "التسعير"}
       </span>
-    </div>
+    </div> */}
 
     {/* Pricing Cards Grid */}
-   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto place-items-center">
+   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-6 max-w-7xl mx-auto place-items-center">
   {PricingPackages.map((pkg) => (
     <PricingCard
       key={pkg.id}
@@ -616,11 +618,11 @@ const options = [
         link="mailto:info@jovera.ae"
       />
 
-      <ContactPill
-        icon={FaWhatsapp}
-        text="+97126311977"
-        link="https://wa.me/97126311977"
-      />
+         <ContactPill
+            icon={Phone}
+            text="+97126311977"
+            link="tel:026311977"
+          />
 
       <ContactPill
         icon={FaWhatsapp}

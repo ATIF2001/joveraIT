@@ -31,7 +31,7 @@ const FeaturedCategories = ({ lang = "en" }) => {
   const title = lang === "en" ? "Featured Categories" : "الفئات المميزة";
 
   return (
-    <section className="py-20 bg-black text-white">
+    <section className="py-10 bg-black text-white">
       {/* Title */}
       <h2 className="text-center text-3xl font-bold text-[#D7AA47] mb-12">
         {title}

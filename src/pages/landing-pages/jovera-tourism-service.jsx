@@ -361,9 +361,9 @@ const content = {
 
     success: {
       label: "OUR SUCCESS",
-      title: "We have helped more than 700+ clients worldwide",
+      title: "We have helped more than 700+ clients in the UAE",
       description:
-                       "Building trust, innovation, and measurable results for our clients Delivering trust, innovation, and measurable results. Our clients' success is the true proof of our work.",
+      "Building trust, innovation, and measurable results for our clients Delivering trust, innovation, and measurable results. Our clients' success is the true proof of our work.",
 
     },
 
@@ -390,7 +390,7 @@ const content = {
 
     success: {
       label: "نجاحنا",
-      title: "لقد ساعدنا أكثر من 700 عميل حول العالم",
+      title: "لقد ساعدنا أكثر من 700 عميل في الإمارات",
       description:
         "نبني الثقة والابتكار ونحقق نتائج ملموسة لعملائنا.",
     },
@@ -692,14 +692,14 @@ const content = {
     
           <ContactPill
             icon={Mail}
-            text="info@jovera.ae"
-            link="mailto:info@jovera.ae"
+            text="info@joveratourism.ae"
+            link="mailto:info@joveratourism.ae"
           />
     
           <ContactPill
-            icon={FaWhatsapp}
+            icon={Phone}
             text="+97126311977"
-            link="https://wa.me/97126311977"
+            link="tel:026311977"
           />
     
           <ContactPill

@@ -74,8 +74,8 @@ const isArabic = lang !== 'en';
       },
       success: {
         label: "OUR SUCCESS",
-        title: "We have helped more than 700+ clients worldwide",
-        description:                 "Building trust, innovation, and measurable results for our clients Delivering trust, innovation, and measurable results. Our clients' success is the true proof of our work.",
+        title: "We have helped more than 700+ clients in the UAE",
+        description: "Building trust, innovation, and measurable results for our clients Delivering trust, innovation, and measurable results. Our clients' success is the true proof of our work.",
 
       }
     },
@@ -130,7 +130,7 @@ const isArabic = lang !== 'en';
       },
       success: {
         label: "نجاحنا",
-        title: "لقد ساعدنا أكثر من 700+ عميل حول العالم",
+        title: "لقد ساعدنا أكثر من 700 عميل في الإمارات",
         description: "تقديم الثقة والابتكار والنتائج القابلة للقياس. نجاح عملائنا هو الدليل الحقيقي على عملنا."
       }
     }
@@ -210,7 +210,7 @@ const options = [
       </ScrollAnimation>
 {/* Services Section */}
 <ScrollAnimation>
-<section className="container mx-auto px-4 py-16 ">
+<section className="container mx-auto px-4 pb-16 ">
   <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#D7AA47]">
     {t.services.title}
   </h2>
@@ -510,16 +510,15 @@ const options = [
 
       <ContactPill
         icon={Mail}
-        text="info@jovera.ae"
-        link="mailto:info@jovera.ae"
+        text="info@joveraits.ae"
+        link="mailto:info@joveraits.ae"
       />
 
-      <ContactPill
-        icon={FaWhatsapp}
-        text="+97126311977"
-        link="https://wa.me/97126311977"
-      />
-
+         <ContactPill
+            icon={Phone}
+            text="+97126311977"
+            link="tel:026311977"
+          />
       <ContactPill
         icon={FaWhatsapp}
         text="+97126311977"

@@ -112,7 +112,11 @@ export default function ServicesSection({ lang }) {
   return (
     <section className="py-32 px-4 sm:px-10 bg-black text-white">
 
-      {/* Intro Section */}
+    
+
+      {/* Services List */}
+      <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-12">
+         {/* Intro Section */}
       <ScrollAnimation
         className={`mb-16 w-full sm:w-1/2 ${
     lang === "en" ? "text-left sm:mr-auto" : "text-right sm:ml-auto"
@@ -139,9 +143,8 @@ export default function ServicesSection({ lang }) {
           </li>
         </ul>
       </ScrollAnimation>
-
-      {/* Services List */}
-      <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-12">
+       
+       
         {servicesData.map((service, index) => (
           <ScrollAnimation
             key={service.id}
@@ -150,7 +153,7 @@ export default function ServicesSection({ lang }) {
             }`}
           >
             {/* Image */}
-            <div className="md:w-1/2 w-full h-48 sm:h-64 md:h-80 overflow-hidden rounded-xl shadow-lg">
+            <div className="md:w-1/2 w-full h-80 sm:h-64 md:h-80 overflow-hidden rounded-xl shadow-lg">
               <img
                 src={service.image}
                 alt={service.title_en}
@@ -164,7 +167,7 @@ export default function ServicesSection({ lang }) {
               <img
                 src={service.logo}
                 alt={service.title_en}
-                className="w-32 sm:w-44 md:w-52 mx-auto md:mx-0"
+                className="w-44 sm:w-44 md:w-52 mx-auto md:mx-0"
                 loading="lazy"
               />
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold">
@@ -180,10 +183,10 @@ export default function ServicesSection({ lang }) {
                   children={lang === "en" ? service.cta_en : service.cta_ar}
                   link={service.website}
                 />
-                <SecondaryButton
+                {/* <SecondaryButton
                   children={lang === "en" ? "Go Website" : "اذهب إلى الموقع"}
                   link={"/UnderDevelopment"}
-                />
+                /> */}
               </div>
             </div>
           </ScrollAnimation>

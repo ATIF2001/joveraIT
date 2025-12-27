@@ -21,7 +21,7 @@ import UnderDevelopment from "./pages/under-development";
 import AboutUs from "./pages/about_us";
 import Careers from "./pages/career";
 import JobDetails from "./pages/career-job";
-
+import ScrollToTop from "../src/components/ScrollToTop";
 import Jovera404 from "./pages/404";
 
 import "./App.css";
@@ -39,10 +39,12 @@ function App() {
 
   return (
     <Router>
+       <ScrollToTop />
       <Topbar lang={lang} />
       <Nav lang={lang} setLang={setLang} />
 
       <Routes>
+        
         <Route path="/" element={<Home lang={lang} />} />
         <Route path="/portfolio" element={<ServicesSection lang={lang} />} />
         <Route path="/media-hub" element={<Media lang={lang} />} />

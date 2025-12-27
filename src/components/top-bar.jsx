@@ -10,7 +10,7 @@ import { FaTiktok } from "react-icons/fa";
 
 function Topbar({ lang }) {
   return (
-    <div className="bg-[#1B1B1B] py-2 px-4 text-base text-white block max-[750px]:hidden
+    <div className=" bg-[#1B1B1B] py-2 px-4 text-base text-white block max-[750px]:hidden
 ">
       <div className="mx-auto flex justify-between items-center">
         

@@ -51,7 +51,7 @@ const content = {
 
     success: {
       label: "OUR SUCCESS",
-      title: "We have helped more than 700+ clients worldwide",
+      title: "We have helped more than 700+ clients in the UAE",
       description:
         "Building trust, innovation, and measurable results for our clients Delivering trust, innovation, and measurable results. Our clients' success is the true proof of our work.",
     },
@@ -68,7 +68,7 @@ const content = {
 
     success: {
       label: "نجاحنا",
-      title: "لقد ساعدنا أكثر من 700 عميل حول العالم",
+      title:"لقد ساعدنا أكثر من 700 عميل في الإمارات",
       description:
         "نبني الثقة والابتكار ونحقق نتائج ملموسة لعملائنا.",
     },
@@ -148,7 +148,7 @@ const options = [
   <ScrollAnimation>
      
    {/* ================= PARTNERS ================= */}
-<section className="py-16">
+<section className="py-8">
   <div className="container mx-auto px-4 ">
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
       {partners.map((logo, i) => (
@@ -172,15 +172,15 @@ const options = [
   {/* ================= Featured Categories ================= */}
 
 <ScrollAnimation>
-<section className="w-full flex justify-center items-center py-16">
-  <div className=" w-full max-w-7xl px-4">
+<section className="w-full flex justify-center items-center py-8">
+  <div className=" w-full max-w-7xl">
     <FeaturedCategories lang={lang} />
   </div>
 </section>
   </ScrollAnimation>
 
   {/* ================= Properties ================= */}
-<section className="w-full flex justify-center items-center py-16">
+<section className="w-full flex justify-center items-center py-8">
   <div className="w-full max-w-6xl px-4">
     <PropertiesSection lang={lang}/>
   </div>
@@ -221,11 +221,11 @@ const options = [
               link="mailto:info@jovera.ae"
             />
       
-            <ContactPill
-              icon={FaWhatsapp}
-              text="+97126311977"
-              link="https://wa.me/97126311977"
-            />
+             <ContactPill
+            icon={Phone}
+            text="+97126311977"
+            link="tel:026311977"
+          />
       
             <ContactPill
               icon={FaWhatsapp}

@@ -80,7 +80,7 @@ const JobDetails = ({ lang }) => {
           className="hidden"
           onChange={handleFileChange}
         />
-        <PrimaryButton link={handleButtonClick}>
+        <PrimaryButton onClick={handleButtonClick}>
           {applying ? (isRTL ? "جاري الرفع..." : "Uploading...") : isRTL ? "ارفع سيرتك الذاتية" : "Upload CV"}
         </PrimaryButton>
 
@@ -154,8 +154,23 @@ const JobDetails = ({ lang }) => {
               <li key={idx}>{display(benefit)}</li>
             ))}
           </ul>
+            <div className="mt-12 text-center">
+  {/* <div className="mt-12 text-center">
+  <button
+    onClick={handleButtonClick}
+    className="text-[#D7AA47] font-semibold transition-transform transition-colors duration-300 hover:text-yellow-400 hover:scale-110"
+  >
+    {isRTL ? "قدّم الآن" : "Apply Now"}
+  </button>
+</div> */}
+
+</div>
+
         </div>
-      )}
+    
+  
+     
+     )}
     </div>
   );
 };

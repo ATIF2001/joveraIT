@@ -118,6 +118,7 @@ function Nav({ lang, setLang }) {
             </Link>
                <Link
             to="/about-us"
+            onClick={() => setIsMenuOpen(false)}
             className={`hover:text-yellow-400 ${
               isActive("/about-us") ? "text-yellow-400" : "text-white"
             }`}

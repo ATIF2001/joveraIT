@@ -1,179 +1,173 @@
-import React from "react";
-import Hero from "../assets/about-us/hero.jpg";
-import aboutImg from "../assets/about-us/about-us-img.jpg";
+import ramy from "../assets/about-us/ramy.png";
+import background from "../assets/about-us/bg.png";
 
-import ramyGerguis from "../assets/ramy-gerguis.png";
-import abanoubUddin from "../assets/abanoub-uddin.png";
-import fadyGerguis from "../assets/fady-gerguis.png";
-import gomilUddin from "../assets/gomil-uddin.png";
-import hossamMohammad from "../assets/hossam-mohamed.png";
-import kamalBadri from "../assets/kamal-badri.png";
-import mohammadGamal from "../assets/mohamed-gamal.png";
-import osmanMohammad from "../assets/osman-mohamed.png";
-import wadeaGerguis from "../assets/wagea-yousif.png";
+import fady from "../assets/about-us/fady.png";
+import backgroundfady from "../assets/about-us/bg-2.png";
 
-/* ================= DIRECTORS ================= */
+import righttumb from "../assets/about-us/right-tumb.png";
+import lefttumb from "../assets/about-us/left-tumb.png";
 
-const directors_en = [
-  { name: "RAMY GERGUIS", role: "CEO", image: ramyGerguis },
-  { name: "FADY GERGUIS", role: "MANAGING DIRECTOR", image: fadyGerguis },
-  { name: "KAMAL UDDIN", role: "IT MANAGER", image: kamalBadri },
-  { name: "MOHAMED GAMAL", role: "REAL ESTATE MANAGER", image: mohammadGamal },
-  { name: "WADEA GERGUIS", role: "MORTGAGE MANAGER", image: wadeaGerguis },
-  { name: "GAMIL UDDIN", role: "BUSINESS LOAN MANAGER", image: gomilUddin },
-  { name: "ABANOUB UDDIN", role: "MARKETING MANAGER", image: abanoubUddin },
-  { name: "HOSSAM MOHAMED", role: "TOURISM MANAGER", image: hossamMohammad },
-  { name: "OSMAN MOHAMED", role: "BUSINESS SERVICES MANAGER", image: osmanMohammad },
-];
+import { Eye, Target, Hand } from 'lucide-react';
 
-const directors_ar = [
-  { name: "رامي جرجس", role: "المدير التنفيذي", image: ramyGerguis },
-  { name: "فادي جرجس", role: "المدير العام", image: fadyGerguis },
-  { name: "كمال الدين", role: "مدير تكنولوجيا المعلومات", image: kamalBadri },
-  { name: "محمد جمال", role: "مدير العقارات", image: mohammadGamal },
-  { name: "وديع جرجس", role: "مدير القروض العقارية", image: wadeaGerguis },
-  { name: "جميل الدين", role: "مدير القروض التجارية", image: gomilUddin },
-  { name: "أبانوب الدين", role: "مدير التسويق", image: abanoubUddin },
-  { name: "حسام محمد", role: "مدير السياحة", image: hossamMohammad },
-  { name: "عثمان محمد", role: "مدير خدمات رجال الأعمال", image: osmanMohammad },
-];
-
-/* ================= PAGE CONTENT ================= */
-
-const content = {
-  en: {
-    purpose: "Our Purpose",
-    heroTitle1: "Looking For",
-    heroTitle2: "The Future !",
-    heroTextHighlight: "We Incubate A Network of",
-    heroText:
-      "Financial services (Mortgage, Business Finance, Personal Loan), Real Estate, IT Solution, E-Marketing, Business Services, Tourism, Accounting And Auditing.",
-    storyTitle: "Our Story",
-    storyP1:
-      "Jovera Group, established in 2013 in the UAE, swiftly became a key player in real estate and financial services, tourism, advertisement, and accountancy, prioritizing excellence and innovation.",
-    storyP2:
-      "Offering a comprehensive suite of services, the company forged strong client and partner relationships. Guided by integrity and a customer-centric approach, Jovera Group continues to grow across the UAE.",
-    boardTitle: "Our Board of Directors",
+const AboutUs = ({lang}) => {
+   const cards = [
+  {
+    icon: Hand,
+    title: lang === "en" ? "Overview" : "نظرة عامة",
+    description:
+      lang === "en"
+        ? `Jovera Group established in 2013 in the UAE, it swiftly became a key player in real estate and financial services, tourism, advertisement, and accountancy, prioritizing excellence and innovation. Offering a comprehensive suite of services, the company has forged strong client and partner relationships. Guided by integrity and a customer-centric approach, Jovera Group's seasoned professionals navigate the complexities of sectors, providing informed advice. Since 2013, the company has experienced continuous growth, marked by innovation and an unwavering commitment to excellence, solidifying its prominent position in the UAE.`
+        : `تأسست مجموعة جوفيرا في عام 2013 في دولة الإمارات العربية المتحدة، وسرعان ما أصبحت لاعبًا رئيسيًا في مجالات العقارات والخدمات المالية والسياحة والإعلان والمحاسبة، مع إعطاء الأولوية للتميز والابتكار. من خلال تقديم مجموعة شاملة من الخدمات، نجحت الشركة في بناء علاقات قوية مع العملاء والشركاء. وبفضل النزاهة ونهج يركز على العملاء، يعمل فريق جوفيرا من الخبراء المحترفين على التعامل مع تعقيدات القطاعات المختلفة وتقديم استشارات مدروسة. ومنذ عام 2013، شهدت الشركة نموًا مستمرًا مدفوعًا بالابتكار والالتزام الراسخ بالتميز، مما عزز مكانتها البارزة في دولة الإمارات.`
   },
-  ar: {
-    purpose: "رسالتنا",
-    heroTitle1: "نبحث عن",
-    heroTitle2: "المستقبل",
-    heroTextHighlight: "نحن نُنشئ شبكة من",
-    heroText:
-      "الخدمات المالية (التمويل العقاري، تمويل الأعمال، القروض الشخصية)، العقارات، حلول تقنية المعلومات، التسويق الإلكتروني، خدمات رجال الأعمال، السياحة، المحاسبة والتدقيق.",
-    storyTitle: "قصتنا",
-    storyP1:
-      "تأسست مجموعة جوفيرا عام 2013 في دولة الإمارات العربية المتحدة، وسرعان ما أصبحت لاعبًا رئيسيًا في مجالات العقارات والخدمات المالية والسياحة والإعلان والمحاسبة، مع التركيز على التميز والابتكار.",
-    storyP2:
-      "ومن خلال تقديم مجموعة متكاملة من الخدمات، نجحت الشركة في بناء علاقات قوية مع العملاء والشركاء، مستندة إلى النزاهة والتركيز على العميل.",
-    boardTitle: "مجلس الإدارة",
+  {
+    icon: Target,
+    title: lang === "en" ? "Mission Statement" : "رسالتنا",
+    description:
+      lang === "en"
+        ? `Our mission is to provide exceptional financial services to our clients and help them achieve their goals. We believe that everyone deserves access to affordable and reliable financial services, and we are committed to making that a reality for our clients. We offer a range of services to meet the unique financial needs of our clients, including real estate, mortgages, business banking, personal loans, tourism, advertisement, and accountancy.`
+        : `رسالتنا هي تقديم خدمات مالية استثنائية لعملائنا ومساعدتهم على تحقيق أهدافهم. نحن نؤمن بأن الجميع يستحق الوصول إلى خدمات مالية موثوقة وبأسعار مناسبة، ونعمل جاهدين على تحويل ذلك إلى واقع لعملائنا. نقدم مجموعة متنوعة من الخدمات التي تلبي الاحتياجات المالية الفريدة لعملائنا، بما في ذلك العقارات، والتمويل العقاري، والخدمات المصرفية للأعمال، والقروض الشخصية، والسياحة، والإعلان، والمحاسبة.`
   },
-};
-
-const AboutUs = ({ lang = "en" }) => {
-  const isAr = lang === "ar";
-  const t = content[lang];
-  const directors = isAr ? directors_ar : directors_en;
+  {
+    icon: Eye,
+    title: lang === "en" ? "Vision Statement" : "رؤيتنا",
+    description:
+      lang === "en"
+        ? `Our vision is to be the number one trusted and leading company in real estate, banking, tourism, advertisement, and accountancy services. We think in the best interest of our clients first by providing solutions best suited to them. We aim to build long-term relationships through trust, professionalism, and exceptional customer service, while empowering our clients with the tools and resources they need to achieve their goals.`
+        : `رؤيتنا هي أن نكون الشركة الأولى والأكثر ثقة وريادة في مجالات العقارات والخدمات المصرفية والسياحة والإعلان والمحاسبة. نضع مصلحة عملائنا في المقام الأول من خلال تقديم حلول تناسب احتياجاتهم بشكل مثالي. نسعى لبناء علاقات طويلة الأمد قائمة على الثقة والاحترافية وخدمة العملاء المتميزة، وتمكين عملائنا بالأدوات والموارد التي تساعدهم على تحقيق أهدافهم.`
+  }
+];
 
   return (
-    <div className="bg-black text-white" dir={isAr ? "rtl" : "ltr"}>
+     <div className="">
 
-{/* ================= HERO ================= */}
-<section className="relative h-[900px] flex items-center">
-  <div className="absolute inset-0">
-    <img
-      src={Hero}
-      alt="About Hero"
-      className="w-full h-full object-cover opacity-50"
-    />
-  </div>
+    <div className="relative bg-black text-white min-h-screen overflow-hidden flex items-center justify-center pt-32 ">
 
-  <div className="relative z-10 max-w-6xl px-4 sm:px-8 md:px-16">
-    {/* PURPOSE */}
-    <h2 className="uppercase tracking-[0.3em] text-sm sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-10">
-      {t.purpose}
-    </h2>
+     {/* Top Right Thumb */}
+<img
+  src={righttumb}
+  alt=""
+  className="absolute top-0 right-0 w-1/2 sm:w-1/2 max-w-[50%] opacity-80 pointer-events-none z-0"
+/>
 
-    {/* DESCRIPTION */}
-    <p className="max-w-4xl text-gray-300 leading-relaxed text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12">
-      <span className="text-[#D7AA47] font-semibold">
-        {t.heroTextHighlight}
-      </span>{" "}
-      {t.heroText}
-    </p>
-
-    {/* MAIN TITLE */}
-    <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light uppercase leading-snug sm:leading-tight md:leading-tight lg:leading-tight">
-      {t.heroTitle1} <br />
-      <span className="font-semibold">{t.heroTitle2}</span>
-    </h1>
-  </div>
-</section>
+{/* Bottom Left Thumb */}
+<img
+  src={lefttumb}
+  alt=""
+  className="absolute bottom-0 left-0 w-1/2 sm:w-1/2 max-w-[50%] opacity-80 pointer-events-none z-0"
+/>
 
 
+    <div className="relative z-10 flex flex-col items-center text-center gap-12 w-full max-w-5xl">
 
-      {/* ================= OUR STORY ================= */}
-<section className="py-20 px-6 bg-[#1B1B1B]">
-  <div className=" px-16 grid gap-12 lg:grid-cols-2 items-center">
-    {/* Text */}
-    <div className={`${lang === 'en' ? 'text-left' : 'text-right'}  text-white}`}>
-      <h2 className="text-2xl sm:text-3xl mb-6 uppercase text-white">{t.storyTitle}</h2>
-      <p className="text-gray-300 leading-relaxed mb-4">{t.storyP1}</p>
-      <p className="text-gray-300 leading-relaxed">{t.storyP2}</p>
-    </div>
 
-    {/* Image */}
-    <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
-      <div className="bg-white p-4 rounded-xl border border-white">
+  {/* CEO Message */}
+<div className="flex justify-center items-center bg-black px-4 py-10 sm:py-20">
+  {/* Tilted Card */}
+  <div className="relative max-w-7xl w-full text-white rounded-[28px] px-6 md:px-16 py-20 md:py-28 transform overflow-visible">
+
+    {/* Background - Golden Transparent */}
+    <div className="absolute inset-0 rounded-[28px] bg-[#D7AA47]/10 -z-10"></div>
+
+    {/* Content */}
+    <div className="relative transform flex flex-col md:flex-row items-center">
+
+      {/* IMAGE */}
+      <div className="relative md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 md:-translate-x-1/2 mb-10 md:mb-0">
         <img
-          src={aboutImg}
-          alt="Our Story"
-          className="rounded-lg w-[200px] sm:w-[240px] md:w-[280px] h-[240px] sm:h-[300px] md:h-[340px] object-cover"
+          src={ramy}
+          alt="CEO"
+          className="h-[260px] sm:h-[320px] md:h-[500px] object-contain mx-auto"
+           loading="lazy"
         />
       </div>
+
+      {/* TEXT */}
+      <div className="w-full md:w-[65%] md:ml-auto text-center md:text-left px-2 sm:px-6 md:px-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+          {lang === "en" ? "CEO Welcome Message" : "رسالة ترحيب المدير التنفيذي"}
+        </h1>
+
+        <p className="text-sm sm:text-base md:text-lg leading-loose mb-4">
+          {lang === "en"
+            ? "As the CEO of Jovera Group, I'm thrilled to share the success of our journey in the UAE's real estate and financial, tourism, advertisement and accountancy sector. Our commitment to excellence and innovation has been the driving force behind our remarkable growth. We understand that our success is intertwined with that of our clients and partners, and we've built a foundation rooted in dedication and expertise. In the ever-changing landscapes of real estate and finance, we pride ourselves on being a reliable, innovative, and integrity-driven beacon. Our professional team brings experience and fresh perspectives to provide tailored solutions that truly make a difference. Looking ahead, we are excited about the opportunities that await us. Our commitment is to enhance services, expand reach, and foster even stronger relationships with all of you."
+            : "بصفتي المدير التنفيذي لمجموعة جوميرا، يسعدني مشاركة نجاح رحلتنا في قطاع العقارات والخدمات المالية والسياحة والإعلان والمحاسبة في الإمارات. التزامنا بالتميز والابتكار هو القوة الدافعة وراء نمونا المميز. نحن نفهم أن نجاحنا مرتبط بنجاح عملائنا وشركائنا، وقد بنينا أساساً قائماً على التفاني والخبرة. في ظل التغيرات المستمرة في قطاع العقارات والمالية، نفخر بأننا مرجع موثوق ومبتكر ويتمتع بالنزاهة. يجلب فريقنا المحترف خبرة ومنظوراً جديداً لتقديم حلول مخصصة تحدث فرقاً حقيقياً. نتطلع إلى الفرص القادمة، والتزامنا هو تحسين الخدمات، وتوسيع نطاق الوصول، وتعزيز العلاقات معكم جميعاً."
+          }
+        </p>
+      </div>
+
     </div>
   </div>
-</section>
+</div>
+
+{/* Director / MD Message */}
+<div className="flex justify-center items-center bg-black px-4 pb-10 sm:pb-20">
+  {/* Tilted Card */}
+  <div className="relative max-w-7xl w-full text-white px-6 md:px-16 py-20 md:py-28 transform overflow-visible">
+
+    {/* Background - Golden Transparent */}
+    <div className="absolute inset-0 rounded-[28px] bg-[#D7AA47]/10 -z-10"></div>
+
+    {/* Content */}
+    <div className="relative transform flex flex-col md:flex-row items-center">
+
+      {/* IMAGE */}
+      <div className="relative md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 md:translate-x-1/2 mb-10 md:mb-0">
+        <img
+          src={fady}
+          alt="MD"
+          className="h-[260px] sm:h-[320px] md:h-[500px] object-contain mx-auto"
+          loading="lazy"
+        />
+      </div>
+
+      {/* TEXT */}
+      <div className="w-full md:w-[65%] md:mr-auto text-center md:text-left px-2 sm:px-6 md:px-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+          {lang === "en" ? "Managing Director Welcome Message" : "رسالة ترحيب المدير العام"}
+        </h1>
+
+        <p className="text-sm sm:text-base md:text-lg leading-loose mb-4">
+          {lang === "en"
+            ? "As the Managing Director of Jovera Group, I am privileged to lead a team dedicated to excellence in real estate and financial, tourism, advertisement, and accountancy services. Every interaction is an opportunity for positive impact, guided by our commitment to integrity and innovation. Our team, a close-knit family, works tirelessly to provide tailored solutions, foster strong relationships, and create lasting value. Navigating the dynamic landscapes of real estate and finance, we remain confident in overcoming challenges and seizing opportunities."
+            : "بصفتي المدير العام لمجموعة جوميرا، يشرفني قيادة فريق مكرس للتميز في خدمات العقارات والمالية والسياحة والإعلان والمحاسبة. كل تفاعل يمثل فرصة لتحقيق تأثير إيجابي، مسترشدين بالتزامنا بالنزاهة والابتكار. يعمل فريقنا، كأسرة مترابطة، بلا كلل لتقديم حلول مخصصة، وتعزيز العلاقات القوية، وخلق قيمة مستدامة. في ظل التغيرات المستمرة في قطاع العقارات والمالية، نظل واثقين من التغلب على التحديات واغتنام الفرص."
+          }
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
 
 
-{/* ================= BOARD ================= */}
-<section className="py-20 px-6 bg-black">
-  <div className="px-4 md:px-16">
-    <h2 className="text-2xl sm:text-3xl mb-10 uppercase text-white">{t.boardTitle}</h2>
+    </div>
+     <div className=" bg-black px-4 sm:pt-20 pb-10" dir={lang === "en" ? "ltr" : "rtl"}>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+          {cards.map((card, index) => (
+          <div
+  key={index}
+  className="bg-[#1B1B1B] border border-yellow-600/30 rounded-lg px-8 py-12 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-900/20"
+>
+  <div className="flex flex-col items-center mb-6">
+    <div className="w-20 h-20 rounded-full border-2 border-[#D7AA47] flex items-center justify-center mb-4 hover:border-yellow-500 transition-colors">
+      <card.icon className="w-8 h-8 text-[#D7AA47]" strokeWidth={1.5} />
+    </div>
+    <h2 className="text-2xl font-bold text-[#D7AA47] text-center">
+      {card.title}
+    </h2>
+  </div>
+  <p className="text-gray-300 leading-relaxed text-center text-sm">
+    {card.description}
+  </p>
+</div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-      {directors.map((d, i) => (
-        <div
-          key={i}
-          className="relative border-[6px] border-[#D7AA47] rounded-xl overflow-hidden bg-[#111] flex flex-col items-center"
-        >
-          <div className="w-full pt-[130%] relative">
-            {/* Image fills the frame */}
-            <img
-              src={d.image}
-              alt={d.name}
-              className="absolute top-0 left-0 w-full h-full object-cover object-top rounded-t-xl"
-            />
-          </div>
-
-          <div className="text-center p-2">
-            <h4
-              className="font-extrabold italic text-lg md:text-xl"
-              style={{ WebkitTextStroke: "0.5px #facc15", color: "white" }}
-            >
-              {d.name}
-            </h4>
-            <p className="text-sm md:text-base font-semibold">{d.role}</p>
-          </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
-  </div>
-</section>
-
-
-    </div>
+   </div>
   );
 };
 

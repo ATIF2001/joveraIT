@@ -139,10 +139,17 @@ export default function Calculator({ lang }) {
 
   useEffect(() => {
     if (loanKey === "mortgage") {
-      setPrice(rules.price[0]);
-      setAdvance(rules.advance[0]);
-      setYears(rules.years[0]);
-    } else {
+  const initialPrice = rules.price[0];
+  const initialAdvance =
+    rules.advance[0] >= initialPrice
+      ? Math.floor(initialPrice * 0.8) // ensure real loan
+      : rules.advance[0];
+
+  setPrice(initialPrice);
+  setAdvance(initialAdvance);
+  setYears(rules.years[0]);
+}
+ else {
       setAmount(rules.amount[0]);
       setPeriod(rules.period[0]);
       setInterest(rules.interest[0]);
@@ -289,10 +296,24 @@ const Slider = ({ label, value, set, step = 1, type, range: [min, max], t }) => 
     }
   };
 
+  // Handle direct input change
+  const handleInputChange = (e) => {
+    let val = e.target.value;
+
+    // Remove currency/percentage formatting for amount/interest
+    if (type === "amount") val = val.replace(/\D/g, "");
+    if (type === "interest") val = parseFloat(val);
+
+    // Clamp value to min/max
+    val = Math.max(min, Math.min(max, Number(val)));
+
+    set(val);
+  };
+
   return (
     <div className="flex flex-col sm:flex-row items-center w-full gap-4">
       <div className="flex flex-col space-y-2 flex-1 w-full">
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between text-md">
           <span>{label}</span>
         </div>
         <input
@@ -302,7 +323,7 @@ const Slider = ({ label, value, set, step = 1, type, range: [min, max], t }) => 
           step={step}
           value={value}
           onChange={(e) => set(Number(e.target.value))}
-          className="w-full h-3 accent-[#D7AA47] rounded-lg"
+          className="w-full accent-[#D7AA47] rounded-lg"
         />
         <div className="flex justify-between text-xs text-white">
           <span>{format(min)}</span>
@@ -310,15 +331,28 @@ const Slider = ({ label, value, set, step = 1, type, range: [min, max], t }) => 
         </div>
       </div>
 
+      {/* Editable input field instead of static value */}
       <fieldset className="border border-gray-400 rounded px-3 py-2 min-w-[120px] sm:min-w-[150px] text-left mt-2 sm:mt-0">
         <legend className="px-1 text-sm font-medium text-white">
           {legendType[type]}
         </legend>
-        <div className="font-medium">{displayValue()}</div>
+        <input
+          type="text"
+          value={
+            type === "amount"
+              ? format(value)
+              : type === "interest"
+              ? value.toFixed(1)
+              : value
+          }
+          onChange={handleInputChange}
+          className="w-full bg-transparent text-white font-medium outline-none"
+        />
       </fieldset>
     </div>
   );
 };
+
 
 const Stat = ({ label, value }) => (
   <div className="bg-[#D7AA47] text-white text-center rounded-lg p-4">

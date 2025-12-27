@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import aboutImg from "../assets/about-us/about-us-img.jpg";
 
 import ScrollAnimation from '../components/scrollAnimation';
 import { Menu, X, Facebook, Instagram, Twitter, Youtube, Phone, Mail, MapPin} from 'lucide-react';
@@ -146,26 +147,28 @@ const translatedServices = [
 const directors_en = [
   { name: "RAMY GERGUIS", role: "CEO", image: ramyGerguis },
   { name: "FADY GERGUIS", role: "MANAGING DIRECTOR", image: fadyGerguis },
-  { name: "KAMAL UDDIN", role: "IT MANAGER", image: kamalBadri },
+  { name: "OSMAN MOHAMED", role: "BUSSINESSMEN SERVICES MANAGER", image: osmanMohammad },
   { name: "MOHAMED GAMAL", role: "REAL ESTATE MANAGER", image: mohammadGamal },
+  { name: "KAMAL UDDIN", role: "IT MANAGER", image: kamalBadri },
   { name: "Wadea Gerguis", role: "MORTGAGE MANAGER", image: wadeaGerguis },
   { name: "Gamil Uddin", role: "BUSSINESS LOAN MANAGER", image: gomilUddin },
-  { name: "ABANOUB UDDIN", role: "MARKETING MANAGER", image: abanoubUddin },
+ // { name: "ABANOUB UDDIN", role: "MARKETING MANAGER", image: abanoubUddin },
   { name: "HOSSAM MOHAMED", role: "TOURISM MANAGER", image: hossamMohammad },
-  { name: "OSMAN MOHAMED", role: "BUSSINESSMEN SERVICES MANAGER", image: osmanMohammad },
+ 
 ];
 
 // Arabic version
 const directors_ar = [
   { name: "رامي جرجس", role: "المدير التنفيذي", image: ramyGerguis },
   { name: "فادي جرجس", role: "المدير العام", image: fadyGerguis },
-  { name: "كمال الدين", role: "مدير تكنولوجيا المعلومات", image: kamalBadri },
+  { name: "عثمان محمد", role: "مدير خدمات رجال الأعمال", image: osmanMohammad },
   { name: "محمد جمال", role: "مدير العقارات", image: mohammadGamal },
+  { name: "كمال الدين", role: "مدير تكنولوجيا المعلومات", image: kamalBadri },
   { name: "وديع جرجس", role: "مدير القروض العقارية", image: wadeaGerguis },
   { name: "جميل الدين", role: "مدير القروض التجارية", image: gomilUddin },
-  { name: "أبانوب الدين", role: "مدير التسويق", image: abanoubUddin },
+  //{ name: "أبانوب الدين", role: "مدير التسويق", image: abanoubUddin },
   { name: "حسام محمد", role: "مدير السياحة", image: hossamMohammad },
-  { name: "عثمان محمد", role: "مدير خدمات رجال الأعمال", image: osmanMohammad },
+ 
 ];
 
 // Choose array based on language
@@ -294,7 +297,7 @@ const options = [
     <div className="bg-black text-white min-h-screen">
 
 {/* Hero Section with Video Background */}
-<section className="relative h-[900px] flex items-center">
+<section className="relative h-[700px] flex items-center">
   <video
     className="absolute inset-0 w-full h-full object-cover z-0"
     src="/Hero-Video.mp4"
@@ -358,7 +361,7 @@ const options = [
               bg-[#1B1B1B] text-white h-full flex flex-col justify-between"
           >
             {/* Icon */}
-            <div className="w-16 h-16 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-b from-[#D7AA47] to-[#715925]  hover:from-white/20 hover:to-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
               {service.icon}
             </div>
 
@@ -400,8 +403,8 @@ const options = [
         {lang === "en" ? (
           <>
             <div className="text-left mb-8">
-              <div className="text-5xl text-yellow-600 mb-2">13 Years</div>
-              <div className="text-5xl text-yellow-600 mb-2">Experience</div>
+              <div className="text-5xl text-[#D7AA47]  mb-2">13 Years</div>
+              <div className="text-5xl  text-[#D7AA47]   mb-2">Experience</div>
             </div>
 
             <p className="text-left text-gray-300 mb-4 leading-relaxed">
@@ -447,9 +450,31 @@ const options = [
       </div>
 
       {/* Contact Form */}
-      <div className={lang !== "en" ? "lg:col-start-1" : ""}>
+      {/* <div className={lang !== "en" ? "lg:col-start-1" : ""}>
         <ContactForm lang={lang} options={options}/>
-      </div>
+      </div> */}
+      
+{/* Image */}
+{/* Image */}
+<div className="flex items-end justify-center mt-8 lg:mt-0">
+  <img
+    src={aboutImg}
+    alt="Our Story"
+    className="
+      rounded-xl
+      ring-4 ring-white
+      shadow-sm
+      w-[200px] sm:w-[230px] md:w-[260px] lg:w-[260px]
+      h-[240px] sm:h-[280px] md:h-[320px] lg:h-[320px]
+      object-cover
+      bg-black
+    "
+  />
+</div>
+
+
+
+
     </div>
   </div>
 </section>

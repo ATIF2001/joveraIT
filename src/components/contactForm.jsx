@@ -180,10 +180,10 @@ export default function ContactForm({ lang, options}) {
   name="service"
   value={formData.service}
   onChange={handleChange}
-  className="w-full p-3 rounded-xl bg-[#F4D98F] text-white text-sm appearance-none pr-10 cursor-pointer"
+  className="w-full p-3 rounded-xl bg-[#F4D98F]  text-sm appearance-none pr-10 text-black cursor-pointer"
   required
 >
-  <option value="" disabled className="text-white">
+  <option value="" >
     {lang === "en" ? "Select a service" : "اختر الخدمة"}
   </option>
 
@@ -196,7 +196,7 @@ export default function ContactForm({ lang, options}) {
 
 
   {/* Arrow icon */}
-  <span className="absolute top-1/2 right-3 -translate-y-1/2 pointer-events-none text-white">
+  <span className="absolute top-1/2 right-3 -translate-y-1/2 pointer-events-none ">
     ▼
   </span>
 </div>

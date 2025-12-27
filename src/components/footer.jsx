@@ -11,6 +11,7 @@ function Footer({ lang }) {
       portfolio: "Portfolio",
       Media: "Media Hub",
       Contact: "Contact us",
+      Careers:"Careers",
       services: "Services",
       servicesList: [
         { name: "Financial Services", link: "/Finance" },
@@ -32,6 +33,7 @@ function Footer({ lang }) {
       portfolio: "أعمالنا",
       Media: "محور وسائل الإعلام",
       Contact: "اتصل بنا",
+      Careers:"وظائف",
       services: "خدمات",
       servicesList: [
         { name: "الخدمات المالية", link: "/Finance" },
@@ -52,7 +54,7 @@ function Footer({ lang }) {
   const text = lang === "en" ? t.en : t.ar;
 
   return (
-    <footer className="bg-[#1A1A1A] text-white">
+    <footer className=" bg-[#1A1A1A] text-white">
       {/* Top Section */}
       <div className="mx-auto px-5 py-10 md:px-[50px]">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left">
@@ -93,6 +95,12 @@ function Footer({ lang }) {
               <li>
                 <Link to="/contact-us" className="hover:text-yellow-600 cursor-pointer">
                   {text.Contact}
+                </Link>
+                
+              </li>
+              <li>
+                <Link to="/Career" className="hover:text-yellow-600 cursor-pointer">
+                  {text.Careers}
                 </Link>
               </li>
             </ul>
