@@ -9,7 +9,7 @@ import { Phone, Mail, MessageCircle } from "lucide-react";
 import { Home, Briefcase, CreditCard } from "lucide-react";
 import HeroImage from "../../assets/landing-pages/Financial-Services/Hero-img.png";
 import ScrollAnimation from "../../components/scrollAnimation";
-
+import { Helmet } from 'react-helmet';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -259,7 +259,42 @@ const options = [
   const t = content[isArabic ? 'ar' : 'en'];
 
   return (
- 
+ <>
+      <Helmet>
+        <title>
+          {isArabic
+            ? "الخدمات المالية - مجموعة جوفيرا"
+            : "Financial Services - Jovera Group"}
+        </title>
+        <meta name="description" content={content.description} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.description} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content={HeroImage}
+        />
+        <meta
+          property="og:url"
+          content="https://www.jovera.ae/Finance"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={content.title} />
+        <meta name="twitter:description" content={content.description} />
+       
+      </Helmet>
+
+
+
+
+
+<main>
+
+
   <div className={`min-h-screen bg-black text-white ${isArabic ? 'rtl' : 'ltr'}`}>
       {/* Hero Section */}
       <ScrollAnimation>
@@ -481,6 +516,8 @@ const options = [
       </section>
    
     </div>
+    </main>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ import FeaturedCategories from "../../components/featured-categories";
 import HeroImage from "../../assets/landing-pages/Real-Estate/Hero-img.png";
 import PropertiesSection from "../../components/PropertiesSection";
 import ScrollAnimation from "../../components/scrollAnimation";
-
+import { Helmet } from "react-helmet";
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
@@ -88,6 +88,43 @@ const options = [
   /* ===================== RENDER ===================== */
 
   return (
+<>
+<Helmet>
+        <title>
+          {isArabic
+            ? "العقارات - مجموعة جوفيرا"
+            : "Real Estate - Jovera Group"}
+        </title>
+        <meta name="description" content={content.description} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.description} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content={HeroImage}
+        />
+        <meta
+          property="og:url"
+          content="https://www.jovera.ae/RealEstate"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={content.title} />
+        <meta name="twitter:description" content={content.description} />
+        <meta
+          name="twitter:image"
+          content={HeroImage}
+        />
+      </Helmet>
+
+
+
+
+
+<main>
     <div
       
       className="min-h-screen bg-black text-white"
@@ -240,6 +277,8 @@ const options = [
             </section>
         
     </div>
+    </main>
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ import { ContactPill } from "../../components/contact-pill";
 import FeaturedCategories from "../../components/featured-categories";
 import HeroImage from "../../assets/landing-pages/Business-Services/HeroImg.png";
 import PropertiesSection from "../../components/PropertiesSection";
+import { Helmet } from "react-helmet";
 import ServiceCard from "../../components/ServiceCard";
 import PricingCard from "../../components/pricing-card";
 import ScrollAnimation from "../../components/scrollAnimation";
@@ -378,6 +379,28 @@ const options = [
   /* ===================== RENDER ===================== */
 
   return (
+    <>
+    <Helmet>
+        <title>
+          {lang === "en"
+            ? "Business Services - Jovera Group"
+            : "خدمات رجال الأعمال - مجموعة جوفيرا"}
+        </title>
+        <meta name="description" content={content.description} />
+        {/* Open Graph */}
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.description} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content={HeroImage}
+        />
+        <meta
+          property="og:url"
+          content="https://www.jovera.ae/Business"
+        />
+      </Helmet>
+      <main>
     <div
       
       className="min-h-screen bg-black text-white"
@@ -635,6 +658,8 @@ const options = [
         </div>
       </section>
     </div>
+</main>
+    </>
   );
 };
 

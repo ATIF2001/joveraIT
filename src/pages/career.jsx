@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useFetchOpenJobs from "../Apis/fetchJobOpenings";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
 const Careers = ({ lang }) => {
@@ -48,6 +49,27 @@ const Careers = ({ lang }) => {
   }
 
   return (
+    <>
+<Helmet>
+        <title>{lang === "en" ? "Careers - Jovera Group" : "الوظائف - مجموعة جوفيرا"}</title>
+        <meta
+          name="description"
+          content={lang === "en"
+            ? "Explore career opportunities at Jovera Group. Join a dynamic team and grow your professional journey in real estate, finance, IT, tourism, and more."
+            : "استكشف فرص العمل في مجموعة جوفيرا. انضم إلى فريق ديناميكي وطور مسيرتك المهنية في العقارات، والتمويل، وتكنولوجيا المعلومات، والسياحة، وأكثر من ذلك."}
+        />
+        {/* Open Graph */}
+        <meta property="og:title" content="Careers - Jovera Group" />
+        <meta
+          property="og:description"
+          content={lang === "en"
+            ? "Join Jovera Group and be part of a professional team driving innovation in real estate, finance, IT, tourism, and business services."
+            : "انضم إلى مجموعة جوفيرا وكن جزءًا من فريق محترف يقود الابتكار في العقارات والتمويل وتكنولوجيا المعلومات والسياحة وخدمات الأعمال."}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.jovera.ae/Career" />
+      </Helmet>
+<main>
     <div className="min-h-screen bg-black px-6 md:px-16 pt-[200px] pb-[200px]
 ">
       {/* Total Jobs */}
@@ -116,6 +138,8 @@ const Careers = ({ lang }) => {
         </div>
       )}
     </div>
+    </main>
+    </>
   );
 };
 

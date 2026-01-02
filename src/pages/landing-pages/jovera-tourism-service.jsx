@@ -15,6 +15,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 
 
+import { Helmet } from "react-helmet";
 
 
 //Services
@@ -415,6 +416,32 @@ const content = {
   /* ===================== RENDER ===================== */
 
   return (
+    <>
+<Helmet>
+        <title>
+          {isArabic
+            ? "السياحة - مجموعة جوفيرا"
+            : "Tourism - Jovera Group"}
+        </title>
+        <meta name="description" content={content.description} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={content.image} />
+        <meta property="og:url" content={content.url} />
+
+        {/* Twitter Card */}
+
+        <meta name="twitter:title" content={content.title} />
+        <meta name="twitter:description" content={content.description} />
+        <meta name="twitter:image" content={HeroImage} />
+      </Helmet>
+
+
+<main>
+
     <div
       
       className="min-h-screen bg-black text-white"
@@ -714,6 +741,8 @@ const content = {
           </section>
        
     </div>
+    </main>
+    </>
   );
 };
 

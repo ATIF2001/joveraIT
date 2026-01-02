@@ -6,7 +6,7 @@ import IT from "../assets/portfolio-main/IT.jpg";
 import Travel from "../assets/portfolio-main/travel.jpg";
 import Bussiness from "../assets/portfolio-main/business-service.jpg";
 import Accounting from "../assets/portfolio-main/accounting-auditing.png";
-
+import { Helmet } from "react-helmet";
 // Importing Logos
 import Financelogo from "../assets/portfolio-logos/financial-services.png";
 import RealEstatelogo from "../assets/portfolio-logos/real-estate.png";
@@ -110,6 +110,39 @@ const servicesData = [
 
 export default function ServicesSection({ lang }) {
   return (
+    <>
+      <Helmet>
+        <title>
+          {lang === "en"
+            ? "Our Services - Jovera Group Portfolio"
+            : "خدماتنا - محفظة مجموعة جوفيرا"}
+        </title>
+        <meta
+          name="description"
+          content={
+            lang === "en"
+              ? "Explore Jovera Group's portfolio of services including finance, real estate, IT, tourism, business solutions, and accountancy. Providing innovative solutions and exceptional client value since 2013 in the UAE."
+              : "اكتشف محفظة خدمات مجموعة جوفيرا بما في ذلك التمويل، العقارات، تكنولوجيا المعلومات، السياحة، حلول الأعمال، والمحاسبة. تقديم حلول مبتكرة وقيمة استثنائية للعملاء منذ عام 2013 في الإمارات."
+          }
+        />
+        {/* Open Graph */}
+        <meta property="og:title" content="Jovera Group Services Portfolio" />
+        <meta
+          property="og:description"
+          content={
+            lang === "en"
+              ? "Discover Jovera Group services: finance, real estate, IT, tourism, business solutions, and accounting. We deliver innovation and excellence to our clients in UAE."
+              : "اكتشف خدمات مجموعة جوفيرا: التمويل، العقارات، تكنولوجيا المعلومات، السياحة، حلول الأعمال، والمحاسبة. نحن نقدم الابتكار والتميز لعملائنا في الإمارات."
+          }
+        />
+        <meta property="og:type" content="website" />
+        
+        <meta property="og:url" content="https://www.jovera.ae/portfolio" />
+      </Helmet>
+
+
+
+<main>
     <section className="py-32 px-4 sm:px-10 bg-black text-white">
 
     
@@ -167,7 +200,7 @@ export default function ServicesSection({ lang }) {
               <img
                 src={service.logo}
                 alt={service.title_en}
-                className="w-44 sm:w-44 md:w-52 mx-auto md:mx-0"
+               className={`w-44 sm:w-44 md:w-52 mx-auto md:mx-0 ${lang !== "en" ? "md:ml-auto" : ""}`}
                 loading="lazy"
               />
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold">
@@ -178,7 +211,7 @@ export default function ServicesSection({ lang }) {
               </p>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 mt-4">
+              <div className={`flex flex-col sm:flex-row gap-3 mt-4 ${lang !== "en" ? "sm:justify-end" : ""}`}>
                 <PrimaryButton2
                   children={lang === "en" ? service.cta_en : service.cta_ar}
                   link={service.website}
@@ -193,5 +226,7 @@ export default function ServicesSection({ lang }) {
         ))}
       </div>
     </section>
+    </main>
+    </>
   );
 }

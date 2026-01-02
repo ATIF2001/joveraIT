@@ -36,7 +36,7 @@ export default function NewsDetail({ lang }) {
             {display(article.title)}
           </h1>
         </div>
-      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 sm:py-20 md:py-20">
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16  pb-20 sm:py-20 md:py-20">
 
         {/* Article Header */}
        

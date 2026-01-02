@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import useFetchNews from '../Apis/fetchNews';
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import useFetchNews from "../Apis/fetchNews";
 import { useNavigate } from "react-router-dom";
 
 export default function MediaHub({ lang }) {
@@ -12,14 +12,14 @@ export default function MediaHub({ lang }) {
   const {
     allNews: featuredNews = [],
     loading: featuredLoading,
-    error: featuredError
+    error: featuredError,
   } = useFetchNews({ page: 1, lang, limit: 3, featured: true });
 
   /* ================= NORMAL NEWS ================= */
   const {
     allNews: normalNews = [],
     loading: normalLoading,
-    error: normalError
+    error: normalError,
   } = useFetchNews({ page: currentPage, lang, limit: 12, featured: false });
 
   const isLoading = featuredLoading || normalLoading;
@@ -34,29 +34,40 @@ export default function MediaHub({ lang }) {
   useEffect(() => {
     if (heroSlides.length > 1) {
       const timer = setInterval(() => {
-        setCurrentSlide(prev => (prev + 1) % heroSlides.length);
+        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
       }, 5000);
       return () => clearInterval(timer);
     }
   }, [heroSlides.length]);
 
-  const nextSlide = (e) => { e.stopPropagation(); setCurrentSlide(prev => (prev + 1) % heroSlides.length); };
-  const prevSlide = (e) => { e.stopPropagation(); setCurrentSlide(prev => (prev - 1 + heroSlides.length) % heroSlides.length); };
+  const nextSlide = (e) => {
+    e.stopPropagation();
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+  const prevSlide = (e) => {
+    e.stopPropagation();
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
   const goToSlide = (index) => setCurrentSlide(index);
-  const goToPage = (page) => { setCurrentPage(page); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+  const goToPage = (page) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const generatePagination = () => {
     const pages = [];
     const maxVisiblePages = 4;
+
     if (totalPages <= maxVisiblePages + 2) {
       for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
       pages.push(1);
-      if (currentPage > 3) pages.push('...');
+      if (currentPage > 3) pages.push("...");
       const start = Math.max(2, currentPage - 1);
       const end = Math.min(totalPages - 1, currentPage + 1);
       for (let i = start; i <= end; i++) pages.push(i);
-      if (currentPage < totalPages - 2) pages.push('...');
+      if (currentPage < totalPages - 2) pages.push("...");
       pages.push(totalPages);
     }
     return pages;
@@ -77,7 +88,7 @@ export default function MediaHub({ lang }) {
   }
 
   return (
-    <div className="bg-[#111111] min-h-screen text-white">
+    <div className="bg-[#111111] min-h-screen text-white" dir={lang === "en" ? "ltr" : "rtl"}>
       <div className="max-w-7xl mx-auto px-10 sm:px-6 lg:px-20 py-16 md:py-24">
 
         {/* Header */}
@@ -87,14 +98,22 @@ export default function MediaHub({ lang }) {
         </div>
 
         {/* Error */}
-        {hasError && <div className="text-center text-red-400 mb-12">Failed to load news. Please try again later.</div>}
+        {hasError && (
+          <div className="text-center text-red-400 mb-12">
+            Failed to load news. Please try again later.
+          </div>
+        )}
 
         {/* Hero Slider */}
         {heroSlides.length > 0 && (
           <div className="relative mb-20">
             <div
               className="relative overflow-hidden rounded-xl cursor-pointer"
-              onClick={() => navigate(`/news/${heroSlides[currentSlide]._id}`, { state: { article: heroSlides[currentSlide] } })}
+              onClick={() =>
+                navigate(`/news/${heroSlides[currentSlide]._id}`, {
+                  state: { article: heroSlides[currentSlide] },
+                })
+              }
             >
               <div className="aspect-[16/9] md:aspect-[21/9] relative">
                 <img
@@ -108,11 +127,17 @@ export default function MediaHub({ lang }) {
                 <div className="absolute bottom-0 w-full px-4 sm:px-6 pb-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent text-center">
                   <h3
                     className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 line-clamp-2"
-                    style={{ background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+                    style={{
+                      background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
                   >
                     {heroSlides[currentSlide]?.title || "N/A"}
                   </h3>
-                  <p className="text-gray-300 text-sm sm:text-base line-clamp-2">{heroSlides[currentSlide]?.description || "N/A"}</p>
+                  <p className="text-gray-300 text-sm sm:text-base line-clamp-2">
+                    {heroSlides[currentSlide]?.description || "N/A"}
+                  </p>
                 </div>
 
                 {/* Navigation Buttons */}
@@ -120,13 +145,13 @@ export default function MediaHub({ lang }) {
                   <>
                     <button
                       onClick={prevSlide}
-                      className="absolute inset-y-0 left-2 sm:left-4 my-auto w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black/50 hover:scale-110 transition-transform"
+                      className={`absolute inset-y-0 ${lang === "en" ? "left-2 sm:left-4" : "right-2 sm:right-4"} my-auto w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black/50 hover:scale-110 transition-transform`}
                     >
                       <ChevronLeft className="w-4 sm:w-6 h-4 sm:h-6 text-white" />
                     </button>
                     <button
                       onClick={nextSlide}
-                      className="absolute inset-y-0 right-2 sm:right-4 my-auto w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black/50 hover:scale-110 transition-transform"
+                      className={`absolute inset-y-0 ${lang === "en" ? "right-2 sm:right-4" : "left-2 sm:left-4"} my-auto w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black/50 hover:scale-110 transition-transform`}
                     >
                       <ChevronRight className="w-4 sm:w-6 h-4 sm:h-6 text-white" />
                     </button>
@@ -141,7 +166,7 @@ export default function MediaHub({ lang }) {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`rounded-full ${currentSlide === index ? 'w-3 h-3' : 'bg-gray-600 w-2.5 h-2.5'}`}
+                  className={`rounded-full ${currentSlide === index ? "w-3 h-3" : "bg-gray-600 w-2.5 h-2.5"}`}
                   style={currentSlide === index ? { background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)" } : {}}
                 />
               ))}
@@ -163,35 +188,39 @@ export default function MediaHub({ lang }) {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-4 line-clamp-1">{article?.title || "N/A"}</h3>
-                  <p className="text-gray-400 mb-6 line-clamp-2">{article?.description || "N/A"}</p>
-                  <button
-                    onClick={() => navigate(`/news/${article._id}`, { state: { article } })}
-                    className="px-8 py-2.5 rounded-lg font-semibold text-white hover:scale-105"
-                    style={{ background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)" }}
-                  >
-                    Read more
-                  </button>
+                  <p className="text-gray-400 mb-6 line-clamp-2 h-[50px]">{article?.description || "N/A"}</p>
+                 <button
+  onClick={() => navigate(`/news/${article._id}`, { state: { article } })}
+  className={`px-8 py-2.5 rounded-lg font-semibold text-white hover:scale-105 self-${lang === "en" ? "start" : "end"}`}
+  style={{ background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)" }}
+>
+  {lang === "en" ? "Read more" : "اقرأ المزيد"}
+</button>
+
                 </div>
               </div>
             ))}
           </div>
         )}
 
+
         {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-2">
-            <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1} className="p-2 disabled:opacity-30"><ChevronLeft /></button>
-            {generatePagination().map((page, i) => page === '...' ? <span key={i}>...</span> : (
-              <button
-                key={page}
-                onClick={() => goToPage(page)}
-                className={`w-10 h-10 rounded ${currentPage === page ? 'text-white' : 'bg-[#1a1a1a]'}`}
-                style={currentPage === page ? { background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)" } : {}}
-              >
-                {page}
-              </button>
-            ))}
-            <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages} className="p-2 disabled:opacity-30"><ChevronRight /></button>
+            {(lang === "en" ? generatePagination() : [...generatePagination()].reverse()).map((page, i) =>
+              page === "..." ? (
+                <span key={i}>...</span>
+              ) : (
+                <button
+                  key={page}
+                  onClick={() => goToPage(page)}
+                  className={`w-10 h-10 rounded ${currentPage === page ? "text-white" : "bg-[#1a1a1a]"}`}
+                  style={currentPage === page ? { background: "linear-gradient(90deg, #D7AA47 0%, #715925 100%)" } : {}}
+                >
+                  {page}
+                </button>
+              )
+            )}
           </div>
         )}
       </div>

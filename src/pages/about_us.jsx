@@ -1,6 +1,6 @@
 import ramy from "../assets/about-us/ramy.png";
 import background from "../assets/about-us/bg.png";
-
+import { Helmet } from "react-helmet";
 import fady from "../assets/about-us/fady.png";
 import backgroundfady from "../assets/about-us/bg-2.png";
 
@@ -39,7 +39,25 @@ const AboutUs = ({lang}) => {
 
   return (
      <div className="">
+      <Helmet>
+        <title>About Us - Jovera Group | Real Estate & Financial Services</title>
+        <meta
+          name="description"
+          content="Learn about Jovera Group, established in 2013 in the UAE, providing exceptional services in real estate, financial services, tourism, advertisement, and accountancy. Our mission, vision, and commitment to excellence guide every client interaction."
+        />
+        {/* Optional: Open Graph for social media sharing */}
+        <meta property="og:title" content="About Us - Jovera Group" />
+        <meta
+          property="og:description"
+          content="Discover Jovera Group's journey since 2013, offering innovative solutions in real estate, finance, tourism, advertisement, and accountancy, with integrity and excellence."
+        />
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:image" content="/path-to-your-og-image.jpg" /> */}
+        <meta property="og:url" content="https://www.jovera.ae/about-us" />
+      </Helmet>
 
+
+      <main>
     <div className="relative bg-black text-white min-h-screen overflow-hidden flex items-center justify-center pt-32 ">
 
      {/* Top Right Thumb */}
@@ -82,7 +100,7 @@ const AboutUs = ({lang}) => {
       </div>
 
       {/* TEXT */}
-      <div className="w-full md:w-[65%] md:ml-auto text-center md:text-left px-2 sm:px-6 md:px-10">
+      <div className={`w-full md:w-[65%] md:ml-auto ${lang ==="en" ? "text-left":"text-right"}  px-2 sm:px-6 md:px-10`}>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
           {lang === "en" ? "CEO Welcome Message" : "رسالة ترحيب المدير التنفيذي"}
         </h1>
@@ -90,7 +108,7 @@ const AboutUs = ({lang}) => {
         <p className="text-sm sm:text-base md:text-lg leading-loose mb-4">
           {lang === "en"
             ? "As the CEO of Jovera Group, I'm thrilled to share the success of our journey in the UAE's real estate and financial, tourism, advertisement and accountancy sector. Our commitment to excellence and innovation has been the driving force behind our remarkable growth. We understand that our success is intertwined with that of our clients and partners, and we've built a foundation rooted in dedication and expertise. In the ever-changing landscapes of real estate and finance, we pride ourselves on being a reliable, innovative, and integrity-driven beacon. Our professional team brings experience and fresh perspectives to provide tailored solutions that truly make a difference. Looking ahead, we are excited about the opportunities that await us. Our commitment is to enhance services, expand reach, and foster even stronger relationships with all of you."
-            : "بصفتي المدير التنفيذي لمجموعة جوميرا، يسعدني مشاركة نجاح رحلتنا في قطاع العقارات والخدمات المالية والسياحة والإعلان والمحاسبة في الإمارات. التزامنا بالتميز والابتكار هو القوة الدافعة وراء نمونا المميز. نحن نفهم أن نجاحنا مرتبط بنجاح عملائنا وشركائنا، وقد بنينا أساساً قائماً على التفاني والخبرة. في ظل التغيرات المستمرة في قطاع العقارات والمالية، نفخر بأننا مرجع موثوق ومبتكر ويتمتع بالنزاهة. يجلب فريقنا المحترف خبرة ومنظوراً جديداً لتقديم حلول مخصصة تحدث فرقاً حقيقياً. نتطلع إلى الفرص القادمة، والتزامنا هو تحسين الخدمات، وتوسيع نطاق الوصول، وتعزيز العلاقات معكم جميعاً."
+            : "بصفتي الرئيس التنفيذي لمجموعة جوفيرا، يسعدني أن أشارككم نجاح مسيرتنا في قطاع العقارات في دولة الإمارات العربية المتحدة، وقطاعات التمويل والسياحة والإعلان والمحاسبة. لقد كان التزامنا بالتميز والابتكار القوة الدافعة وراء نمونا الملحوظ، وندرك أن نجاحنا مرتبط بنجاح عملائنا وشركائنا، وقد بنينا أساسًا متينًا قائمًا على التفاني والخبرة. في ظل التغيرات المستمرة في قطاعي العقارات والتمويل، نفخر بكوننا منارة موثوقة ومبتكرة وقائمة على النزاهة، ويمتلك فريقنا المحترف الخبرة والرؤى الجديدة لتقديم حلول مصممة خصيصًا تُحدث فرقًا حقيقيًا. نتطلع بحماس إلى الفرص التي تنتظرنا، ونلتزم بتحسين خدماتنا، وتوسيع نطاق وصولنا، وتعزيز علاقاتنا معكم جميعًا"
           }
         </p>
       </div>
@@ -121,7 +139,7 @@ const AboutUs = ({lang}) => {
       </div>
 
       {/* TEXT */}
-      <div className="w-full md:w-[65%] md:mr-auto text-center md:text-left px-2 sm:px-6 md:px-10">
+      <div className={`w-full md:w-[65%] md:mr-auto ${lang ==="en" ? "text-left":"text-right"}  px-2 sm:px-6 md:px-10`}>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
           {lang === "en" ? "Managing Director Welcome Message" : "رسالة ترحيب المدير العام"}
         </h1>
@@ -129,7 +147,7 @@ const AboutUs = ({lang}) => {
         <p className="text-sm sm:text-base md:text-lg leading-loose mb-4">
           {lang === "en"
             ? "As the Managing Director of Jovera Group, I am privileged to lead a team dedicated to excellence in real estate and financial, tourism, advertisement, and accountancy services. Every interaction is an opportunity for positive impact, guided by our commitment to integrity and innovation. Our team, a close-knit family, works tirelessly to provide tailored solutions, foster strong relationships, and create lasting value. Navigating the dynamic landscapes of real estate and finance, we remain confident in overcoming challenges and seizing opportunities."
-            : "بصفتي المدير العام لمجموعة جوميرا، يشرفني قيادة فريق مكرس للتميز في خدمات العقارات والمالية والسياحة والإعلان والمحاسبة. كل تفاعل يمثل فرصة لتحقيق تأثير إيجابي، مسترشدين بالتزامنا بالنزاهة والابتكار. يعمل فريقنا، كأسرة مترابطة، بلا كلل لتقديم حلول مخصصة، وتعزيز العلاقات القوية، وخلق قيمة مستدامة. في ظل التغيرات المستمرة في قطاع العقارات والمالية، نظل واثقين من التغلب على التحديات واغتنام الفرص."
+            : "بصفتي المدير العام لمجموعة جوفيرا، أتشرف بقيادة فريق ملتزم بالتميز في خدمات العقارات والخدمات المالية والسياحة والإعلان والمحاسبة. كل تفاعل يمثل فرصة لإحداث تأثير إيجابي، مسترشدين بالتزامنا بالنزاهة والابتكار. فريقنا، الذي يُشكل عائلة مترابطة، يعمل بلا كلل لتقديم حلول مصممة خصيصًا، وتعزيز علاقات متينة، وخلق قيمة مستدامة. في خضمّ المشهد المتغير باستمرار لقطاعي العقارات والتمويل، نبقى على ثقة تامة بقدرتنا على تجاوز التحديات واغتنام الفرص"
           }
         </p>
       </div>
@@ -167,6 +185,7 @@ const AboutUs = ({lang}) => {
         </div>
       </div>
     </div>
+    </main>
    </div>
   );
 };

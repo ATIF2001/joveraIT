@@ -13,7 +13,7 @@ import Projects from "../../assets/landing-pages/IT/phone-pic.png";
 import PlayStore from "../../assets/landing-pages/IT/Mobile-play-store-badge.png";
 import AppStore from "../../assets/landing-pages/IT/Mobile-app-store-badge.png";
 import ScrollAnimation from "../../components/scrollAnimation";
-
+import { Helmet } from "react-helmet";
 import { Shield, Monitor, Wrench, TrendingUp } from 'lucide-react';
 
 const ITLandingPage = ({lang}) => {
@@ -159,6 +159,42 @@ const options = [
   const t = content[isArabic ? 'ar' : 'en'];
 
   return (
+<>
+
+<Helmet>
+        <title>
+          {isArabic
+            ? "خدمات تكنولوجيا المعلومات - مجموعة جوفيرا"
+            : "IT Services - Jovera Group"}
+        </title>
+        <meta name="description" content={content.description} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.description} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="/path-to-it-services-og-image.jpg"
+        />
+        <meta
+          property="og:url"
+          content="https://www.jovera.ae/IT"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={content.title} />
+        <meta name="twitter:description" content={content.description} />
+        <meta
+          name="twitter:image"
+          content={HeroImage}
+        />
+      </Helmet>
+
+<main>
+
+
     <div className={`min-h-screen bg-black text-white ${isArabic ? 'rtl' : 'ltr'}`}>
       {/* Hero Section */}
       <ScrollAnimation>
@@ -531,6 +567,8 @@ const options = [
       </section>
 
     </div>
+    </main>
+    </>
   );
 };
 

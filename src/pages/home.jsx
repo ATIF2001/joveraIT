@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import aboutImg from "../assets/about-us/about-us-img.jpg";
-
+import { Helmet } from "react-helmet";
 import ScrollAnimation from '../components/scrollAnimation';
 import { Menu, X, Facebook, Instagram, Twitter, Youtube, Phone, Mail, MapPin} from 'lucide-react';
 import { CreditCard, Home, ServerCog, Plane, FileText, Briefcase } from 'lucide-react';
@@ -151,7 +151,7 @@ const directors_en = [
   { name: "MOHAMED GAMAL", role: "REAL ESTATE MANAGER", image: mohammadGamal },
   { name: "KAMAL UDDIN", role: "IT MANAGER", image: kamalBadri },
   { name: "Wadea Gerguis", role: "MORTGAGE MANAGER", image: wadeaGerguis },
-  { name: "Gamil Uddin", role: "BUSSINESS LOAN MANAGER", image: gomilUddin },
+  { name: "Gamil", role: "BUSSINESS LOAN MANAGER", image: gomilUddin },
  // { name: "ABANOUB UDDIN", role: "MARKETING MANAGER", image: abanoubUddin },
   { name: "HOSSAM MOHAMED", role: "TOURISM MANAGER", image: hossamMohammad },
  
@@ -165,7 +165,7 @@ const directors_ar = [
   { name: "محمد جمال", role: "مدير العقارات", image: mohammadGamal },
   { name: "كمال الدين", role: "مدير تكنولوجيا المعلومات", image: kamalBadri },
   { name: "وديع جرجس", role: "مدير القروض العقارية", image: wadeaGerguis },
-  { name: "جميل الدين", role: "مدير القروض التجارية", image: gomilUddin },
+  { name: "جميل ", role: "مدير القروض التجارية", image: gomilUddin },
   //{ name: "أبانوب الدين", role: "مدير التسويق", image: abanoubUddin },
   { name: "حسام محمد", role: "مدير السياحة", image: hossamMohammad },
  
@@ -296,6 +296,22 @@ const options = [
   return (
     <div className="bg-black text-white min-h-screen">
 
+<Helmet>
+        <title>Jovera Group - Excellence in Real Estate & Financial Services</title>
+        <meta
+          name="description"
+          content="Jovera Group leads in real estate, financial services, tourism, advertising, and accounting, delivering innovative solutions with integrity and excellence."
+        />
+</Helmet>
+
+
+
+
+
+
+
+
+<main>
 {/* Hero Section with Video Background */}
 <section className="relative h-[700px] flex items-center">
   <video
@@ -315,7 +331,7 @@ const options = [
       
       {/* Main Heading */}
       <h1 className={`text-[3rem] font-normal uppercase mb-4 ${lang === "en" ? "text-left" : "text-right"}`} dir={lang === "en" ? "ltr" : "rtl"}>
-        {lang === 'en' ? 'LOOKING FOR\nTHE FUTURE !' : 'نبحث عن المستقبل!'}
+        {lang === 'en' ? 'LOOKING FOR\nTHE FUTURE !' : 'نتطلع الى المستقبل !'}
       </h1>
 
       {/* Subheading with styled text */}
@@ -323,7 +339,7 @@ const options = [
         {lang === 'en' 
           ? (
             <>
-              <span className="text-[#D7AA47] font-bold">We Incubate A Network of </span>
+              <span className="text-[#D7AA47]  font-bold">We Incubate A Network of </span>
               <span className="text-white italic">
                 Financial services (Mortgage, Bussiness Finance, Personal Loan) Real Estate, IT Solution, E-Marketing, Service Of BusinessMen, Tourism, Accounting And Auditing
               </span>
@@ -331,9 +347,9 @@ const options = [
           )
           : (
             <>
-              <span className="text-[#D7AA47] font-bold">نحن نحتضن شبكة من </span>
-              <span className="text-white italic">
-                الخدمات المالية (الرهون العقارية، تمويل الأعمال، القروض الشخصية)، العقارات، حلول تكنولوجيا المعلومات، التسويق الإلكتروني، خدمات رجال الأعمال، السياحة، المحاسبة والتدقيق
+              <span className="text-[#D7AA47]  font-bold">حن نحتضن شبكة واسعة </span>
+              <span className="text-white  ">
+              من الخدمات المالية (التمويل العقاري، تمويل الأعمال، القروض الشخصية) العقارات، حلول تكنولوجيا المعلومات، التسويق الإلكتروني، خدمة رجال الأعمال، السياحة، المحاسبة والتدقيق
               </span>
             </>
           )
@@ -427,7 +443,7 @@ const options = [
         ) : (
           <>
             <div className="text-right mb-8">
-              <div className="text-5xl text-yellow-600 mb-2">13 سنة</div>
+              <div className="text-5xl text-yellow-600 mb-2">سنة 13 </div>
               <div className="text-5xl text-yellow-600 mb-2">خبرة</div>
             </div>
 
@@ -480,67 +496,66 @@ const options = [
 </section>
 
 
-      {/* Mission & Vision */}
+     {/* Mission & Vision */}
 <section className="py-16 px-4 bg-[#1B1B1B]">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-    
-    {lang === "en" ? (
-      /* ------------------- ENGLISH CONTENT ------------------- */
-      <div>
-        <h3 className="text-left text-3xl mb-4">
-          OUR<br />Mission
-        </h3>
-        <p className="text-left text-gray-300 leading-relaxed">
-          To deliver seamless, end-to-end business solutions across real estate,
-          finance, technology, and tourism—empowering individuals and organizations
-          to achieve sustainable growth, trust, excellence, and professionalism.
-        </p>
+  <div
+    className={`max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 ${
+      lang !== "en" ? "lg:flex-row-reverse" : ""
+    }`}
+  >
+    {/* TEXT */}
+    <div className="flex-1">
+      {lang === "en" ? (
+        <>
+          <h3 className="text-left text-3xl mb-4">
+            OUR<br />Mission
+          </h3>
+          <p className="text-left text-gray-300 leading-relaxed">
+            To deliver seamless, end-to-end business solutions across real estate,
+            finance, technology, and tourism—empowering individuals and organizations
+            to achieve sustainable growth, trust, excellence, and professionalism.
+          </p>
 
-        <h3 className="mt-5 text-left text-3xl mb-4">
-          OUR<br />Vision
-        </h3>
-        <p className="text-left text-gray-300 leading-relaxed max-w-3xl">
-          To be a leading, diversified service group in the UAE and beyond—recognized
-          for transforming challenges into opportunities and building long-term
-          value for our clients, partners, and communities.
-        </p>
-      </div>
+          <h3 className="mt-5 text-left text-3xl mb-4">
+            OUR<br />Vision
+          </h3>
+          <p className="text-left text-gray-300 leading-relaxed max-w-3xl">
+            To be a leading, diversified service group in the UAE and beyond—recognized
+            for transforming challenges into opportunities and building long-term
+            value for our clients, partners, and communities.
+          </p>
+        </>
+      ) : (
+        <div dir="rtl" className="font-arabic">
+          <h3 className="text-right text-3xl mb-4">مهمتنا</h3>
+          <p className="text-right text-gray-300 leading-relaxed">
+            تقديم حلول أعمال متكاملة وسلسة في مجالات العقارات، والتمويل،
+            والتكنولوجيا، والسياحة—لتمكين الأفراد والمؤسسات من تحقيق نمو مستدام،
+            وبناء الثقة، والتميز، والاحترافية.
+          </p>
 
-    ) : (
-      /* ------------------- ARABIC CONTENT ------------------- */
-      <div dir="rtl">
-        <h3 className="text-right text-3xl mb-4">
-          مهمتنا
-        </h3>
-        <p className="text-right text-gray-300 leading-relaxed">
-          تقديم حلول أعمال متكاملة وسلسة في مجالات العقارات، والتمويل،
-          والتكنولوجيا، والسياحة—لتمكين الأفراد والمؤسسات من تحقيق نمو مستدام،
-          وبناء الثقة، والتميز، والاحترافية.
-        </p>
-
-        <h3 className="mt-5 text-right text-3xl mb-4">
-          رؤيتنا
-        </h3>
-        <p className="text-right text-gray-300 leading-relaxed max-w-3xl">
-          أن نكون مجموعة خدمات رائدة ومتنوعة في دولة الإمارات وخارجها—معروفة
-          بقدرتها على تحويل التحديات إلى فرص وبناء قيمة طويلة الأمد لعملائنا
-          وشركائنا ومجتمعاتنا.
-        </p>
-      </div>
-    )}
-
-    {/* IMAGE SECTION */}
-    <div className="flex items-start justify-center">
-      <img 
-        src="./our-mission-picture.jpg" 
-        alt="Team collaboration" 
-        className="rounded-lg w-full max-w-sm lg:max-w-md max-h-80 object-cover"
-        loading='lazy'
-      />
+          <h3 className="mt-5 text-right text-3xl mb-4">رؤيتنا</h3>
+          <p className="text-right text-gray-300 leading-relaxed max-w-3xl">
+            أن نكون مجموعة خدمات رائدة ومتنوعة في دولة الإمارات وخارجها—معروفة
+            بقدرتها على تحويل التحديات إلى فرص وبناء قيمة طويلة الأمد لعملائنا
+            وشركائنا ومجتمعاتنا.
+          </p>
+        </div>
+      )}
     </div>
 
+    {/* IMAGE */}
+    <div className="flex-1 flex items-start justify-center">
+      <img
+        src="./our-mission-picture.jpg"
+        alt="Team collaboration"
+        className="rounded-lg w-full max-w-sm lg:max-w-md max-h-80 object-cover"
+        loading="lazy"
+      />
+    </div>
   </div>
 </section>
+
 
 {/* 
   Board of directors */}
@@ -656,6 +671,7 @@ const options = [
 </section>
 
  {/* Branches */}
+{/* Branches */}
 <section className="py-8 px-3 sm:py-12 sm:px-4 bg-black">
   <div className="max-w-7xl mx-auto">
 
@@ -668,43 +684,54 @@ const options = [
       {lang === "en" ? "BRANCHES OF JOVERA GROUP" : "فروع مجموعة جوفيرا"}
     </h2>
 
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-      {(lang === "en" ? branches : translatedBranches).map((branch, index) => (
-        <div
-          key={index}
-          className={`
-            p-3 sm:p-4 rounded-lg sm:rounded-xl text-white flex items-center gap-3 sm:gap-4
-            ${index === 0
+    {/* Cards container */}
+{/* Cards container */}
+<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+  {(lang === "en" ? branches : [...translatedBranches].reverse()).map(
+    (branch, index) => (
+      <div
+        key={index}
+        className={`
+          p-3 sm:p-4 rounded-lg sm:rounded-xl text-white flex items-center gap-3 sm:gap-4
+          ${lang === "en"
+            ? index === 0
               ? "bg-gradient-to-r from-[#D7AA47] to-[#715925]"
-              : "bg-[#1A1A1A]"}
-          `}
-        >
-          {/* Icon */}
-          <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14">
-            <MapPin size={22} className="sm:hidden" />
-            <MapPin size={36} className="hidden sm:block" />
-          </div>
-
-          {/* Text */}
-          <div
-            className={`flex flex-col gap-0.5 sm:gap-1 ${
-              lang === "en" ? "text-left" : "text-right"
-            }`}
-          >
-            <h4 className="font-semibold text-sm sm:text-md">
-              {branch.address}
-            </h4>
-            <p className="text-xs sm:text-sm opacity-90 leading-snug">
-              {branch.details}
-            </p>
-          </div>
+              : "bg-[#1A1A1A]"
+            : index === 3 // 4th card in Arabic (0-based)
+            ? "bg-gradient-to-r from-[#D7AA47] to-[#715925]"
+            : "bg-[#1A1A1A]"}
+        `}
+      >
+        {/* Icon */}
+        <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14">
+          <MapPin size={22} className="sm:hidden" />
+          <MapPin size={36} className="hidden sm:block" />
         </div>
-      ))}
-    </div>
+
+        {/* Text */}
+        <div
+          className={`flex flex-col gap-0.5 sm:gap-1 ${
+            lang === "en" ? "text-left" : "text-right"
+          }`}
+        >
+          <h4 className="font-semibold text-sm sm:text-md">
+            {branch.address}
+          </h4>
+          <p className="text-xs sm:text-sm opacity-90 leading-snug">
+            {branch.details}
+          </p>
+        </div>
+      </div>
+    )
+  )}
+</div>
+
+
 
   </div>
 </section>
-  
+
+  </main>
     </div>
   );
 };

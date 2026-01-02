@@ -7,7 +7,7 @@ import HeroImage from "../../assets/landing-pages/Accounting/hero.png";
 import ChartImage from "../../assets/landing-pages/Accounting/charts.jpg"
 import ServicesImg from "../../assets/landing-pages/Accounting/services.png"
 import ScrollAnimation from "../../components/scrollAnimation";
-
+import { Helmet } from "react-helmet";
 
 
 
@@ -66,6 +66,25 @@ const options = [
   /* ===================== RENDER ===================== */
 
   return (
+
+<>
+      <Helmet>
+        <title>{lang === "en" ? "Accounting Services - Jovera Group" : "خدمات المحاسبة - مجموعة جوفيرا"}</title>
+        <meta
+          name="description"
+          content={content.description}
+        />
+        {/* Open Graph */}
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={HeroImage} />
+        <meta property="og:url" content="https://www.jovera.ae/Accounting" />
+      </Helmet>
+
+
+<main>
+
     <div className="min-h-screen bg-black text-white">
      
       {/* ================= HERO ================= */}
@@ -75,7 +94,7 @@ const options = [
 <section className="container mx-auto px-4 pt-20 sm:pt-24 md:py-20 lg:pt-32 max-w-7xl">
 <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
   {/* LEFT DIV (Text) */}
-  <div className={`h-full flex flex-col mt-20 ${isArabic ? 'order-2 text-right' : 'order-1'} `}>
+  <div className={`h-full flex flex-col justify-center ${isArabic ? 'order-2 text-right' : 'order-1'} `}>
     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
       {t.hero.title}
     </h1>
@@ -281,7 +300,12 @@ const options = [
             </div>
           </div>
         </section>
+  
     </div>
+
+</main>
+
+    </>
   );
 };
 
