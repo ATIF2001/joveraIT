@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import {getDeviceType} from "../utils/device";
 
-import { PrimaryButton } from "./button-primary";
+import { PrimaryButton } from "./ButtonPrimary";
 
 const PLAY_STORE =
   "https://play.google.com/store/apps/details?id=com.joveragroup.tourism&hl=en&pli=1";

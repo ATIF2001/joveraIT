@@ -1,10 +1,10 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { Home, Briefcase, CreditCard, Phone, Mail } from "lucide-react";
 import ContactForm from "../../components/contactForm";
-import { PrimaryButton, SecondaryButton,  PrimaryButton2} from "../../components/button-primary";
-import { ContactPill } from "../../components/contact-pill";
-import LoanCalculator from "../../components/loan-calculator";
-import FeaturedCategories from "../../components/featured-categories";
+import { PrimaryButton, SecondaryButton,  PrimaryButton2} from "../../components/ButtonPrimary";
+import { ContactPill } from "../../components/ContactPill";
+import LoanCalculator from "../../components/LoanCalculator";
+import FeaturedCategories from "../../components/FeaturedCategories";
 import HeroImage from "../../assets/landing-pages/Real-Estate/Hero-img.png";
 import PropertiesSection from "../../components/PropertiesSection";
 import ScrollAnimation from "../../components/scrollAnimation";

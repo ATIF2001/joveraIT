@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import TourismPackageCard from "./travel-card";
+import TourismPackageCard from "./TravelCard";
 
 const CARD_WIDTH = 320;
 const GAP = 20;

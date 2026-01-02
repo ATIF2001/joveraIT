@@ -1,10 +1,10 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import TourismCarousel from "../../components/tourism-carousel";
+import TourismCarousel from "../../components/TourismCarousel";
 import { Home, Briefcase, CreditCard, Phone, Mail } from "lucide-react";
 import ContactForm from "../../components/contactForm";
-import { PrimaryButton, SecondaryButton, PrimaryButton2 } from "../../components/button-primary";
-import { ContactPill } from "../../components/contact-pill";
+import { PrimaryButton, SecondaryButton, PrimaryButton2 } from "../../components/ButtonPrimary";
+import { ContactPill } from "../../components/ContactPill";
 import HeroImage from "../../assets/landing-pages/Tourism/TourismHero.png";
 import ScrollAnimation from "../../components/scrollAnimation";
 

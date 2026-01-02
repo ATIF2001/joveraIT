@@ -3,24 +3,24 @@ import { useState, useEffect } from "react";
 
 import Nav from "./components/navbar";
 import Footer from "./components/footer";
-import Topbar from "./components/top-bar";
+import Topbar from "./components/TopBar";
 
 import Home from "./pages/home";
-import Contact_us from "./pages/contact_us";
+import Contact_us from "./pages/ContactUs";
 import Media from "./pages/media";
-import NewsDetail from "./pages/media-article";
+import NewsDetail from "./pages/MediaArticle";
 import ServicesSection from "./pages/portfolio";
-import ITLandingPage from "./pages/landing-pages/jovera-it-service";
-import FinanceLandingPage from "./pages/landing-pages/jovera-financial-service";
-import RealEstateLandingPage from "./pages/landing-pages/jovera-real-estate";
-import BusinessLandingPage from "./pages/landing-pages/jovera-business-service";
-import TourismLandingPage from "./pages/landing-pages/jovera-tourism-service";
-import AccountingLandingPage from "./pages/landing-pages/jovera-accounting";
-import TermsAndConditions from "./pages/terms_and_conditions";
-import UnderDevelopment from "./pages/under-development";
-import AboutUs from "./pages/about_us";
-import Careers from "./pages/career";
-import JobDetails from "./pages/career-job";
+import ITLandingPage from "./pages/LandingPages/JoveraITService";
+import FinanceLandingPage from "./pages/LandingPages/JoveraFinancialService";
+import RealEstateLandingPage from "./pages/LandingPages/JoveraRealEstate";
+import BusinessLandingPage from "./pages/LandingPages/JoveraBusinessService";
+import TourismLandingPage from "./pages/LandingPages/JoveraTourismService";
+import AccountingLandingPage from "./pages/LandingPages/JoveraAccounting";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import UnderDevelopment from "./pages/UnderDevelopment";
+import AboutUs from "./pages/AboutUs";
+import Careers from "./pages/Career";
+import JobDetails from "./pages/CareerJob";
 import ScrollToTop from "../src/components/ScrollToTop";
 import Jovera404 from "./pages/404";
 

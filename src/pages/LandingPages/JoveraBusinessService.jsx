@@ -1,14 +1,14 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { Home, Briefcase, CreditCard, Phone, Mail } from "lucide-react";
 import ContactForm from "../../components/contactForm";
-import { PrimaryButton, SecondaryButton, PrimaryButton2 } from "../../components/button-primary";
-import { ContactPill } from "../../components/contact-pill";
-import FeaturedCategories from "../../components/featured-categories";
+import { PrimaryButton, SecondaryButton, PrimaryButton2 } from "../../components/ButtonPrimary";
+import { ContactPill } from "../../components/ContactPill";
+import FeaturedCategories from "../../components/FeaturedCategories";
 import HeroImage from "../../assets/landing-pages/Business-Services/HeroImg.png";
 import PropertiesSection from "../../components/PropertiesSection";
 import { Helmet } from "react-helmet";
 import ServiceCard from "../../components/ServiceCard";
-import PricingCard from "../../components/pricing-card";
+import PricingCard from "../../components/PricingCard";
 import ScrollAnimation from "../../components/scrollAnimation";
 
 // Swiper

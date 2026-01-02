@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useRef } from "react";
 import useFetchJobById from "../Apis/fetchJobById";
-import { PrimaryButton } from "../components/button-primary";
+import { PrimaryButton } from "../components/ButtonPrimary";
 import useApplyJob from "../Apis/postResume";
 
 const JobDetails = ({ lang }) => {

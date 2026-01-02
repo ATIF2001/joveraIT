@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { FaWhatsapp } from "react-icons/fa";
 import ContactForm from '../../components/contactForm';
-import { PrimaryButton, PrimaryButton2 } from '../../components/button-primary';
-import { SecondaryButton } from '../../components/button-primary';
-import { ContactPill } from '../../components/contact-pill';
-import LoanCalculator from "../../components/loan-calculator";
+import { PrimaryButton, PrimaryButton2 } from '../../components/ButtonPrimary';
+import { SecondaryButton } from '../../components/ButtonPrimary';
+import { ContactPill } from '../../components/ContactPill';
+import LoanCalculator from "../../components/LoanCalculator";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import { Home, Briefcase, CreditCard } from "lucide-react";
 import HeroImage from "../../assets/landing-pages/Financial-Services/Hero-img.png";

@@ -16,7 +16,7 @@ import Businesslogo from "../assets/portfolio-logos/services-businessman.png";
 import Accountancylogo from "../assets/portfolio-logos/accountancy.png";
 
 import ScrollAnimation from "../components/scrollAnimation";
-import { PrimaryButton2, SecondaryButton } from "../components/button-primary";
+import { PrimaryButton2, SecondaryButton } from "../components/ButtonPrimary";
 
 const servicesData = [
   {
