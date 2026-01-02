@@ -19,7 +19,7 @@ import AccountingLandingPage from "./pages/LandingPages/JoveraAccounting";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import UnderDevelopment from "./pages/UnderDevelopment";
 import AboutUs from "./pages/AboutUs";
-import Careers from "./pages/Career";
+import Careers from "./pages/CareerPage";
 import JobDetails from "./pages/CareerJob";
 import ScrollToTop from "../src/components/ScrollToTop";
 import Jovera404 from "./pages/404";
