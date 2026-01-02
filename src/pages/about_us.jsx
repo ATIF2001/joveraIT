@@ -53,7 +53,7 @@ const AboutUs = ({lang}) => {
         />
         <meta property="og:type" content="website" />
         {/* <meta property="og:image" content="/path-to-your-og-image.jpg" /> */}
-        <meta property="og:url" content="https://www.jovera.ae/about-us" />
+        <meta property="og:url" content="https://www.jovera.ae/AboutUs" />
       </Helmet>
 
 

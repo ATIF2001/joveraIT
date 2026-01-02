@@ -80,16 +80,16 @@ function Footer({ lang }) {
                 <Link to="/" className="hover:text-yellow-600 cursor-pointer">{text.home}</Link>
               </li>
               <li>
-                <Link to="/about-us" className="hover:text-yellow-600 cursor-pointer">{text.about}</Link>
+                <Link to="/AboutUs" className="hover:text-yellow-600 cursor-pointer">{text.about}</Link>
               </li>
               <li>
                 <Link to="/portfolio" className="hover:text-yellow-600 cursor-pointer">{text.portfolio}</Link>
               </li>
               <li>
-                <Link to="/media-hub" className="hover:text-yellow-600 cursor-pointer">{text.Media}</Link>
+                <Link to="/MediaHub" className="hover:text-yellow-600 cursor-pointer">{text.Media}</Link>
               </li>
               <li>
-                <Link to="/contact-us" className="hover:text-yellow-600 cursor-pointer">{text.Contact}</Link>
+                <Link to="/ContactUs" className="hover:text-yellow-600 cursor-pointer">{text.Contact}</Link>
               </li>
               <li>
                 <Link to="/Career" className="hover:text-yellow-600 cursor-pointer">{text.Careers}</Link>

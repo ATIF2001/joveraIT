@@ -101,7 +101,7 @@ function Contact_us({ lang }) {
           content="Contact Jovera Group for real estate, financial services, tourism, advertisement, and accountancy inquiries. Our team is ready to assist you via email, phone, or WhatsApp."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.jovera.ae/contact-us" />
+        <meta property="og:url" content="https://www.jovera.ae/ContactUs" />
       </Helmet>
       
     <main className={`bg-[#0D0D0D] text-white min-h-screen px-4 sm:px-16 py-32 ${lang !== "en" ? "rtl" : ""}`}>

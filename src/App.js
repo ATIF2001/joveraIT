@@ -47,9 +47,9 @@ function App() {
         
         <Route path="/" element={<Home lang={lang} />} />
         <Route path="/portfolio" element={<ServicesSection lang={lang} />} />
-        <Route path="/media-hub" element={<Media lang={lang} />} />
-        <Route path="/contact-us" element={<Contact_us lang={lang} />} />
-        <Route path="/about-us" element={<AboutUs lang={lang} />} />
+        <Route path="/MediaHub" element={<Media lang={lang} />} />
+        <Route path="/ContactUs" element={<Contact_us lang={lang} />} />
+        <Route path="/AboutUs" element={<AboutUs lang={lang} />} />
         <Route path="/IT" element={<ITLandingPage lang={lang} />} />
         <Route path="/Finance" element={<FinanceLandingPage lang={lang} />} />
         <Route path="/RealEstate" element={<RealEstateLandingPage lang={lang} />} />

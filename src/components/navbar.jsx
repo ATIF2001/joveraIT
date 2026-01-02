@@ -35,9 +35,9 @@ function Nav({ lang, setLang }) {
             {lang === "en" ? "Home" : "الرئيسية"}
           </Link>
              <Link
-            to="/about-us"
+            to="/AboutUs"
             className={`hover:text-yellow-400 ${
-              isActive("/about-us") ? "text-yellow-400" : "text-white"
+              isActive("/AboutUs") ? "text-yellow-400" : "text-white"
             }`}
           >
             {lang === "en" ? "About Us" : "من نحن"}
@@ -52,18 +52,18 @@ function Nav({ lang, setLang }) {
           </Link>
 
           <Link
-            to="/media-hub"
+            to="/MediaHub"
             className={`hover:text-yellow-400 ${
-              isActive("/media-hub") ? "text-yellow-400" : "text-white"
+              isActive("/MediaHub") ? "text-yellow-400" : "text-white"
             }`}
           >
             {lang === "en" ? "Media Hub" : "المركز الإعلامي"}
           </Link>
 
           <Link
-            to="/contact-us"
+            to="/ContactUs"
             className={`hover:text-yellow-400 ${
-              isActive("/contact-us") ? "text-yellow-400" : "text-white"
+              isActive("/ContactUs") ? "text-yellow-400" : "text-white"
             }`}
           >
             {lang === "en" ? "Contact Us" : "تواصل معنا"}
@@ -117,10 +117,10 @@ function Nav({ lang, setLang }) {
               {lang === "en" ? "Home" : "الرئيسية"}
             </Link>
                <Link
-            to="/about-us"
+            to="/AboutUs"
             onClick={() => setIsMenuOpen(false)}
             className={`hover:text-yellow-400 ${
-              isActive("/about-us") ? "text-yellow-400" : "text-white"
+              isActive("/AboutUs") ? "text-yellow-400" : "text-white"
             }`}
           >
             {lang === "en" ? "About Us" : "من نحن"}
@@ -136,20 +136,20 @@ function Nav({ lang, setLang }) {
             </Link>
 
             <Link
-              to="/media-hub"
+              to="/MediaHub"
               onClick={() => setIsMenuOpen(false)}
               className={`hover:text-yellow-400 ${
-                isActive("/media-hub") ? "text-yellow-400" : "text-white"
+                isActive("/MediaHub") ? "text-yellow-400" : "text-white"
               }`}
             >
               {lang === "en" ? "Media Hub" : "المركز الإعلامي"}
             </Link>
 
             <Link
-              to="/contact-us"
+              to="/ContactUs"
               onClick={() => setIsMenuOpen(false)}
               className={`hover:text-yellow-400 ${
-                isActive("/contact-us") ? "text-yellow-400" : "text-white"
+                isActive("/ContactUs") ? "text-yellow-400" : "text-white"
               }`}
             >
               {lang === "en" ? "Contact Us" : "تواصل معنا"}
