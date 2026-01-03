@@ -7,7 +7,7 @@ import { ContactPill } from '../../components/ContactPill';
 import LoanCalculator from "../../components/LoanCalculator";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import { Home, Briefcase, CreditCard } from "lucide-react";
-import HeroImage from "../../assets/landing-pages/Financial-Services/Hero-img.png";
+import HeroImage from "../../assets/landing-pages/Financial-Services/Hero-img.webp";
 import ScrollAnimation from "../../components/scrollAnimation";
 import { Helmet } from 'react-helmet';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,16 +16,16 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 // importing Partner images
-import adcb from "../../assets/partners/Adcb.png";
-import adib from "../../assets/partners/ADIB.png";
-import aldar from "../../assets/partners/Aldar.png";
-import eithad from "../../assets/partners/eithad.png";
-import emaar from "../../assets/partners/Emaar.png";
-import emiratesislamic from "../../assets/partners/Emirates_Islamic.png";
-import emiratesnbd from "../../assets/partners/emirates-nbd.png";
-import emirates from "../../assets/partners/emirates.png";
-import fab from "../../assets/partners/FAB.png";
-import mashreq from "../../assets/partners/mashreq.png";
+import adcb from "../../assets/partners/Adcb.webp";
+import adib from "../../assets/partners/ADIB.webp";
+import aldar from "../../assets/partners/Aldar.webp";
+import eithad from "../../assets/partners/eithad.webp";
+import emaar from "../../assets/partners/Emaar.webp";
+import emiratesislamic from "../../assets/partners/Emirates_Islamic.webp";
+import emiratesnbd from "../../assets/partners/emirates-nbd.webp";
+import emirates from "../../assets/partners/emirates.webp";
+import fab from "../../assets/partners/FAB.webp";
+import mashreq from "../../assets/partners/mashreq.webp";
 
 
 

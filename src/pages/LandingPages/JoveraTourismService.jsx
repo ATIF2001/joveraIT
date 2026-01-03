@@ -5,7 +5,7 @@ import { Home, Briefcase, CreditCard, Phone, Mail } from "lucide-react";
 import ContactForm from "../../components/contactForm";
 import { PrimaryButton, SecondaryButton, PrimaryButton2 } from "../../components/ButtonPrimary";
 import { ContactPill } from "../../components/ContactPill";
-import HeroImage from "../../assets/landing-pages/Tourism/TourismHero.png";
+import HeroImage from "../../assets/landing-pages/Tourism/TourismHero.webp";
 import ScrollAnimation from "../../components/scrollAnimation";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,46 +20,46 @@ import { Helmet } from "react-helmet";
 
 //Services
 
-import UAEVisas from "../../assets/landing-pages/Tourism/UAEVISAS.png";
-import TRIP from "../../assets/landing-pages/Tourism/TRIPS.png";
-import Hotels from "../../assets/landing-pages/Tourism/Hotel.png";
-import AirlineTickets from "../../assets/landing-pages/Tourism/AirlineTickets.png";
-import GlobalVisas from "../../assets/landing-pages/Tourism/GlobalVisas.png";
-import UaeTrip from "../../assets/landing-pages/Tourism/UAETRIP.png";
+import UAEVisas from "../../assets/landing-pages/Tourism/UAEVISAS.webp";
+import TRIP from "../../assets/landing-pages/Tourism/TRIPS.webp";
+import Hotels from "../../assets/landing-pages/Tourism/Hotel.webp";
+import AirlineTickets from "../../assets/landing-pages/Tourism/AirlineTickets.webp";
+import GlobalVisas from "../../assets/landing-pages/Tourism/GlobalVisas.webp";
+import UaeTrip from "../../assets/landing-pages/Tourism/UAETRIP.webp";
 
-import Arrow from "../../assets/landing-pages/Tourism/Icon.png";
+import Arrow from "../../assets/landing-pages/Tourism/Icon.webp";
 
 
 //Visas
-import phoneMockup from "../../assets/landing-pages/Tourism/QRCode.png";
-import Playstore from "../../assets/landing-pages/Tourism/play-store.png";
-import Appstore from "../../assets/landing-pages/Tourism/AppStore.png";
+import phoneMockup from "../../assets/landing-pages/Tourism/QRCode.webp";
+import Playstore from "../../assets/landing-pages/Tourism/play-store.webp";
+import Appstore from "../../assets/landing-pages/Tourism/AppStore.webp";
 import  useTourismPackages from "../../Apis/fetchTourismPackages";
 
 
 //Payment
-import stripe from "../../assets/landing-pages/Tourism/payments/Stripe.png";
-import AmericanExpress from "../../assets/landing-pages/Tourism/payments/american-express.png";
-import elisalat from "../../assets/landing-pages/Tourism/payments/e&.png";
-import fawry from "../../assets/landing-pages/Tourism/payments/fawry.png";
-import googlePay from "../../assets/landing-pages/Tourism/payments/googlePay.png";
-import vodafone from "../../assets/landing-pages/Tourism/payments/vodafone.png";
+import stripe from "../../assets/landing-pages/Tourism/payments/Stripe.webp";
+import AmericanExpress from "../../assets/landing-pages/Tourism/payments/american-express.webp";
+import elisalat from "../../assets/landing-pages/Tourism/payments/e&.webp";
+import fawry from "../../assets/landing-pages/Tourism/payments/fawry.webp";
+import googlePay from "../../assets/landing-pages/Tourism/payments/googlePay.webp";
+import vodafone from "../../assets/landing-pages/Tourism/payments/vodafone.webp";
 
 // //Tourism Carousel
-// import BahrainFlag from "../../assets/landing-pages/Tourism/packages/Bahrain-flag.png";
-// import KawaitFlag from "../../assets/landing-pages/Tourism/packages/Kawait-flag.jpg";
-// import OmanFlag from "../../assets/landing-pages/Tourism/packages/oman-flag.png";
-// import QatarFlag from "../../assets/landing-pages/Tourism/packages/Qatar-flag.jpg";
-// import SaudiFlag from "../../assets/landing-pages/Tourism/packages/saudi-flag.jpg";
-// import UAEFlag from "../../assets/landing-pages/Tourism/packages/UAE-flag.png";
+// import BahrainFlag from "../../assets/landing-pages/Tourism/packages/Bahrain-flag.webp";
+// import KawaitFlag from "../../assets/landing-pages/Tourism/packages/Kawait-flag.webp";
+// import OmanFlag from "../../assets/landing-pages/Tourism/packages/oman-flag.webp";
+// import QatarFlag from "../../assets/landing-pages/Tourism/packages/Qatar-flag.webp";
+// import SaudiFlag from "../../assets/landing-pages/Tourism/packages/saudi-flag.webp";
+// import UAEFlag from "../../assets/landing-pages/Tourism/packages/UAE-flag.webp";
 
 // //Tourism pictures
-// import KawaitPic from "../../assets/landing-pages/Tourism/packages/Kawait-pic.jpg";
-// import BahrainPic from "../../assets/landing-pages/Tourism/packages/Bahrain-pic.jpg";
-// import SaudiPic from "../../assets/landing-pages/Tourism/packages/Saudi-pic.jpg";
-// import OmanPic from "../../assets/landing-pages/Tourism/packages/oman-pic.jpg";
-// import QatarPic from "../../assets/landing-pages/Tourism/packages/Qatar-pic.jpg";
-// import UAEPic from "../../assets/landing-pages/Tourism/packages/UAE-pic.jpg";
+// import KawaitPic from "../../assets/landing-pages/Tourism/packages/Kawait-pic.webp";
+// import BahrainPic from "../../assets/landing-pages/Tourism/packages/Bahrain-pic.webp";
+// import SaudiPic from "../../assets/landing-pages/Tourism/packages/Saudi-pic.webp";
+// import OmanPic from "../../assets/landing-pages/Tourism/packages/oman-pic.webp";
+// import QatarPic from "../../assets/landing-pages/Tourism/packages/Qatar-pic.webp";
+// import UAEPic from "../../assets/landing-pages/Tourism/packages/UAE-pic.webp";
 
 
 import { getDeviceType } from "../../utils/device";

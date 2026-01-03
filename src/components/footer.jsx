@@ -66,7 +66,7 @@ function Footer({ lang }) {
           <div className={`flex justify-center md:justify-${lang !== "en" ? "end" : "start"} mb-6 md:mb-0 w-full`}
 >
             <img
-              src="/logo.png"
+              src="/logo.webp"
               alt="logo"
               className="w-[160px] h-[60px] object-contain"
             />
@@ -131,7 +131,7 @@ function Footer({ lang }) {
     } justify-center md:justify-between items-center gap-4 w-full`}
   >
     <p className="text-gray-400 text-sm hover:text-yellow-600 cursor-pointer">
-      <Link to="/Terms_and_Conditions">{text.terms}</Link>
+      <Link to="/TermsAndConditions">{text.terms}</Link>
     </p>
 
     <p className="text-gray-400 text-sm">{text.copyright}</p>

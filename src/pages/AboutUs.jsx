@@ -1,11 +1,11 @@
-import ramy from "../assets/about-us/ramy.png";
-import background from "../assets/about-us/bg.png";
+import ramy from "../assets/about-us/ramy.webp";
+import background from "../assets/about-us/bg.webp";
 import { Helmet } from "react-helmet";
-import fady from "../assets/about-us/fady.png";
-import backgroundfady from "../assets/about-us/bg-2.png";
+import fady from "../assets/about-us/fady.webp";
+import backgroundfady from "../assets/about-us/bg-2.webp";
 
-import righttumb from "../assets/about-us/right-tumb.png";
-import lefttumb from "../assets/about-us/left-tumb.png";
+import righttumb from "../assets/about-us/right-tumb.webp";
+import lefttumb from "../assets/about-us/left-tumb.webp";
 
 import { Eye, Target, Hand } from 'lucide-react';
 
@@ -52,7 +52,7 @@ const AboutUs = ({lang}) => {
           content="Discover Jovera Group's journey since 2013, offering innovative solutions in real estate, finance, tourism, advertisement, and accountancy, with integrity and excellence."
         />
         <meta property="og:type" content="website" />
-        {/* <meta property="og:image" content="/path-to-your-og-image.jpg" /> */}
+        {/* <meta property="og:image" content="/path-to-your-og-image.webp" /> */}
         <meta property="og:url" content="https://www.jovera.ae/AboutUs" />
       </Helmet>
 

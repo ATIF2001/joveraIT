@@ -1,16 +1,16 @@
 import React from "react";
-import Hero from "../assets/about-us/hero.jpg";
-import aboutImg from "../assets/about-us/about-us-img.jpg";
+import Hero from "../assets/about-us/hero.webp";
+import aboutImg from "../assets/about-us/about-us-img.webp";
 
-import ramyGerguis from "../assets/ramy-gerguis.png";
-import abanoubUddin from "../assets/abanoub-uddin.png";
-import fadyGerguis from "../assets/fady-gerguis.png";
-import gomilUddin from "../assets/gomil-uddin.png";
-import hossamMohammad from "../assets/hossam-mohamed.png";
-import kamalBadri from "../assets/kamal-badri.png";
-import mohammadGamal from "../assets/mohamed-gamal.png";
-import osmanMohammad from "../assets/osman-mohamed.png";
-import wadeaGerguis from "../assets/wagea-yousif.png";
+import ramyGerguis from "../assets/ramy-gerguis.webp";
+import abanoubUddin from "../assets/abanoub-uddin.webp";
+import fadyGerguis from "../assets/fady-gerguis.webp";
+import gomilUddin from "../assets/gomil-uddin.webp";
+import hossamMohammad from "../assets/hossam-mohamed.webp";
+import kamalBadri from "../assets/kamal-badri.webp";
+import mohammadGamal from "../assets/mohamed-gamal.webp";
+import osmanMohammad from "../assets/osman-mohamed.webp";
+import wadeaGerguis from "../assets/wagea-yousif.webp";
 
 /* ================= DIRECTORS ================= */
 

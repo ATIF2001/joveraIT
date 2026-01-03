@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import aboutImg from "../assets/about-us/about-us-img.jpg";
+import aboutImg from "../assets/about-us/about-us-img.webp";
 import { Helmet } from "react-helmet";
 import ScrollAnimation from '../components/scrollAnimation';
 import { Menu, X, Facebook, Instagram, Twitter, Youtube, Phone, Mail, MapPin} from 'lucide-react';
@@ -12,27 +12,27 @@ import "swiper/css/autoplay";
 
 
 import { Autoplay } from "swiper/modules";
-import ramyGerguis from "../assets/ramy-gerguis.png";
-import abanoubUddin from "../assets/abanoub-uddin.png";
-import fadyGerguis from "../assets/fady-gerguis.png";
-import gomilUddin from "../assets/gomil-uddin.png";
-import hossamMohammad from "../assets/hossam-mohamed.png";
-import kamalBadri from "../assets/kamal-badri.png";
-import mohammadGamal from "../assets/mohamed-gamal.png";
-import osmanMohammad from "../assets/osman-mohamed.png";
-import wadeaGerguis from "../assets/wagea-yousif.png";
+import ramyGerguis from "../assets/ramy-gerguis.webp";
+import abanoubUddin from "../assets/abanoub-uddin.webp";
+import fadyGerguis from "../assets/fady-gerguis.webp";
+import gomilUddin from "../assets/gomil-uddin.webp";
+import hossamMohammad from "../assets/hossam-mohamed.webp";
+import kamalBadri from "../assets/kamal-badri.webp";
+import mohammadGamal from "../assets/mohamed-gamal.webp";
+import osmanMohammad from "../assets/osman-mohamed.webp";
+import wadeaGerguis from "../assets/wagea-yousif.webp";
 
 // importing Partner images
-import adcb from "../assets/partners/Adcb.png";
-import adib from "../assets/partners/ADIB.png";
-import aldar from "../assets/partners/Aldar.png";
-import eithad from "../assets/partners/eithad.png";
-import emaar from "../assets/partners/Emaar.png";
-import emiratesislamic from "../assets/partners/Emirates_Islamic.png";
-import emiratesnbd from "../assets/partners/emirates-nbd.png";
-import emirates from "../assets/partners/emirates.png";
-import fab from "../assets/partners/FAB.png";
-import mashreq from "../assets/partners/mashreq.png";
+import adcb from "../assets/partners/Adcb.webp";
+import adib from "../assets/partners/ADIB.webp";
+import aldar from "../assets/partners/Aldar.webp";
+import eithad from "../assets/partners/eithad.webp";
+import emaar from "../assets/partners/Emaar.webp";
+import emiratesislamic from "../assets/partners/Emirates_Islamic.webp";
+import emiratesnbd from "../assets/partners/emirates-nbd.webp";
+import emirates from "../assets/partners/emirates.webp";
+import fab from "../assets/partners/FAB.webp";
+import mashreq from "../assets/partners/mashreq.webp";
 
 const JoveraHomepage = ({ lang }) => {
   
@@ -547,7 +547,7 @@ const options = [
     {/* IMAGE */}
     <div className="flex-1 flex items-start justify-center">
       <img
-        src="./our-mission-picture.jpg"
+        src="./our-mission-picture.webp"
         alt="Team collaboration"
         className="rounded-lg w-full max-w-sm lg:max-w-md max-h-80 object-cover"
         loading="lazy"

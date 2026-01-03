@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import arrow from "../../src/assets/landing-pages/Business-Services/services/arrow.png";
+import arrow from "../../src/assets/landing-pages/Business-Services/services/arrow.webp";
 
 export default function ServiceCard({ service, lang }) {
   return (

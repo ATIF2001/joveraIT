@@ -5,7 +5,7 @@ import { PrimaryButton, SecondaryButton,  PrimaryButton2} from "../../components
 import { ContactPill } from "../../components/ContactPill";
 import LoanCalculator from "../../components/LoanCalculator";
 import FeaturedCategories from "../../components/FeaturedCategories";
-import HeroImage from "../../assets/landing-pages/Real-Estate/Hero-img.png";
+import HeroImage from "../../assets/landing-pages/Real-Estate/Hero-img.webp";
 import PropertiesSection from "../../components/PropertiesSection";
 import ScrollAnimation from "../../components/scrollAnimation";
 import { Helmet } from "react-helmet";
@@ -17,11 +17,11 @@ import "swiper/css/free-mode";
 import "swiper/css/autoplay";
 
 // Partners
-import bloom from "../../assets/landing-pages/Real-Estate/partners1.png";
-import aldar from "../../assets/landing-pages/Real-Estate/partners2.png";
-import emaar from "../../assets/landing-pages/Real-Estate/partners3.png";
-import samana from "../../assets/landing-pages/Real-Estate/partners4.png";
-import binghatti from "../../assets/landing-pages/Real-Estate/partners6.png";
+import bloom from "../../assets/landing-pages/Real-Estate/partners1.webp";
+import aldar from "../../assets/landing-pages/Real-Estate/partners2.webp";
+import emaar from "../../assets/landing-pages/Real-Estate/partners3.webp";
+import samana from "../../assets/landing-pages/Real-Estate/partners4.webp";
+import binghatti from "../../assets/landing-pages/Real-Estate/partners6.webp";
 
 
 

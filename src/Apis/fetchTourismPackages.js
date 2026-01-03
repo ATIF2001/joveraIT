@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import fallbackImage from "../assets/tourism.png"
-import fallbackflag from "../assets/landing-pages/Tourism/packages/UAE-flag.png"
+import fallbackImage from "../assets/tourism.webp"
+import fallbackflag from "../assets/landing-pages/Tourism/packages/UAE-flag.webp"
 import axiosInstance from "./Tourism_BaseURL";
 
 const useTourismPackages = () => {

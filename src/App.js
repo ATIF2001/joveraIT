@@ -17,6 +17,9 @@ import BusinessLandingPage from "./pages/LandingPages/JoveraBusinessService";
 import TourismLandingPage from "./pages/LandingPages/JoveraTourismService";
 import AccountingLandingPage from "./pages/LandingPages/JoveraAccounting";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import TermsAndConditionsFinance from "./pages/FinanceTermsAndConditions";
+import PrivacyPolicyFinance  from "./pages/PrivacyPolicyFinance";
+import AccountDeletionFinance from "./pages/AccountDeletionFinance";
 import UnderDevelopment from "./pages/UnderDevelopment";
 import AboutUs from "./pages/AboutUs";
 import Careers from "./pages/CareerPage";
@@ -27,43 +30,75 @@ import Jovera404 from "./pages/404";
 import "./App.css";
 
 function App() {
-  // Load language from localStorage if it exists, otherwise default to "en"
-  const [lang, setLang] = useState(() => {
-    return localStorage.getItem("lang") || "en";
-  });
+  // Language state
+  const [lang, setLang] = useState(() => localStorage.getItem("lang") || "en");
 
-  // Whenever lang changes, update localStorage
   useEffect(() => {
     localStorage.setItem("lang", lang);
   }, [lang]);
 
   return (
     <Router>
-       <ScrollToTop />
+      <ScrollToTop />
       <Topbar lang={lang} />
       <Nav lang={lang} setLang={setLang} />
 
       <Routes>
-        
+        {/* Main Pages */}
         <Route path="/" element={<Home lang={lang} />} />
-        <Route path="/portfolio" element={<ServicesSection lang={lang} />} />
+        <Route path="/Portfolio" element={<ServicesSection lang={lang} />} />
         <Route path="/MediaHub" element={<Media lang={lang} />} />
         <Route path="/ContactUs" element={<Contact_us lang={lang} />} />
         <Route path="/AboutUs" element={<AboutUs lang={lang} />} />
+
+        {/* IT */}
         <Route path="/IT" element={<ITLandingPage lang={lang} />} />
+
+        {/* Finance - Parent + Subpage */}
         <Route path="/Finance" element={<FinanceLandingPage lang={lang} />} />
+        <Route 
+          path="/Finance/TermsAndConditions" 
+          element={<TermsAndConditionsFinance lang={lang} />} 
+          caseSensitive={false} 
+        />
+           <Route 
+          path="/Finance/AccountDeletion" 
+          element={<AccountDeletionFinance lang={lang} />} 
+          caseSensitive={false} 
+        />
+           <Route 
+          path="/Finance/PrivacyPolicy" 
+          element={<PrivacyPolicyFinance lang={lang} />} 
+          caseSensitive={false} 
+        />
+
+        {/* Real Estate */}
         <Route path="/RealEstate" element={<RealEstateLandingPage lang={lang} />} />
+
+        {/* Business */}
         <Route path="/Business" element={<BusinessLandingPage lang={lang} />} />
+
+        {/* Tourism */}
         <Route path="/Tourism" element={<TourismLandingPage lang={lang} />} />
+
+        {/* Accounting */}
         <Route path="/Accounting" element={<AccountingLandingPage lang={lang} />} />
-        <Route path="/Terms_and_Conditions" element={<TermsAndConditions lang={lang} />} />
+
+        {/* General Terms and Conditions */}
+        <Route path="/TermsAndConditions" element={<TermsAndConditions lang={lang} />} />
+        {/* <Route path="/Terms_and_Conditions" element={<TermsAndConditions lang={lang} />} /> */}
+
+        {/* Careers */}
         <Route path="/Career" element={<Careers lang={lang} />} />
-        <Route path="/careers/:jobId" element={<JobDetails lang={lang} />} />
-        <Route path="news/:id" element={<NewsDetail lang={lang} />} />
+        <Route path="/Careers/:jobId" element={<JobDetails lang={lang} />} />
+
+        {/* News */}
+        <Route path="/News/:id" element={<NewsDetail lang={lang} />} />
 
         {/* Under Development */}
         <Route path="/UnderDevelopment" element={<UnderDevelopment lang={lang} />} />
-        {/* 404 – Must be LAST */}
+
+        {/* 404 - Must be last */}
         <Route path="*" element={<Jovera404 lang={lang} />} />
       </Routes>
 

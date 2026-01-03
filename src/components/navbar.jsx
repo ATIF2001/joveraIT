@@ -15,7 +15,7 @@ function Nav({ lang, setLang }) {
         <div className="flex items-center gap-2">
           <div className="w-sm">
             <Link to="/">
-              <img src="./logo.png" alt="logo" width="190px" />
+              <img src="./logo.webp" alt="logo" width="190px" />
             </Link>
           </div>
         </div>

@@ -1,9 +1,9 @@
 import React from "react";
-import dubai from "../../src/assets/landing-pages/Real-Estate/properties/dubai.png";
-import AbuDhabi from "../../src/assets/landing-pages/Real-Estate/properties/AbuDhabi.png";
-import Sharjah from "../../src/assets/landing-pages/Real-Estate/properties/sharjah.png";
-import RasAlKhama from "../../src/assets/landing-pages/Real-Estate/properties/rasAlKhama.png";
-import Ajman from "../../src/assets/landing-pages/Real-Estate/properties/ajman.png";
+import dubai from "../../src/assets/landing-pages/Real-Estate/properties/dubai.webp";
+import AbuDhabi from "../../src/assets/landing-pages/Real-Estate/properties/AbuDhabi.webp";
+import Sharjah from "../../src/assets/landing-pages/Real-Estate/properties/sharjah.webp";
+import RasAlKhama from "../../src/assets/landing-pages/Real-Estate/properties/rasAlKhama.webp";
+import Ajman from "../../src/assets/landing-pages/Real-Estate/properties/ajman.webp";
 
 import PropertyCard from "./PropertyCard";
 import {Link} from "react-router-dom";

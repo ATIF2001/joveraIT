@@ -1,5 +1,5 @@
-import ramy from "../assets/about-us/ramy.png";
-import background from "../assets/about-us/bg.png";
+import ramy from "../assets/about-us/ramy.webp";
+import background from "../assets/about-us/bg.webp";
 
 const Message = () => {
   return (

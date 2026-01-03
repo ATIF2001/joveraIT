@@ -4,7 +4,7 @@ import ContactForm from "../../components/contactForm";
 import { PrimaryButton, SecondaryButton, PrimaryButton2 } from "../../components/ButtonPrimary";
 import { ContactPill } from "../../components/ContactPill";
 import FeaturedCategories from "../../components/FeaturedCategories";
-import HeroImage from "../../assets/landing-pages/Business-Services/HeroImg.png";
+import HeroImage from "../../assets/landing-pages/Business-Services/HeroImg.webp";
 import PropertiesSection from "../../components/PropertiesSection";
 import { Helmet } from "react-helmet";
 import ServiceCard from "../../components/ServiceCard";
@@ -19,23 +19,23 @@ import "swiper/css/free-mode";
 import "swiper/css/autoplay";
 
 // Partners
-import judicialDepartment from "../../assets/landing-pages/Business-Services/Abu-Dhabi-Judicial-Department.png";
-import police from "../../assets/landing-pages/Business-Services/abu-dhabi-police-force.png";
-import taxAuthority from "../../assets/landing-pages/Business-Services/federal-tax-authority.png";
-import LandDepartment from "../../assets/landing-pages/Business-Services/Land-Department 1.png";
-import ChamberOfCommerce from "../../assets/landing-pages/Business-Services/dubai-chamber-of-commerce.png";
-import MOHRE from  "../../assets/landing-pages/Business-Services/Ministry-of-Human-Resources-&-Emiratisation-1 1.png";
+import judicialDepartment from "../../assets/landing-pages/Business-Services/Abu-Dhabi-Judicial-Department.webp";
+import police from "../../assets/landing-pages/Business-Services/abu-dhabi-police-force.webp";
+import taxAuthority from "../../assets/landing-pages/Business-Services/federal-tax-authority.webp";
+import LandDepartment from "../../assets/landing-pages/Business-Services/Land-Department 1.webp";
+import ChamberOfCommerce from "../../assets/landing-pages/Business-Services/dubai-chamber-of-commerce.webp";
+import MOHRE from  "../../assets/landing-pages/Business-Services/Ministry-of-Human-Resources-&-Emiratisation-1 1.webp";
 
 //Services
 
-import DebtCollection from "../../assets/landing-pages/Business-Services/services/Debt-collection.png";
-import EstablishingCompanies from "../../assets/landing-pages/Business-Services/services/Establishing-companies.jpg";
-import Police from "../../assets/landing-pages/Business-Services/services/police.png";
-import CompaniesRepresentation from "../../assets/landing-pages/Business-Services/services/Representing-companies.png";
-import Transaction from "../../assets/landing-pages/Business-Services/services/Transaction-clearing-service.png";
-import legal from "../../assets/landing-pages/Business-Services/services/Legal-consultations.png";
-import Mofa from "../../assets/landing-pages/Business-Services/services/MOFA.jpg";
-import JusticeBook from "../../assets/landing-pages/Business-Services/services/justice-book.jpg";
+import DebtCollection from "../../assets/landing-pages/Business-Services/services/Debt-collection.webp";
+import EstablishingCompanies from "../../assets/landing-pages/Business-Services/services/Establishing-companies.webp";
+import Police from "../../assets/landing-pages/Business-Services/services/police.webp";
+import CompaniesRepresentation from "../../assets/landing-pages/Business-Services/services/Representing-companies.webp";
+import Transaction from "../../assets/landing-pages/Business-Services/services/Transaction-clearing-service.webp";
+import legal from "../../assets/landing-pages/Business-Services/services/Legal-consultations.webp";
+import Mofa from "../../assets/landing-pages/Business-Services/services/MOFA.webp";
+import JusticeBook from "../../assets/landing-pages/Business-Services/services/justice-book.webp";
 
 
 const BusinessLandingPage = ({ lang }) => {

@@ -6,12 +6,12 @@ import { PrimaryButton, PrimaryButton2 } from '../../components/ButtonPrimary';
 import { SecondaryButton } from '../../components/ButtonPrimary';
 import { ContactPill } from '../../components/ContactPill';
 import { Phone, Mail, MessageCircle } from "lucide-react";
-import HeroImage from "../../assets/landing-pages/IT/Kamal-Img.png";
-import WhyUs1 from "../../assets/landing-pages/IT/1.png";
-import WhyUs2 from "../../assets/landing-pages/IT/2.png";
-import Projects from "../../assets/landing-pages/IT/phone-pic.png";
-import PlayStore from "../../assets/landing-pages/IT/Mobile-play-store-badge.png";
-import AppStore from "../../assets/landing-pages/IT/Mobile-app-store-badge.png";
+import HeroImage from "../../assets/landing-pages/IT/Kamal-Img.webp";
+import WhyUs1 from "../../assets/landing-pages/IT/1.webp";
+import WhyUs2 from "../../assets/landing-pages/IT/2.webp";
+import Projects from "../../assets/landing-pages/IT/phone-pic.webp";
+import PlayStore from "../../assets/landing-pages/IT/Mobile-play-store-badge.webp";
+import AppStore from "../../assets/landing-pages/IT/Mobile-app-store-badge.webp";
 import ScrollAnimation from "../../components/scrollAnimation";
 import { Helmet } from "react-helmet";
 import { Shield, Monitor, Wrench, TrendingUp } from 'lucide-react';
@@ -175,7 +175,7 @@ const options = [
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="/path-to-it-services-og-image.jpg"
+          content="/path-to-it-services-og-image.webp"
         />
         <meta
           property="og:url"

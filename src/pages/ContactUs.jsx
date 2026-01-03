@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ContactForm from "../components/contactForm";
 import { MapPin, Mail, Phone, Smartphone } from "lucide-react";
-import hiring from "../assets/contact-us/Job offers-bro 1.png";
+import hiring from "../assets/contact-us/Job offers-bro 1.webp";
 import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { Helmet } from "react-helmet";

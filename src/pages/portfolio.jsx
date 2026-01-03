@@ -1,19 +1,19 @@
 // Scroll Animation
 import { useInView } from "react-intersection-observer";
-import Finance from "../assets/portfolio-main/Financial-services.jpg";
-import RealEstate from "../assets/portfolio-main/real-estate.png";
-import IT from "../assets/portfolio-main/IT.jpg";
-import Travel from "../assets/portfolio-main/travel.jpg";
-import Bussiness from "../assets/portfolio-main/business-service.jpg";
-import Accounting from "../assets/portfolio-main/accounting-auditing.png";
+import Finance from "../assets/portfolio-main/Financial-services.webp";
+import RealEstate from "../assets/portfolio-main/real-estate.webp";
+import IT from "../assets/portfolio-main/IT.webp";
+import Travel from "../assets/portfolio-main/travel.webp";
+import Bussiness from "../assets/portfolio-main/business-service.webp";
+import Accounting from "../assets/portfolio-main/accounting-auditing.webp";
 import { Helmet } from "react-helmet";
 // Importing Logos
-import Financelogo from "../assets/portfolio-logos/financial-services.png";
-import RealEstatelogo from "../assets/portfolio-logos/real-estate.png";
-import Itlogo from "../assets/portfolio-logos/IT.png";
-import Tourismlogo from "../assets/portfolio-logos/tourism.png";
-import Businesslogo from "../assets/portfolio-logos/services-businessman.png";
-import Accountancylogo from "../assets/portfolio-logos/accountancy.png";
+import Financelogo from "../assets/portfolio-logos/financial-services.webp";
+import RealEstatelogo from "../assets/portfolio-logos/real-estate.webp";
+import Itlogo from "../assets/portfolio-logos/IT.webp";
+import Tourismlogo from "../assets/portfolio-logos/tourism.webp";
+import Businesslogo from "../assets/portfolio-logos/services-businessman.webp";
+import Accountancylogo from "../assets/portfolio-logos/accountancy.webp";
 
 import ScrollAnimation from "../components/scrollAnimation";
 import { PrimaryButton2, SecondaryButton } from "../components/ButtonPrimary";

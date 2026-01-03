@@ -3,9 +3,9 @@ import {  Phone, Mail } from "lucide-react";
 import ContactForm from "../../components/contactForm";
 import { PrimaryButton, PrimaryButton2, SecondaryButton } from "../../components/ButtonPrimary";
 import { ContactPill } from "../../components/ContactPill";
-import HeroImage from "../../assets/landing-pages/Accounting/hero.png";
-import ChartImage from "../../assets/landing-pages/Accounting/charts.jpg"
-import ServicesImg from "../../assets/landing-pages/Accounting/services.png"
+import HeroImage from "../../assets/landing-pages/Accounting/hero.webp";
+import ChartImage from "../../assets/landing-pages/Accounting/charts.webp"
+import ServicesImg from "../../assets/landing-pages/Accounting/services.webp"
 import ScrollAnimation from "../../components/scrollAnimation";
 import { Helmet } from "react-helmet";
 
