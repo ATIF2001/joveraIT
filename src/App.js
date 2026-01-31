@@ -1,41 +1,36 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, Suspense, lazy } from "react";
 
 import Nav from "./components/navbar";
 import Footer from "./components/footer";
 import Topbar from "./components/TopBar";
+import Loader from "./components/loader";
+import ScrollToTop from "./components/ScrollToTop";
 
-import Home from "./pages/home";
-import Contact_us from "./pages/ContactUs";
-import Media from "./pages/media";
-import NewsDetail from "./pages/MediaArticle";
-import ServicesSection from "./pages/portfolio";
-import ITLandingPage from "./pages/LandingPages/JoveraITService";
-import FinanceLandingPage from "./pages/LandingPages/JoveraFinancialService";
-import RealEstateLandingPage from "./pages/LandingPages/JoveraRealEstate";
-import BusinessLandingPage from "./pages/LandingPages/JoveraBusinessService";
-import TourismLandingPage from "./pages/LandingPages/JoveraTourismService";
-import AccountingLandingPage from "./pages/LandingPages/JoveraAccounting";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import TermsAndConditionsFinance from "./pages/FinanceTermsAndConditions";
-import PrivacyPolicyFinance  from "./pages/PrivacyPolicyFinance";
-import AccountDeletionFinance from "./pages/AccountDeletionFinance";
 import UnderDevelopment from "./pages/UnderDevelopment";
-import AboutUs from "./pages/AboutUs";
-import Careers from "./pages/CareerPage";
 import JobDetails from "./pages/CareerJob";
-import ScrollToTop from "../src/components/ScrollToTop";
 import Jovera404 from "./pages/404";
+
+// Services
+import DigitalDevelopment from "./pages/Services/digitalDevelopment";
+import Marketing from "./pages/Services/Marketing";
+import Design from "./pages/Services/design";
+import ITservice from "./pages/Services/IT";
 
 import "./App.css";
 
-function App() {
-  // Language state
-  const [lang, setLang] = useState(() => localStorage.getItem("lang") || "en");
+// ✅ Lazy-loaded pages (KEEP TOGETHER)
+const Home = lazy(() => import("./pages/home"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const Contact_us = lazy(() => import("./pages/ContactUs"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Careers = lazy(() => import("./pages/CareerPage"));
 
-  useEffect(() => {
-    localStorage.setItem("lang", lang);
-  }, [lang]);
+function App() {
+  const [lang, setLang] = useState(
+    () => localStorage.getItem("lang") || "en"
+  );
 
   return (
     <Router>
@@ -43,64 +38,39 @@ function App() {
       <Topbar lang={lang} />
       <Nav lang={lang} setLang={setLang} />
 
-      <Routes>
-        {/* Main Pages */}
-        <Route path="/" element={<Home lang={lang} />} />
-        <Route path="/Portfolio" element={<ServicesSection lang={lang} />} />
-        <Route path="/MediaHub" element={<Media lang={lang} />} />
-        <Route path="/ContactUs" element={<Contact_us lang={lang} />} />
-        <Route path="/AboutUs" element={<AboutUs lang={lang} />} />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Home lang={lang} />} />
+          <Route path="/ContactUs" element={<Contact_us lang={lang} />} />
+          <Route path="/AboutUs" element={<AboutUs lang={lang} />} />
+          
+          <Route path="/blog" element={<Blog lang={lang} />} />
+          <Route path="/blog/:slug" element={<Blog  lang={lang}/>} />
 
-        {/* IT */}
-        <Route path="/IT" element={<ITLandingPage lang={lang} />} />
+          <Route path="/Career" element={<Careers lang={lang} />} />
+          <Route path="/Careers/:jobId" element={<JobDetails lang={lang} />} />
+          <Route
+            path="/TermsAndConditions"
+            element={<TermsAndConditions lang={lang} />}
+          />
 
-        {/* Finance - Parent + Subpage */}
-        <Route path="/Finance" element={<FinanceLandingPage lang={lang} />} />
-        <Route 
-          path="/Finance/TermsAndConditions" 
-          element={<TermsAndConditionsFinance lang={lang} />} 
-          caseSensitive={false} 
-        />
-           <Route 
-          path="/Finance/AccountDeletion" 
-          element={<AccountDeletionFinance lang={lang} />} 
-          caseSensitive={false} 
-        />
-           <Route 
-          path="/Finance/PrivacyPolicy" 
-          element={<PrivacyPolicyFinance lang={lang} />} 
-          caseSensitive={false} 
-        />
+          {/* Services */}
+          <Route
+            path="/DigitalDevelopment"
+            element={<DigitalDevelopment lang={lang} />}
+          />
+          <Route path="/IT" element={<ITservice lang={lang} />} />
+          <Route path="/Marketing" element={<Marketing lang={lang} />} />
+          <Route path="/design" element={<Design lang={lang} />} />
 
-        {/* Real Estate */}
-        <Route path="/RealEstate" element={<RealEstateLandingPage lang={lang} />} />
+          <Route
+            path="/UnderDevelopment"
+            element={<UnderDevelopment lang={lang} />}
+          />
 
-        {/* Business */}
-        <Route path="/Business" element={<BusinessLandingPage lang={lang} />} />
-
-        {/* Tourism */}
-        <Route path="/Tourism" element={<TourismLandingPage lang={lang} />} />
-
-        {/* Accounting */}
-        <Route path="/Accounting" element={<AccountingLandingPage lang={lang} />} />
-
-        {/* General Terms and Conditions */}
-        <Route path="/TermsAndConditions" element={<TermsAndConditions lang={lang} />} />
-        {/* <Route path="/Terms_and_Conditions" element={<TermsAndConditions lang={lang} />} /> */}
-
-        {/* Careers */}
-        <Route path="/Career" element={<Careers lang={lang} />} />
-        <Route path="/Careers/:jobId" element={<JobDetails lang={lang} />} />
-
-        {/* News */}
-        <Route path="/News/:id" element={<NewsDetail lang={lang} />} />
-
-        {/* Under Development */}
-        <Route path="/UnderDevelopment" element={<UnderDevelopment lang={lang} />} />
-
-        {/* 404 - Must be last */}
-        <Route path="*" element={<Jovera404 lang={lang} />} />
-      </Routes>
+          <Route path="*" element={<Jovera404 lang={lang} />} />
+        </Routes>
+      </Suspense>
 
       <Footer lang={lang} />
     </Router>

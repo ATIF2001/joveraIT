@@ -37,7 +37,7 @@ const JobDetails = ({ lang }) => {
   // ================= LOADER =================
   if (loading) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-[#0D0D0D] flex items-center justify-center">
         <div className="flex flex-col items-center gap-6">
           <div className="relative w-16 h-16">
             <div className="absolute inset-0 rounded-full border-4 border-gray-700"></div>
@@ -53,7 +53,7 @@ const JobDetails = ({ lang }) => {
 
   if (error || !job) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center text-red-500">
+      <div className="min-h-screen bg-[#0D0D0D] flex items-center justify-center text-red-500">
         {isRTL ? "لم يتم العثور على الوظيفة" : "Job not found"}
       </div>
     );
@@ -65,7 +65,7 @@ const JobDetails = ({ lang }) => {
   return (
     <div
   dir={isRTL ? "rtl" : "ltr"}
-  className="min-h-screen bg-black text-white px-6 md:px-24 pt-[160px] pb-24"
+  className="min-h-screen bg-[#0D0D0D] text-white px-6 md:px-24 pt-[160px] pb-24"
 >
 
       {/* Title */}

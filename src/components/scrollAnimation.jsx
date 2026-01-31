@@ -5,7 +5,7 @@ export default function ScrollAnimation({
   children,
   className = "",
   threshold = 0.2, // how much of element should be visible
-  once = false, // animate only once
+  once = true, // animate only once
 }) {
   const { ref, inView } = useInView({
     threshold,

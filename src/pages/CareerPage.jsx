@@ -25,7 +25,7 @@ const Careers = ({ lang }) => {
   /* ================= LOADER ================= */
   if (loading) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-[#0D0D0D]  flex items-center justify-center">
         <div className="flex flex-col items-center gap-6">
           <div className="relative w-16 h-16">
             <div className="absolute inset-0 rounded-full border-4 border-gray-700"></div>
@@ -42,7 +42,7 @@ const Careers = ({ lang }) => {
   /* ================= ERROR ================= */
   if (error) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center text-red-500">
+      <div className="min-h-screen bg-[#0D0D0D] flex items-center justify-center text-red-500">
         Failed to load jobs
       </div>
     );
@@ -51,26 +51,58 @@ const Careers = ({ lang }) => {
   return (
     <>
 <Helmet>
-        <title>{lang === "en" ? "Careers - Jovera Group" : "الوظائف - مجموعة جوفيرا"}</title>
-        <meta
-          name="description"
-          content={lang === "en"
+      <title>
+        {lang === "en" ? "Careers - Jovera IT" : "الوظائف - مجموعة جوفيرا"}
+      </title>
+
+      <meta
+        name="description"
+        content={
+          lang === "en"
             ? "Explore career opportunities at Jovera Group. Join a dynamic team and grow your professional journey in real estate, finance, IT, tourism, and more."
-            : "استكشف فرص العمل في مجموعة جوفيرا. انضم إلى فريق ديناميكي وطور مسيرتك المهنية في العقارات، والتمويل، وتكنولوجيا المعلومات، والسياحة، وأكثر من ذلك."}
-        />
-        {/* Open Graph */}
-        <meta property="og:title" content="Careers - Jovera Group" />
-        <meta
-          property="og:description"
-          content={lang === "en"
+            : "استكشف فرص العمل في مجموعة جوفيرا. انضم إلى فريق ديناميكي وطور مسيرتك المهنية في العقارات، والتمويل، وتكنولوجيا المعلومات، والسياحة، وأكثر من ذلك."
+        }
+      />
+
+      {/* Open Graph */}
+      <meta
+        property="og:title"
+        content={lang === "en" ? "Careers - Jovera IT" : "الوظائف - مجموعة جوفيرا"}
+      />
+      <meta
+        property="og:description"
+        content={
+          lang === "en"
             ? "Join Jovera Group and be part of a professional team driving innovation in real estate, finance, IT, tourism, and business services."
-            : "انضم إلى مجموعة جوفيرا وكن جزءًا من فريق محترف يقود الابتكار في العقارات والتمويل وتكنولوجيا المعلومات والسياحة وخدمات الأعمال."}
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.jovera.ae/Career" />
-      </Helmet>
+            : "انضم إلى مجموعة جوفيرا وكن جزءًا من فريق محترف يقود الابتكار في العقارات والتمويل وتكنولوجيا المعلومات والسياحة وخدمات الأعمال."
+        }
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.joveraits.ae/Career" />
+      <meta property="og:image" content="%PUBLIC_URL%/logo.webp" />
+
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content={lang === "en" ? "Careers - Jovera IT" : "الوظائف - مجموعة جوفيرا"}
+      />
+      <meta
+        name="twitter:description"
+        content={
+          lang === "en"
+            ? "Join Jovera Group and be part of a professional team driving innovation in real estate, finance, IT, tourism, and business services."
+            : "انضم إلى مجموعة جوفيرا وكن جزءًا من فريق محترف يقود الابتكار في العقارات والتمويل وتكنولوجيا المعلومات والسياحة وخدمات الأعمال."
+        }
+      />
+      <meta name="twitter:image" content="%PUBLIC_URL%/logo.webp" />
+
+      {/* Favicon / Logo */}
+      <link rel="icon" href="%PUBLIC_URL%/logo.webp" />
+      <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.webp" />
+    </Helmet>
 <main>
-    <div className="min-h-screen bg-black px-6 md:px-16 pt-[200px] pb-[200px]
+    <div className="min-h-screen bg-[#0D0D0D] px-6 md:px-16 pt-[200px] pb-[200px]
 ">
       {/* Total Jobs */}
       <div className="text-white text-2xl mb-20 text-center">

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import ContactForm from "../components/contactForm";
 import { MapPin, Mail, Phone, Smartphone } from "lucide-react";
-import hiring from "../assets/contact-us/Job offers-bro 1.webp";
-import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+
 function Contact_us({ lang }) {
   const [activeBranch, setActiveBranch] = useState("abuDhabi");
 
@@ -88,21 +87,37 @@ function Contact_us({ lang }) {
 
   return (
 <>
-    <Helmet>
-        <title>Contact Us - Jovera Group | Get in Touch</title>
-        <meta
-          name="description"
-          content="Get in touch with Jovera Group. Reach our headquarters and branches in Abu Dhabi, Dubai, Sharjah, and Ajman. Contact via email, phone, or WhatsApp for inquiries, support, and consultations."
-        />
-        {/* Open Graph for social media */}
-        <meta property="og:title" content="Contact Us - Jovera Group" />
-        <meta
-          property="og:description"
-          content="Contact Jovera Group for real estate, financial services, tourism, advertisement, and accountancy inquiries. Our team is ready to assist you via email, phone, or WhatsApp."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.jovera.ae/ContactUs" />
-      </Helmet>
+  <Helmet>
+      <title>Contact Us - Jovera IT | Get in Touch</title>
+
+      <meta
+        name="description"
+        content="Get in touch with Jovera Group. Reach our headquarters and branches in Abu Dhabi, Dubai, Sharjah, and Ajman. Contact via email, phone, or WhatsApp for inquiries, support, and consultations."
+      />
+
+      {/* Open Graph */}
+      <meta property="og:title" content="Contact Us - Jovera Group" />
+      <meta
+        property="og:description"
+        content="Contact Jovera Group for real estate, financial services, tourism, advertisement, and accountancy inquiries. Our team is ready to assist you via email, phone, or WhatsApp."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.joveraits.ae/ContactUs" />
+      <meta property="og:image" content="%PUBLIC_URL%/logo.webp" />
+
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Contact Us - Jovera Group" />
+      <meta
+        name="twitter:description"
+        content="Contact Jovera Group for real estate, financial services, tourism, advertisement, and accountancy inquiries. Our team is ready to assist you via email, phone, or WhatsApp."
+      />
+      <meta name="twitter:image" content="%PUBLIC_URL%/logo.webp" />
+
+      {/* Favicon / Logo */}
+      <link rel="icon" href="%PUBLIC_URL%/logo.webp" />
+      <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.webp" />
+    </Helmet>
       
     <main className={`bg-[#0D0D0D] text-white min-h-screen px-4 sm:px-16 py-32 ${lang !== "en" ? "rtl" : ""}`}>
       <div className="max-w-7xl mx-auto space-y-20">
@@ -223,12 +238,12 @@ function Contact_us({ lang }) {
 
           {/* Contact Form */}
           <div className={`${lang !== "en" ? "order-first" : ""}`}>
-            <ContactForm lang={lang} options={options} />
+            <ContactForm lang={lang} formOnly={true} />
           </div>
         </div>
 
         {/* Row 3: Join Us */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className={`flex flex-col ${lang === "en" ? "items-start" : "items-center"}`}>
             {lang === "en" && <h1 className="text-2xl mb-10 w-full text-left">JOIN US</h1>}
             <img src={hiring} alt="We are hiring" className="w-64 rounded-lg" loading="lazy" />
@@ -244,7 +259,7 @@ function Contact_us({ lang }) {
               </button>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
     </>
