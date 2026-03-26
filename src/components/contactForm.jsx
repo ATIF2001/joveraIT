@@ -183,6 +183,7 @@ export default function ContactForm({ lang, formOnly }) {
       <button
         type="submit"
         disabled={loading}
+         dir={lang === "ar" ? "rtl" : "ltr"}
         className="bg-[#866910] text-white font-semibold pl-8 py-1 rounded-full flex items-center gap-2 transition-colors"
       >
         {lang === "en" ? (

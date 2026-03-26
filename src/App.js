@@ -34,45 +34,47 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop />
-      <Topbar lang={lang} />
-      <Nav lang={lang} setLang={setLang} />
+      <div className={lang !== "en" ? "font-arabic" : ""}>
+        <ScrollToTop />
+        <Topbar lang={lang} />
+        <Nav lang={lang} setLang={setLang} />
 
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<Home lang={lang} />} />
-          <Route path="/ContactUs" element={<Contact_us lang={lang} />} />
-          <Route path="/AboutUs" element={<AboutUs lang={lang} />} />
-          
-          <Route path="/blog" element={<Blog lang={lang} />} />
-          <Route path="/blog/:slug" element={<Blog  lang={lang}/>} />
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Home lang={lang} />} />
+            <Route path="/ContactUs" element={<Contact_us lang={lang} />} />
+            <Route path="/AboutUs" element={<AboutUs lang={lang} />} />
+            
+            <Route path="/blog" element={<Blog lang={lang} />} />
+            <Route path="/blog/:slug" element={<Blog  lang={lang}/>} />
 
-          <Route path="/Career" element={<Careers lang={lang} />} />
-          <Route path="/Careers/:jobId" element={<JobDetails lang={lang} />} />
-          <Route
-            path="/TermsAndConditions"
-            element={<TermsAndConditions lang={lang} />}
-          />
+            <Route path="/Career" element={<Careers lang={lang} />} />
+            <Route path="/Careers/:jobId" element={<JobDetails lang={lang} />} />
+            <Route
+              path="/TermsAndConditions"
+              element={<TermsAndConditions lang={lang} />}
+            />
 
-          {/* Services */}
-          <Route
-            path="/DigitalDevelopment"
-            element={<DigitalDevelopment lang={lang} />}
-          />
-          <Route path="/IT" element={<ITservice lang={lang} />} />
-          <Route path="/Marketing" element={<Marketing lang={lang} />} />
-          <Route path="/design" element={<Design lang={lang} />} />
+            {/* Services */}
+            <Route
+              path="/DigitalDevelopment"
+              element={<DigitalDevelopment lang={lang} />}
+            />
+            <Route path="/IT" element={<ITservice lang={lang} />} />
+            <Route path="/Marketing" element={<Marketing lang={lang} />} />
+            <Route path="/design" element={<Design lang={lang} />} />
 
-          <Route
-            path="/UnderDevelopment"
-            element={<UnderDevelopment lang={lang} />}
-          />
+            <Route
+              path="/UnderDevelopment"
+              element={<UnderDevelopment lang={lang} />}
+            />
 
-          <Route path="*" element={<Jovera404 lang={lang} />} />
-        </Routes>
-      </Suspense>
+            <Route path="*" element={<Jovera404 lang={lang} />} />
+          </Routes>
+        </Suspense>
 
-      <Footer lang={lang} />
+        <Footer lang={lang} />
+      </div>
     </Router>
   );
 }

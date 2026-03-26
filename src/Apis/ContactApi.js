@@ -10,7 +10,7 @@ const createLeadFromWebsite = async (payload) => {
     return res.data;
   } catch (error) {
     console.error("Error creating lead:", error);
-    throw error; // important so UI can catch it
+    throw error; 
   }
 };
 

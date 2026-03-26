@@ -60,8 +60,6 @@ function Footer({ lang }) {
               <ul className="space-y-1 text-gray-300 text-sm">
                 <li><Link to="/" className="hover:text-yellow-600 cursor-pointer">{text.home}</Link></li>
                 <li><Link to="/AboutUs" className="hover:text-yellow-600 cursor-pointer">{text.about}</Link></li>
-                <li><Link to="/portfolio" className="hover:text-yellow-600 cursor-pointer">Portfolio</Link></li>
-                <li><Link to="/MediaHub" className="hover:text-yellow-600 cursor-pointer">Media Hub</Link></li>
                 <li><Link to="/ContactUs" className="hover:text-yellow-600 cursor-pointer">{text.Contact}</Link></li>
                 <li><Link to="/Career" className="hover:text-yellow-600 cursor-pointer">{text.Careers}</Link></li>
               </ul>

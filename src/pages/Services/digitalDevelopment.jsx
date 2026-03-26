@@ -133,7 +133,7 @@ const projects = {
       problem: "Client needed a full tourism ecosystem with bookings and admin control.",
       solution:
         "We built a responsive website, mobile apps, and a real-time dashboard with analytics.",
-      website: "https://jovera.com",
+      website: "https://www.joveratourism.ae/",
     },
     {
       title: "Travel Pro",
@@ -245,7 +245,6 @@ const projects = {
   />
 
   {/* Twitter Card */}
-  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={isArabic ? "تطوير الويب والجوال - Jovera IT" : "Web & Mobile Development - Jovera IT"} />
   <meta
     name="twitter:description"
@@ -328,7 +327,7 @@ const projects = {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1 */}
           <div className="bg-[#141414] border border-[#1f1f1f] rounded-xl ">
-            <img src={image1} alt="Web Development" className="rounded-lg mb-4 h-[200px]" />
+            <img src={image1} alt="Web Development" className="rounded-lg mb-4 w-full h-[200px]" />
             <h3 className="font-semibold text-lg mb-3 text-[#C99E18] px-6">{texts.webDevTitle}</h3>
             <ul className="text-gray-400 text-sm space-y-2 px-6 py-2">
               {texts.webDevItems.map((item, i) => <li key={i}>{item}</li>)}
@@ -337,7 +336,7 @@ const projects = {
 
           {/* Card 2 */}
           <div className="bg-[#141414] border border-[#1f1f1f] rounded-xl ">
-            <img src={image2} alt="Mobile App Development" className="rounded-lg mb-4 h-[200px]" />
+            <img src={image2} alt="Mobile App Development" className="rounded-lg mb-4 w-full h-[200px]" />
             <h3 className="font-semibold text-lg mb-3 text-[#C99E18] px-6">{texts.mobileDevTitle}</h3>
             <ul className="text-gray-400 text-sm space-y-2 px-6 py-2">
               {texts.mobileDevItems.map((item, i) => <li key={i}>{item}</li>)}
@@ -346,7 +345,7 @@ const projects = {
 
           {/* Card 3 */}
           <div className="bg-[#141414] border border-[#1f1f1f] rounded-xl ">
-            <img src={image3} alt="UI UX Design" className="rounded-lg mb-4 h-[200px]" />
+            <img src={image3} alt="UI UX Design" className="rounded-lg mb-4 w-full h-[200px]" />
             <h3 className="font-semibold text-lg mb-3 text-[#C99E18] px-6">{texts.uiuxTitle}</h3>
             <ul className="text-gray-400 text-sm space-y-2 px-6 py-2">
               {texts.uiuxItems.map((item, i) => <li key={i}>{item}</li>)}
@@ -355,7 +354,7 @@ const projects = {
 
           {/* Card 4 */}
           <div className="bg-[#141414] border border-[#1f1f1f] rounded-xl ">
-            <img src={image4} alt="Additional Services" className="rounded-lg mb-4 h-[200px]" />
+            <img src={image4} alt="Additional Services" className="rounded-lg mb-4 w-full h-[200px]" />
             <h3 className="font-semibold text-lg mb-3 text-[#C99E18] px-6">{texts.additionalTitle}</h3>
             <ul className="text-gray-400 text-sm space-y-2 px-6 py-2">
               {texts.additionalItems.map((item, i) => <li key={i}>{item}</li>)}
@@ -388,7 +387,7 @@ const projects = {
 
 {/* Our Work Section */}
 {/* Our Work Section */}
-<PortfolioProjects />
+<PortfolioProjects lang={lang} />
 {/* <section className="bg-[#0e0e0e] text-white px-6 md:px-16 lg:px-20 py-24">
   <div className="max-w-7xl mx-auto">
 

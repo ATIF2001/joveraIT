@@ -34,7 +34,7 @@ import { useState } from "react";
 
 const AboutUs = ({ lang }) => {
  
-const [openIndex, setOpenIndex] = useState(1);
+const [openIndex, setOpenIndex] = useState();
 const content = {
   en: {
     section1: {
@@ -102,42 +102,46 @@ const content = {
     isLead: true,
     linkedin: "https://www.linkedin.com/in/kamal-uddin-shemul/" // 👈 mark as top card
   },
-  {
-    name: "Mahmoud Ghanem",
-    role: "Business Analysis & User Experience Design",
-    image: uiux,
-    linkedin: "https://www.linkedin.com/in/mahmoudghanem2/"
-  },
+
   {
     name: "Naveed Aslam",
     role: "Full Stack Developer",
     image: fullstack,
     linkedin: "https://www.linkedin.com/in/naveed-aslam-559166196/"
   },
-  {
-    name: "Abdullah",
+    {
+    name: "Abdullah Shah",
     role: "Back-end Developer",
     image: backend,
     linkedin: "https://www.linkedin.com/in/abdullah-shahorakzai/"
   },
-  {
-    name: "Atif",
-    role: "Front-end Developer",
-    image: frontend,
-    linkedin: "https://www.linkedin.com/in/muhammad-atif-ab34031a5/"
-  },
-  {
+    {
     name: "Kashif Hameed",
     role: "Mobile Developer",
     image: mobileDev,
     linkedin: "https://www.linkedin.com/in/kashufhameed/"
   },
+    {
+    name: "Mahmoud Ghanem",
+    role: "Business Analysis & User Experience Design",
+    image: uiux,
+    linkedin: "https://www.linkedin.com/in/mahmoudghanem2/"
+  },
+
   {
-    name: "Rashifal",
+    name: "Muhammed Atif",
+    role: "Front-end Developer",
+    image: frontend,
+    linkedin: "https://www.linkedin.com/in/muhammad-atif-ab34031a5/"
+  },
+  {
+    name: "Raphael Ashong",
     role: "Graphic Designer",
     image: graphic, // replace with real image later
     linkedin: "#"
   },
+
+  
 ],
 
     },
@@ -400,7 +404,7 @@ const content = {
       <link rel="icon" href="%PUBLIC_URL%/logo.webp" />
       <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.webp" />
     </Helmet>
-    
+
     <div className="flex flex-col bg-[#0a0a0a] justify-center items-center">
     <section
       className="bg-[#0a0a0a] text-white pt-32 px-5 min-h-screen flex items-center relative overflow-hidden"
@@ -616,7 +620,7 @@ const content = {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
-        <div className="space-y-10 px-20">
+        <div className="space-y-10 px-20 ">
           <div className="space-y-5">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               {data.section3.title}
@@ -627,7 +631,7 @@ const content = {
           </div>
 
           {/* Accordion */}
-          <div className="space-y-4 ">
+          <div className="space-y-4  ">
             {data.section3.faqs.map((item, index) => {
               const isOpen = openIndex === index;
 
@@ -666,7 +670,7 @@ const content = {
           <img
             src={supportImg}
             alt="Support team"
-            className="w-full h-[700px] object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>

@@ -41,8 +41,8 @@ function Contact_us({ lang }) {
     ],
     helpSupport: lang === "en" ? "Help & Support" : "المساعدة والدعم",
     contactItems: [
-      { icon: Mail, text: "info@jovera.ae" },
-      { icon: Phone, text: "800-664000" },
+      { icon: Mail, text: "info@joveraits.ae" },
+      { icon: Phone, text: "800-664-000" },
       { icon: Smartphone, text: "+97126311977" },
       { icon: FaWhatsapp, text: "+97126311977" },
     ],
@@ -119,7 +119,7 @@ function Contact_us({ lang }) {
       <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.webp" />
     </Helmet>
       
-    <main className={`bg-[#0D0D0D] text-white min-h-screen px-4 sm:px-16 py-32 ${lang !== "en" ? "rtl" : ""}`}>
+    <main className={`bg-[#0D0D0D] text-white min-h-screen px-4 sm:px-16 py-32 `}>
       <div className="max-w-7xl mx-auto space-y-20">
 
         {/* Page Heading */}
@@ -261,6 +261,7 @@ function Contact_us({ lang }) {
           </div>
         </div> */}
       </div>
+      
     </main>
     </>
   );

@@ -57,6 +57,15 @@ function Nav({ lang, setLang }) {
             {lang === "en" ? "Home" : "الرئيسية"}
           </Link>
 
+             <Link
+            to="/AboutUs"
+            className={`hover:text-yellow-400 ${
+              isActive("/AboutUs") ? "text-yellow-400" : ""
+            }`}
+          >
+            {lang === "en" ? "About us" : "من نحن"}
+          </Link>
+
           {/* Services Dropdown (FIXED) */}
           <div className="relative group">
             <button className="hover:text-yellow-400">
@@ -101,14 +110,7 @@ function Nav({ lang, setLang }) {
             {lang === "en" ? "Contact us" : "تواصل معنا"}
           </Link>
             
-            <Link
-            to="/AboutUs"
-            className={`hover:text-yellow-400 ${
-              isActive("/AboutUs") ? "text-yellow-400" : ""
-            }`}
-          >
-            {lang === "en" ? "About us" : "من نحن"}
-          </Link>
+         
            <Link
             to="/Blog"
             className={`hover:text-yellow-400 ${
@@ -180,12 +182,13 @@ function Nav({ lang, setLang }) {
             <Link to="/Design" onClick={() => setIsMenuOpen(false)}>
               {lang === "en" ? "UI/UX & Graphic Design" : "تصميم واجهات وتجربة المستخدم والجرافيك"}
             </Link>
-            <Link to="/Blog" onClick={() => setIsMenuOpen(false)}>
-              {lang === "en" ? "Blog" : "المدونة"}
-            </Link>
             <Link to="/ContactUs" onClick={() => setIsMenuOpen(false)}>
               {lang === "en" ? "Contact us" : "تواصل معنا"}
             </Link>
+            <Link to="/Blog" onClick={() => setIsMenuOpen(false)}>
+              {lang === "en" ? "Blog" : "المدونة"}
+            </Link>
+            
           </nav>
         </div>
       )}

@@ -17,10 +17,10 @@ function Topbar({ lang }) {
         {/* Left Side */}
         <div className="flex gap-4">
           <span className="flex items-center gap-1">
-            <Mail size={12} /> info@joveragroup.ae
+            <Mail size={12} /> info@joveraits.ae
           </span>
           <span className="flex items-center gap-1">
-            <Phone size={12} /> 800-464000
+            <Phone size={12} /> 800-664-000
           </span>
         </div>
 

@@ -41,13 +41,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Arabic text class
+/* Arabic text class */
 .font-arabic {
   font-family: 'Cairo', sans-serif;
-} */
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
